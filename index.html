@@ -48,7 +48,7 @@
   --ease:cubic-bezier(.22,1,.36,1);
   --shadow:0 24px 60px -20px rgba(0,0,0,.7);
 
-  --ticker-speed:150s; /* futó felirat sebessége — kisebb érték = gyorsabb */
+  --ticker-speed:260s; /* futó felirat sebessége — kisebb érték = gyorsabb */
 }
 
 /* ==========================================================================
@@ -274,7 +274,7 @@ h1 .grad{
 }
 .ticker-track{display:flex;width:max-content;animation:ticker var(--ticker-speed) linear infinite}
 .ticker:hover .ticker-track{animation-play-state:paused}
-.ticker-track p{white-space:nowrap;padding-right:64px;font-size:14.5px;letter-spacing:.005em;color:var(--soft)}
+.ticker-track p{white-space:nowrap;padding-right:64px;font-size:18px;letter-spacing:.005em;color:var(--soft)}
 .ticker-track p b{color:var(--turquoise);font-weight:600}
 .ticker-track p .sep{color:rgba(64,233,208,.55);padding:0 14px}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -315,7 +315,7 @@ h1 .grad{
 .tl-item{position:relative;padding:0 0 28px 58px;counter-increment:s}
 .tl-item::before{
   content:counter(s);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;
-  display:grid;place-items:center;font-weight:700;font-size:14.5px;color:var(--turquoise);
+  display:grid;place-items:center;font-weight:700;font-size:18px;color:var(--turquoise);
   background:var(--ink-3);border:1px solid var(--line-strong);z-index:1;
 }
 .tl-item::after{content:"";position:absolute;left:19px;top:38px;bottom:0;width:1px;background:var(--line)}
@@ -425,8 +425,8 @@ footer a:hover{color:var(--turquoise)}
   section{padding-block:52px}
   .hero{padding-top:110px;padding-bottom:26px}
   #cursor{display:none}
-  :root{--ticker-speed:105s}
-  .ticker-track p{font-size:13.5px;padding-right:46px}
+  :root{--ticker-speed:180s}
+  .ticker-track p{font-size:16px;padding-right:46px}
 }
 @media (max-width:420px){.chip{flex:1 1 100%}}
 
@@ -535,7 +535,7 @@ footer a:hover{color:var(--turquoise)}
       <div class="video-shell">
         <div class="ratio">
           <!-- TODO: cseréld a saját fájlodra. poster = az alapkép egy kockája -->
-          <video id="heroVideo" playsinline muted loop preload="metadata" poster="poster.jpg" controls>
+                  <video id="heroVideo" playsinline loop preload="metadata" poster="poster.jpg" controls>
             <source src="ai-csapat.mp4" type="video/mp4" />
           </video>
         </div>
@@ -834,14 +834,17 @@ footer a:hover{color:var(--turquoise)}
 
   /* --- videó --- */
   var hv = document.getElementById('heroVideo');
+   if(hv){ hv.muted = false; hv.volume = 0.5; }
   if(hv && 'IntersectionObserver' in window){
     new IntersectionObserver(function(en){
       en.forEach(function(e){
-        if(e.isIntersecting && !reduce){ hv.play().catch(function(){}); }
+                    if(e.isIntersecting && !reduce){ hv.volume = 0.5; hv.play().catch(function(){ hv.muted = true; hv.play().catch(function(){}); }); }
         else { hv.pause(); }
       });
     }, {threshold:0.45}).observe(hv);
   }
+     var fixSound = function(){ if(hv){ hv.muted = false; hv.volume = 0.5; hv.play().catch(function(){}); } document.removeEventListener('click', fixSound); document.removeEventListener('touchstart', fixSound); document.removeEventListener('keydown', fixSound); };
+   document.addEventListener('click', fixSound); document.addEventListener('touchstart', fixSound); document.addEventListener('keydown', fixSound);
 
   /* --- GYIK --- */
   var dets = document.querySelectorAll('details');
