@@ -740,14 +740,9 @@ footer a:hover{color:var(--turquoise)}
 
         <div class="field">
           <textarea id="uzenet" name="uzenet" placeholder=" " rows="4"></textarea>
-          <label for="uzenet">Üzenet — mit szeretnél elérni?</label>
+                    <label for="uzenet">Üzenet</label>
         </div>
-        <p class="hint">
-          <span>Példa: <em>„Ékszer webshopot viszünk, havi 150 ezer forintot költünk Meta hirdetésre. A tartalomgyártás nálam ragad, és nincs időm a kommentekre. Azt szeretném, hogy a posztolás és a hirdetés magától menjen, én csak jóváhagyjam."</em></span>
-          <button type="button" id="fillSample">Minta beillesztése</button>
-        </p>
-
-        <button class="btn btn-lg" type="submit" style="width:100%;margin-top:4px">
+          <button class="btn btn-lg" type="submit" style="width:100%;margin-top:4px">
           Jelentkezem konzultációra
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
         </button>
@@ -881,8 +876,7 @@ footer a:hover{color:var(--turquoise)}
     data.forras = document.referrer || 'direct';
     data.idopont = new Date().toISOString();
 
-    /* TODO: írd be ide a Make.com webhook URL-t */
-    var ENDPOINT = '';
+                var ENDPOINT = 'https://formspree.io/f/xnpapjop';
 
     var done = function(){
       form.style.display = 'none';
@@ -896,7 +890,7 @@ footer a:hover{color:var(--turquoise)}
 
     fetch(ENDPOINT, {
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+              headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(data)
     }).then(done).catch(function(){
       btn.disabled = false; btn.style.opacity = 1;
