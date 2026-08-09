@@ -507,7 +507,7 @@ footer a:hover{color:var(--turquoise)}
       <div class="video-shell">
         <div class="ratio">
           <!-- TODO: cseréld a saját fájlodra. poster = az alapkép egy kockája -->
-                  <video id="heroVideo" playsinline loop preload="metadata" poster="poster.jpg" controls>
+                            <video id="heroVideo" playsinline muted loop preload="metadata" poster="poster.jpg" controls>
             <source src="ai-csapat.mp4" type="video/mp4" />
           </video>
         </div>
@@ -779,17 +779,16 @@ footer a:hover{color:var(--turquoise)}
 
   /* --- videó --- */
   var hv = document.getElementById('heroVideo');
-   if(hv){ hv.muted = false; hv.volume = 0.5; }
+       if(hv){ hv.volume = 1; }
   if(hv && 'IntersectionObserver' in window){
     new IntersectionObserver(function(en){
       en.forEach(function(e){
-                    if(e.isIntersecting && !reduce){ hv.volume = 0.5; hv.play().catch(function(){ hv.muted = true; hv.play().catch(function(){}); }); }
+                            if(e.isIntersecting && !reduce){ hv.play().catch(function(){}); }
         else { hv.pause(); }
       });
     }, {threshold:0.45}).observe(hv);
   }
-     var fixSound = function(){ if(hv){ hv.muted = false; hv.volume = 0.5; hv.play().catch(function(){}); } document.removeEventListener('click', fixSound); document.removeEventListener('touchstart', fixSound); document.removeEventListener('keydown', fixSound); };
-   document.addEventListener('click', fixSound); document.addEventListener('touchstart', fixSound); document.addEventListener('keydown', fixSound);
+     
 
   /* --- GYIK --- */
   var dets = document.querySelectorAll('details');
