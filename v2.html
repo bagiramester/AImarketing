@@ -473,16 +473,6 @@ details p{padding:0 22px 20px;color:var(--muted);font-size:15.4px;max-width:74ch
 .field select:focus+label,
 .field select:valid+label{top:7px;font-size:11.5px;letter-spacing:.05em;color:var(--turquoise);text-transform:uppercase}
 .field .chev{position:absolute;right:18px;top:22px;pointer-events:none;opacity:.5}
-.hint{
-  display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;
-  margin:-6px 2px 15px;font-size:13px;line-height:1.55;color:var(--muted-2);
-}
-.hint em{font-style:italic;color:#98A2AE}
-.hint button{
-  background:none;border:0;padding:0;cursor:pointer;font-size:13px;font-weight:600;
-  color:var(--turquoise);border-bottom:1px dashed rgba(64,233,208,.5);
-}
-.hint button:hover{color:#7CF3E2}
 .form-note{font-size:13px;color:var(--muted-2);margin-top:14px;text-align:center}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
 .success{display:none;text-align:center;padding:34px 10px}
@@ -1031,7 +1021,6 @@ footer a:hover{color:var(--turquoise)}
           <textarea id="uzenet" name="uzenet" placeholder=" " rows="4"></textarea>
           <label for="uzenet">Üzenet — mit szeretnél elérni?</label>
         </div>
-        <p class="hint"><em>Például: „Ékszer webshopot viszünk, havi 150 ezer forintot költünk Meta hirdetésre…"</em> <button type="button" id="fillSample">Minta beillesztése</button></p>
 
         <button class="btn btn-lg" type="submit" style="width:100%;margin-top:4px">
           Jelentkezem konzultációra
@@ -1142,17 +1131,6 @@ footer a:hover{color:var(--turquoise)}
     });
   });
 
-  /* --- üzenet minta beillesztése --- */
-  var sample = 'Ékszer webshopot viszünk, havi 150 ezer forintot költünk Meta hirdetésre. A tartalomgyártás nálam ragad, és nincs időm a kommentekre. Azt szeretném, hogy a posztolás és a hirdetés magától menjen, én csak jóváhagyjam.';
-  var fillBtn = document.getElementById('fillSample'), ta = document.getElementById('uzenet');
-  if(fillBtn && ta){
-    fillBtn.addEventListener('click', function(){
-      ta.value = sample;
-      ta.focus();
-      ta.setSelectionRange(ta.value.length, ta.value.length);
-    });
-  }
-
   /* --- űrlap --- */
   var form = document.getElementById('leadForm'), ok = document.getElementById('ok');
   form.addEventListener('submit', function(e){
@@ -1180,13 +1158,22 @@ footer a:hover{color:var(--turquoise)}
 
     if(!ENDPOINT){ console.log('LEAD (nincs endpoint beállítva):', data); done(); return; }
 
+    var fail = function(){
+      btn.disabled = false; btn.style.opacity = 1;
+      btn.innerHTML = 'Nem sikerült — próbáld újra';
+    };
+
     fetch(ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(data)
-    }).then(done).catch(function(){
-      btn.disabled = false; btn.style.opacity = 1;
-      btn.textContent = 'Próbáld újra';
+    }).then(function(res){
+      /* a fetch a 4xx/5xx választ is sikernek veszi — ezért kell az explicit ellenőrzés */
+      if(!res.ok){ console.error('Form hiba:', res.status, res.statusText); fail(); return; }
+      done();
+    }).catch(function(err){
+      console.error('Form hálózati hiba:', err);
+      fail();
     });
   });
 
