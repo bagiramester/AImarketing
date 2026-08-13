@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<!-- Google Analytics 4 (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S3RBLP1Q3S"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S3RBLP1Q3S');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>AI marketing infrastruktúra KKV-knak — Katona Balázs</title>
+<meta name="description" content="Nem AI eszközt adok, hanem AI marketing infrastruktúrát építek a cégednek: stratégia, tartalom, közösségi média és hirdetés egy rendszerben, emberi jóváhagyással." />
+<meta name="theme-color" content="#0B0D10" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="A marketinged nem áll le akkor sem, amikor te nyaralsz." />
+<meta property="og:description" content="AI marketing infrastruktúra KKV-knak: stratégia, tartalom, közösségi média és hirdetés egy rendszerben." />
+<meta property="og:image" content="https://bagiramester.github.io/AImarketing/og-cover.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://bagiramester.github.io/AImarketing/v2.html" />
+<meta property="og:locale" content="hu_HU" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://bagiramester.github.io/AImarketing/og-cover.jpg" />
+<link rel="canonical" href="https://bagiramester.github.io/AImarketing/v2.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="mask-icon" href="favicon.svg" color="#40E9D0" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* ==========================================================================
+   1. DESIGN TOKENS
+   ========================================================================== */
+:root{
+  --ink:#0B0D10;
+  --ink-2:#10141A;
+  --ink-3:#151A21;
+  --line:rgba(244,241,236,.10);
+  --line-strong:rgba(244,241,236,.18);
+
+  --porcelain:#F4F1EC;
+  --muted:#9BA5B1;
+  --muted-2:#7A8490;
+  --soft:#BFC7CF;
+
+  --turquoise:#40E9D0;
+  --teal:#0F9E96;
+  --gold:#E3C08D;
+  --amber:#F0A868;
+  --navy:#132A55;
+
+  --radius:18px;
+  --radius-lg:26px;
+  --maxw:1140px;
+  --pad:clamp(20px,5vw,40px);
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --shadow:0 24px 60px -20px rgba(0,0,0,.7);
+
+  --ticker-speed:260s;
+}
+
+/* ==========================================================================
+   2. RESET
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{
+  margin:0;background:var(--ink);color:var(--porcelain);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:17px;line-height:1.65;letter-spacing:-.011em;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,video{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.12;letter-spacing:-.03em;font-weight:700}
+p{margin:0}
+::selection{background:var(--turquoise);color:var(--ink)}
+
+/* ==========================================================================
+   3. LAYOUT
+   ========================================================================== */
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+section{position:relative;padding-block:clamp(54px,8vw,104px)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--turquoise);margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--turquoise);opacity:.6}
+h2{font-size:clamp(27px,4.2vw,44px)}
+.lead{color:var(--soft);font-size:clamp(16px,1.9vw,19px);max-width:62ch}
+.section-head{margin-bottom:clamp(26px,3.6vw,44px);max-width:70ch}
+.center-head{text-align:center;margin-inline:auto}
+.center-head .eyebrow{justify-content:center}
+.center-head .lead{margin-inline:auto}
+
+/* ==========================================================================
+   4. AMBIENT FX
+   ========================================================================== */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.30;will-change:transform}
+.b1{width:52vw;height:52vw;left:-14vw;top:-12vw;background:radial-gradient(circle,#0F9E96,transparent 66%);animation:drift1 26s var(--ease) infinite alternate}
+.b2{width:46vw;height:46vw;right:-12vw;top:16vh;background:radial-gradient(circle,#132A55,transparent 66%);animation:drift2 32s var(--ease) infinite alternate}
+.b3{width:40vw;height:40vw;left:24vw;bottom:-16vh;background:radial-gradient(circle,#E3C08D,transparent 68%);opacity:.16;animation:drift3 38s var(--ease) infinite alternate}
+@keyframes drift1{to{transform:translate3d(9vw,7vh,0) scale(1.14)}}
+@keyframes drift2{to{transform:translate3d(-8vw,-6vh,0) scale(1.1)}}
+@keyframes drift3{to{transform:translate3d(6vw,-9vh,0) scale(1.18)}}
+
+.grain{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.28;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+#progress{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:100;
+  background:linear-gradient(90deg,var(--turquoise),var(--gold));
+  box-shadow:0 0 14px rgba(64,233,208,.6);transition:width .12s linear;
+}
+#cursor{
+  position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(64,233,208,.09),transparent 62%);
+  transform:translate(-50%,-50%);opacity:0;transition:opacity .4s;
+}
+
+/* ==========================================================================
+   5. HEADER
+   ========================================================================== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  transition:background .35s var(--ease),border-color .35s,backdrop-filter .35s;
+  border-bottom:1px solid transparent;
+}
+header.stuck{background:rgba(11,13,16,.80);backdrop-filter:blur(18px) saturate(150%);border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;gap:14px;height:68px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.02em;font-size:16px}
+.logo-mark{
+  width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(145deg,#1C232C,#0E1216);border:1px solid var(--line-strong);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+.logo-mark span{width:7px;height:7px;border-radius:50%;background:var(--turquoise);box-shadow:0 0 12px var(--turquoise)}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--muted-2);letter-spacing:.02em;line-height:1}
+.social{display:flex;align-items:center;gap:8px;padding-left:14px;border-left:1px solid var(--line-strong)}
+.social a{
+  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+  color:var(--muted);border:1px solid var(--line);
+  transition:color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);
+}
+.social a:hover{color:var(--turquoise);border-color:rgba(64,233,208,.5);transform:translateY(-2px)}
+.bar .btn{margin-left:auto}
+
+/* ==========================================================================
+   6. BUTTONS
+   ========================================================================== */
+.btn{
+  --bg:var(--turquoise);--fg:#06201C;
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 26px;border-radius:999px;border:0;cursor:pointer;
+  background:var(--bg);color:var(--fg);font-weight:650;font-size:15.5px;letter-spacing:-.01em;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s;
+  box-shadow:0 10px 30px -10px rgba(64,233,208,.55);overflow:hidden;isolation:isolate;
+}
+.btn::after{
+  content:"";position:absolute;inset:0;z-index:-1;translate:-120% 0;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+  transition:translate .7s var(--ease);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 44px -12px rgba(64,233,208,.7)}
+.btn:hover::after{translate:120% 0}
+.btn:active{transform:translateY(0)}
+.btn-sm{padding:11px 19px;font-size:14px}
+.btn-ghost{background:transparent;color:var(--porcelain);border:1px solid var(--line-strong);box-shadow:none}
+.btn-ghost:hover{border-color:var(--turquoise);color:var(--turquoise);box-shadow:none;transform:translateY(-2px)}
+.btn-lg{padding:18px 34px;font-size:17px}
+
+/* ==========================================================================
+   7. HERO
+   ========================================================================== */
+.hero{padding-top:clamp(108px,14vh,158px);padding-bottom:clamp(28px,4vw,46px);text-align:center}
+h1{
+  font-size:clamp(33px,6.4vw,72px);font-weight:800;letter-spacing:-.042em;line-height:1.03;
+  max-width:18ch;margin:0 auto 22px;
+}
+h1 .grad{
+  background:linear-gradient(100deg,var(--turquoise) 0%,var(--gold) 55%,var(--amber) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{margin:0 auto 28px;max-width:60ch;font-size:clamp(16.5px,2.1vw,20px);color:#CDD3DA}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-bottom:22px}
+.micro{
+  font-size:15px;line-height:1.6;color:var(--soft);max-width:56ch;margin:0 auto;
+  padding:13px 20px;border-radius:14px;
+  background:rgba(244,241,236,.045);border:1px solid var(--line);backdrop-filter:blur(8px);
+}
+.micro b{color:var(--turquoise);font-weight:600}
+
+/* trust bar */
+.trust{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:clamp(30px,4.5vw,46px);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--line);
+}
+.trust div{
+  background:linear-gradient(170deg,rgba(244,241,236,.05),rgba(244,241,236,.015));
+  padding:20px 16px;text-align:center;backdrop-filter:blur(8px);
+}
+.trust b{display:block;font-size:clamp(20px,2.8vw,27px);font-weight:750;letter-spacing:-.03em;color:var(--turquoise);line-height:1.15}
+.trust span{display:block;margin-top:5px;font-size:13px;color:var(--muted);line-height:1.4}
+
+/* ==========================================================================
+   8. CARDS
+   ========================================================================== */
+.card{
+  position:relative;padding:26px;border-radius:var(--radius);
+  background:linear-gradient(170deg,rgba(244,241,236,.055),rgba(244,241,236,.018));
+  border:1px solid var(--line);backdrop-filter:blur(10px);
+  transition:transform .45s var(--ease),border-color .45s,background .45s;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .45s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(64,233,208,.13),transparent 42%);
+  pointer-events:none;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+.card:hover::before{opacity:1}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+
+/* ==========================================================================
+   9. USE CASE (probléma → megoldás)
+   ========================================================================== */
+.uc{padding:24px 26px;display:flex;flex-direction:column;gap:14px}
+.uc-top{display:flex;align-items:flex-start;gap:13px}
+.uc-top .ico{
+  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;
+  background:rgba(240,168,104,.10);border:1px solid rgba(240,168,104,.26);
+}
+.uc h3{font-size:17.5px;letter-spacing:-.022em;line-height:1.3;color:#EDE8E1}
+.uc-arrow{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--turquoise)}
+.uc-arrow::before{content:"";flex:none;width:18px;height:1px;background:var(--turquoise);opacity:.55}
+.uc p{font-size:15px;color:var(--muted);line-height:1.6}
+.uc .out{margin-top:auto;padding-top:13px;border-top:1px dashed var(--line);font-size:13.8px;color:#CFCAC3}
+.uc .out b{color:var(--turquoise);font-weight:600}
+
+/* ==========================================================================
+   10. ÖSSZEHASONLÍTÓ TÁBLA
+   ========================================================================== */
+.cmp-panel{
+  border-radius:var(--radius-lg);border:1px solid var(--line);overflow:hidden;
+  background:linear-gradient(165deg,rgba(244,241,236,.045),rgba(244,241,236,.012));
+  backdrop-filter:blur(10px);
+}
+table.cmp{width:100%;border-collapse:collapse;font-size:15px}
+table.cmp th,table.cmp td{padding:15px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+table.cmp thead th{
+  font-size:12.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;
+  color:var(--muted-2);background:rgba(11,13,16,.42);white-space:nowrap;
+}
+table.cmp thead th.hi{color:var(--turquoise)}
+table.cmp tbody th{font-weight:650;font-size:15px;color:#EDE8E1;width:22%}
+table.cmp td{color:var(--muted);line-height:1.55}
+table.cmp td.hi{color:#E7F8F5;background:rgba(64,233,208,.055);border-left:1px solid rgba(64,233,208,.18);border-right:1px solid rgba(64,233,208,.18);font-weight:500}
+table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:0}
+.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cmp-hint{display:none;align-items:center;gap:8px;padding:10px 18px;font-size:13px;color:var(--turquoise);border-top:1px solid var(--line);background:rgba(64,233,208,.05)}
+.cmp-hint svg{flex:none;animation:swipe 1.8s var(--ease) infinite}
+@keyframes swipe{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.cmp-note{margin-top:16px;font-size:13.5px;color:var(--muted-2)}
+
+/* ==========================================================================
+   11. DELIVERABLES
+   ========================================================================== */
+.deliv{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.deliv li{
+  list-style:none;display:flex;align-items:flex-start;gap:12px;
+  padding:15px 18px;border-radius:14px;
+  background:rgba(244,241,236,.035);border:1px solid var(--line);
+  transition:border-color .35s var(--ease),background .35s,transform .35s var(--ease);
+}
+.deliv li:hover{border-color:rgba(64,233,208,.34);background:rgba(64,233,208,.05);transform:translateY(-2px)}
+.deliv svg{flex:none;margin-top:3px}
+.deliv b{display:block;font-size:15.5px;font-weight:650;letter-spacing:-.02em;line-height:1.35}
+.deliv span span{display:block;font-size:13.4px;color:var(--muted-2);line-height:1.45;margin-top:2px}
+ul.deliv{margin:0;padding:0}
+
+/* ==========================================================================
+   12. NEM CHATBOT — 4 pillér
+   ========================================================================== */
+.pill{padding:22px 24px}
+.pill .num{
+  display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;margin-bottom:13px;
+  font-size:13px;font-weight:700;color:var(--turquoise);
+  background:rgba(64,233,208,.11);border:1px solid rgba(64,233,208,.24);
+}
+.pill h3{font-size:17.5px;margin-bottom:8px}
+.pill p{font-size:14.8px;color:var(--muted);line-height:1.58}
+.chat-strip{
+  margin-top:22px;padding:18px 22px;border-radius:15px;
+  border:1px solid rgba(240,168,104,.25);background:rgba(240,168,104,.055);
+  font-size:16px;color:#E7E2DB;max-width:80ch;line-height:1.6;
+}
+.chat-strip b{color:var(--amber)}
+
+/* ==========================================================================
+   13. VIDEÓ + futó narráció
+   ========================================================================== */
+.video-section{
+  border-block:1px solid rgba(64,233,208,.16);
+  background:
+    radial-gradient(115% 85% at 50% 0%,rgba(15,158,150,.30),transparent 62%),
+    linear-gradient(180deg,rgba(64,233,208,.075),rgba(11,13,16,0) 70%);
+}
+.video-section::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 40% at 50% 50%,rgba(64,233,208,.10),transparent 70%);
+}
+.video-section .wrap{position:relative}
+.video-head{text-align:center;max-width:64ch;margin:0 auto clamp(24px,3.6vw,38px)}
+.video-head .eyebrow{justify-content:center}
+.video-frame{
+  position:relative;padding:clamp(10px,1.6vw,18px);border-radius:calc(var(--radius-lg) + 10px);
+  background:linear-gradient(150deg,rgba(64,233,208,.22),rgba(15,158,150,.06) 55%,rgba(227,192,141,.14));
+  box-shadow:0 40px 90px -34px rgba(15,158,150,.6);
+}
+.video-shell{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:#000;border:1px solid rgba(64,233,208,.22)}
+.ratio{aspect-ratio:16/9;width:100%}
+.ratio video,.ratio iframe{width:100%;height:100%;object-fit:cover;border:0;display:block}
+
+.ticker{
+  position:relative;margin-top:18px;overflow:hidden;
+  border-radius:12px;border:1px solid rgba(64,233,208,.18);
+  background:rgba(11,13,16,.45);backdrop-filter:blur(8px);padding:11px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+}
+.ticker-track{display:flex;width:max-content;animation:ticker var(--ticker-speed) linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track p{white-space:nowrap;padding-right:64px;font-size:18px;letter-spacing:.005em;color:var(--soft)}
+.ticker-track p b{color:var(--turquoise);font-weight:600}
+.ticker-track p .sep{color:rgba(64,233,208,.55);padding:0 14px}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ==========================================================================
+   14. TEAM
+   ========================================================================== */
+.team{grid-template-columns:repeat(4,1fr)}
+.agent{display:flex;flex-direction:column;gap:10px;padding:20px 22px}
+.agent-head{display:flex;align-items:center;gap:12px}
+.agent .ico{
+  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:none;
+  background:linear-gradient(150deg,rgba(64,233,208,.16),rgba(64,233,208,.03));
+  border:1px solid rgba(64,233,208,.22);
+}
+.agent.lead-agent .ico{background:linear-gradient(150deg,rgba(227,192,141,.18),rgba(227,192,141,.03));border-color:rgba(227,192,141,.28)}
+.agent h3{font-size:17px;letter-spacing:-.022em;line-height:1.2}
+.agent p{font-size:14.4px;color:var(--muted);line-height:1.55}
+.agent .get{margin-top:auto;padding-top:11px;border-top:1px dashed var(--line);font-size:13.4px;color:#CFCAC3}
+.agent .get b{color:var(--turquoise);font-weight:600}
+.agent.lead-agent{background:linear-gradient(150deg,rgba(227,192,141,.075),rgba(244,241,236,.02))}
+.agent.lead-agent .get b{color:var(--gold)}
+
+/* ==========================================================================
+   15. TIMELINE
+   ========================================================================== */
+.tl{display:grid;counter-reset:s}
+.tl-item{position:relative;padding:0 0 28px 58px;counter-increment:s}
+.tl-item::before{
+  content:counter(s);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;font-weight:700;font-size:18px;color:var(--turquoise);
+  background:var(--ink-3);border:1px solid var(--line-strong);z-index:1;
+}
+.tl-item::after{content:"";position:absolute;left:19px;top:38px;bottom:0;width:1px;background:var(--line)}
+.tl-item:last-child{padding-bottom:0}
+.tl-item:last-child::after{display:none}
+.tl-item b{display:block;font-size:17px;font-weight:650;margin-bottom:4px}
+.tl-item span{color:var(--muted);font-size:15.2px}
+
+/* ==========================================================================
+   16. EGYÜTTMŰKÖDÉSI SZINTEK
+   ========================================================================== */
+.tier{display:flex;flex-direction:column;gap:12px;padding:24px 24px 26px}
+.tier .step{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2);
+}
+.tier h3{font-size:19px;letter-spacing:-.025em}
+.tier .who{font-size:13.6px;color:var(--turquoise);font-weight:600}
+.tier p{font-size:14.6px;color:var(--muted);line-height:1.58}
+.tier.featured{
+  border-color:rgba(64,233,208,.34);
+  background:linear-gradient(165deg,rgba(64,233,208,.10),rgba(244,241,236,.02));
+  box-shadow:0 26px 60px -30px rgba(15,158,150,.7);
+}
+.tier.featured .step{color:var(--turquoise)}
+.tier.featured{padding-top:44px}
+.tier-flag{
+  position:absolute;top:0;left:0;right:0;padding:6px 14px;text-align:center;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--turquoise);color:#06201C;
+}
+.tier-note{
+  margin-top:20px;text-align:center;font-size:15px;color:var(--soft);
+  max-width:70ch;margin-inline:auto;line-height:1.6;
+}
+.tier-note b{color:var(--turquoise);font-weight:600}
+
+/* ==========================================================================
+   17. BIZALOM
+   ========================================================================== */
+.gate{background:linear-gradient(180deg,transparent,rgba(19,42,85,.22),transparent)}
+.safe{display:flex;align-items:flex-start;gap:13px;padding:18px 20px;border-radius:14px;background:rgba(244,241,236,.035);border:1px solid var(--line)}
+.safe svg{flex:none;margin-top:3px}
+.safe b{display:block;font-size:15.6px;font-weight:650;letter-spacing:-.02em;margin-bottom:3px}
+.safe span span{display:block;font-size:13.8px;color:var(--muted-2);line-height:1.5}
+
+/* ==========================================================================
+   18. FAQ
+   ========================================================================== */
+details{border:1px solid var(--line);border-radius:14px;background:rgba(244,241,236,.03);margin-bottom:11px;overflow:hidden;transition:border-color .3s,background .3s}
+details[open]{border-color:var(--line-strong);background:rgba(244,241,236,.05)}
+summary{list-style:none;cursor:pointer;padding:18px 54px 18px 22px;position:relative;font-weight:600;font-size:16.5px;letter-spacing:-.015em}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"";position:absolute;right:22px;top:50%;width:11px;height:11px;
+  border-right:2px solid var(--turquoise);border-bottom:2px solid var(--turquoise);
+  transform:translateY(-70%) rotate(45deg);transition:transform .35s var(--ease);
+}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p{padding:0 22px 20px;color:var(--muted);font-size:15.4px;max-width:74ch}
+
+/* ==========================================================================
+   19. FORM
+   ========================================================================== */
+.form-wrap{
+  position:relative;padding:clamp(26px,5vw,50px);border-radius:var(--radius-lg);
+  background:linear-gradient(165deg,rgba(244,241,236,.07),rgba(244,241,236,.02));
+  border:1px solid var(--line-strong);box-shadow:var(--shadow);overflow:hidden;
+}
+.form-wrap::before{
+  content:"";position:absolute;top:-140px;left:50%;translate:-50% 0;width:520px;height:280px;
+  background:radial-gradient(circle,rgba(64,233,208,.18),transparent 65%);filter:blur(46px);pointer-events:none;
+}
+.field{position:relative;margin-bottom:15px}
+.field input,.field select,.field textarea{
+  width:100%;padding:19px 17px 8px;border-radius:13px;
+  background:rgba(11,13,16,.55);border:1px solid var(--line);
+  color:var(--porcelain);font-size:16px;transition:border-color .3s,box-shadow .3s,background .3s;appearance:none;
+}
+.field textarea{min-height:92px;padding-top:24px;line-height:1.45;resize:vertical}
+.field select{cursor:pointer}
+.field label{position:absolute;left:17px;top:15px;font-size:16px;color:var(--muted-2);pointer-events:none;transition:all .22s var(--ease)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:0;border-color:var(--turquoise);background:rgba(11,13,16,.8);box-shadow:0 0 0 4px rgba(64,233,208,.13);
+}
+.field input:focus+label,
+.field input:not(:placeholder-shown)+label,
+.field textarea:focus+label,
+.field textarea:not(:placeholder-shown)+label,
+.field select:focus+label,
+.field select:valid+label{top:7px;font-size:11.5px;letter-spacing:.05em;color:var(--turquoise);text-transform:uppercase}
+.field .chev{position:absolute;right:18px;top:22px;pointer-events:none;opacity:.5}
+.hint{
+  display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;
+  margin:-6px 2px 15px;font-size:13px;line-height:1.55;color:var(--muted-2);
+}
+.hint em{font-style:italic;color:#98A2AE}
+.hint button{
+  background:none;border:0;padding:0;cursor:pointer;font-size:13px;font-weight:600;
+  color:var(--turquoise);border-bottom:1px dashed rgba(64,233,208,.5);
+}
+.hint button:hover{color:#7CF3E2}
+.form-note{font-size:13px;color:var(--muted-2);margin-top:14px;text-align:center}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.success{display:none;text-align:center;padding:34px 10px}
+.success.on{display:block;animation:pop .5s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.success .tick{width:64px;height:64px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;background:rgba(64,233,208,.13);border:1px solid rgba(64,233,208,.35)}
+.success h3{font-size:23px;margin-bottom:10px}
+.success p{color:var(--muted);max-width:44ch;margin-inline:auto}
+
+/* ==========================================================================
+   20. FOOTER + MOBILE CTA
+   ========================================================================== */
+footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--muted-2);font-size:13.6px}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer a:hover{color:var(--turquoise)}
+.mobile-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;display:none;padding-bottom:env(safe-area-inset-bottom);transform:translateY(140%);transition:transform .45s var(--ease)}
+.mobile-cta.on{transform:translateY(0)}
+.mobile-cta .btn{width:100%;padding:17px}
+
+/* ==========================================================================
+   21. REVEAL
+   ========================================================================== */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.rv.in{opacity:1;transform:none}
+
+/* ==========================================================================
+   22. RESPONSIVE
+   ========================================================================== */
+@media (max-width:1024px){
+  .team,.g4{grid-template-columns:repeat(2,1fr)}
+  .logo small{display:none}
+}
+@media (max-width:860px){
+  .trust{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .g2,.g3,.g4,.team,.deliv{grid-template-columns:1fr}
+  .mobile-cta{display:block}
+  header .btn{display:none}
+  .bar .social{margin-left:auto;padding-left:12px}
+  section{padding-block:50px}
+  .hero{padding-top:104px;padding-bottom:24px}
+  #cursor{display:none}
+  :root{--ticker-speed:180s}
+  .ticker-track p{font-size:16px;padding-right:46px}
+  table.cmp{min-width:640px}
+  .cmp-hint{display:flex}
+  .cmp-scroll{
+    -webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);
+            mask-image:linear-gradient(90deg,#000 82%,transparent);
+  }
+  /* helyet hagyunk a lebegő mobil CTA-sávnak */
+  body{padding-bottom:86px}
+  footer{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+}
+@media (max-width:430px){
+  .logo span:first-of-type{font-size:15px}
+  .social a{width:31px;height:31px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+  .ticker{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="grain"></div>
+<div id="progress"></div>
+<div id="cursor"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="hdr">
+  <div class="wrap bar">
+    <a class="logo" href="#top">
+      <span class="logo-mark"><span></span></span>
+      <span>Katona Balázs<small>AI marketing rendszerek</small></span>
+    </a>
+    <nav class="social" aria-label="Közösségi oldalak">
+      <a href="https://www.facebook.com/8alazskatona" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+      <a href="https://www.instagram.com/8alazskatona" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.linkedin.com/in/balazskatona" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.07-1.95-3.07-1.96 0-2.26 1.46-2.26 2.97V21H9z"/></svg></a>
+    </nav>
+    <a class="btn btn-sm" href="#jelentkezes">Kérek egy konzultációt</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <h1 class="rv">A marketinged nem áll le akkor sem, <span class="grad">amikor te nyaralsz.</span></h1>
+    <p class="lead rv" style="--i:1">Nem AI eszközt adok a kezedbe, hanem <b style="color:#E7F8F5;font-weight:600">AI marketing infrastruktúrát építek a cégednek</b>: stratégia, tartalomgyártás, közösségi média és hirdetéskezelés egyetlen rendszerben. Emberi jóváhagyással, valós időben, folyamatos önfejlesztéssel.</p>
+    <div class="hero-cta rv" style="--i:2">
+      <a class="btn btn-lg" href="#jelentkezes">Kérek egy konzultációt</a>
+      <a class="btn btn-lg btn-ghost" href="#Bemutato">Nézd meg, hogyan működik</a>
+    </div>
+    <p class="micro rv" style="--i:3"><b>30 perc, díjmentes.</b> Nem sales hívás — átnézzük, hol veszítesz időt és pénzt, és mit érdemes elsőként automatizálni.</p>
+
+    <div class="trust rv" style="--i:4">
+      <div><b>8</b><span>specializált AI ügynök</span></div>
+      <div><b>4</b><span>marketingterület egy rendszerben</span></div>
+      <div><b>0</b><span>jóváhagyás nélkül megjelenő anyag</span></div>
+      <div><b>24/7</b><span>működés, heti és havi riporttal</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLÉMA + ÖSSZEHASONLÍTÁS ===================== -->
+<section id="problema" style="padding-top:clamp(26px,3.6vw,48px)">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">A helyzet</span>
+      <h2>AI-t használsz — vagy csak chatelsz vele?</h2>
+      <p class="lead" style="margin-top:14px">A legtöbb cégnél van már AI-előfizetés és néhány automatizmus. Ami hiányzik, az a rendszer: tudásbázis, munkafolyamat, minőségi kapu és mérés. Ez a különbség a gyakorlatban:</p>
+    </div>
+
+    <div class="cmp-panel rv">
+      <div class="cmp-scroll">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col">Feladat</th>
+              <th scope="col">AI nélkül</th>
+              <th scope="col">Alkalmi AI-használat</th>
+              <th scope="col" class="hi">AI marketingcsapattal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Havi tartalom</th>
+              <td>3–4 nap gyártás, mindig csúszik</td>
+              <td>Gyorsabb, de AI-szagú és összefüggéstelen</td>
+              <td class="hi">Kész tartalomnaptár és posztok, márkahangra tanítva, jóváhagyásra várva</td>
+            </tr>
+            <tr>
+              <th scope="row">Hirdetéskreatív</th>
+              <td>Egy variáns, mert nincs több kapacitás</td>
+              <td>Egy prompt, egy kimenet, ellenőrzés nélkül</td>
+              <td class="hi">3 szövegváltozat + képek és videó, másik modell pontozza, a legjobb megy tovább</td>
+            </tr>
+            <tr>
+              <th scope="row">Kampányoptimalizálás</th>
+              <td>Havonta egyszer, ha marad rá idő</td>
+              <td>Kézi elemzés, esetleges</td>
+              <td class="hi">Napi optimalizálás, heti kampányriport, átlátható struktúra</td>
+            </tr>
+            <tr>
+              <th scope="row">Versenytársak</th>
+              <td>Sejtések és véletlen felfedezések</td>
+              <td>Alkalmi kézi keresés</td>
+              <td class="hi">Napi automatikus figyelés, jelzés minden fontos mozgásról</td>
+            </tr>
+            <tr>
+              <th scope="row">Kommentek, üzenetek</th>
+              <td>Órákat visz el, mégis elvész az érdeklődő</td>
+              <td>Nem automatizálható sablonválaszok</td>
+              <td class="hi">Valós idejű kezelés négy platformon, spam szűrve, szabályok szerint</td>
+            </tr>
+            <tr>
+              <th scope="row">Mérés</th>
+              <td>Nem tudod, melyik adatot nézd</td>
+              <td>Adat van, döntés nincs</td>
+              <td class="hi">Egyoldalas havi riport: mi működött, mi nem, mi jön</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cmp-hint" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6l6 6-6 6"/></svg>Húzd oldalra a teljes táblázatért</div>
+    </div>
+    <p class="cmp-note rv">A táblázat a tipikus KKV-működést hasonlítja a rendszer működéséhez — a konkrét számok cégenként eltérnek, ezt a konzultáción nézzük át.</p>
+  </div>
+</section>
+
+<!-- ===================== MIT KAPSZ ===================== -->
+<section id="mit-kapsz">
+  <div class="wrap">
+    <div class="section-head center-head rv">
+      <span class="eyebrow">Kézzelfogható</span>
+      <h2>Milyen kész anyagokat kapsz kézhez?</h2>
+      <p class="lead" style="margin-top:14px">Nem hozzáférést kapsz egy eszközhöz, hanem elkészült, jóváhagyásra váró munkát — minden héten és minden hónapban.</p>
+    </div>
+
+    <ul class="deliv rv">
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Havi stratégiai terv és tartalomnaptár</b><span>Döntésre kész formában, több irány prognózisával.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Kész posztok és hirdetéskreatívok</b><span>Több szöveg- és képverzióban, márkahangra hangolva.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Havi videócsomag</b><span>Feedre, reelre és hirdetésre, hook-szerkezettel és UGC-vel.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Napi versenytárs-jelzések</b><span>Poszt, hirdetés, akció, árazás — csak ami tényleg változott.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Heti kampányriport</b><span>Mi fut, mi teljesít, min változtatunk a jövő héten.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Heti összefoglaló a csapat munkájáról</b><span>Mi készült el, mi fut és mi következik — egy képernyőn.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Egyoldalas havi üzleti riport</b><span>Emberi nyelven: mi működött, mi nem, és miért.</span></span></li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>A saját márka-tudásbázisod</b><span>Hang, arculat, termékek, árlogika — és a tiéd marad.</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== USE CASE-EK ===================== -->
+<section id="feladatok">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">A gyakorlatban</span>
+      <h2>Négy helyzet, amit a rendszer az első hónaptól levesz rólad</h2>
+    </div>
+
+    <div class="grid g2">
+      <article class="card uc rv" style="--i:0">
+        <div class="uc-top">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>A havi tartalom mindig az utolsó pillanatban készül el</h3>
+        </div>
+        <span class="uc-arrow">Mit tesz a rendszer</span>
+        <p>A stratégia ügynök előre megtervezi a hónapot, a tartalomgyár legyártja a posztokat és a képeket, a stúdió pedig a videókat. Neked már csak jóváhagynod kell.</p>
+        <p class="out"><b>Eredmény:</b> a hónap első napján kész a teljes tartalomcsomag.</p>
+      </article>
+
+      <article class="card uc rv" style="--i:1">
+        <div class="uc-top">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9"><path d="M4 19V5M4 19h16"/><path d="M8 15l4-5 3 3 5-6"/></svg></span>
+          <h3>A hirdetés fut, de nem tudod pontosan, melyik adatot nézd</h3>
+        </div>
+        <span class="uc-arrow">Mit tesz a rendszer</span>
+        <p>A hirdetéskezelő ügynök átlátható kampánystruktúrát épít, naponta optimalizál és A/B tesztel, majd hetente egyetlen érthető riportban összefoglalja, mi történt.</p>
+        <p class="out"><b>Eredmény:</b> minden héten tudod, melyik forint mit hozott.</p>
+      </article>
+
+      <article class="card uc rv" style="--i:2">
+        <div class="uc-top">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9"><path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="M8 21l1-4 4-1"/></svg></span>
+          <h3>A kommentek és üzenetek között elvész az érdeklődő</h3>
+        </div>
+        <span class="uc-arrow">Mit tesz a rendszer</span>
+        <p>A közösségi média ügynök valós időben kezeli a kommenteket és üzeneteket négy platformon, szűri a spamet, és eszkalálja neked azt, ami emberi választ igényel.</p>
+        <p class="out"><b>Eredmény:</b> nincs megválaszolatlan érdeklődő.</p>
+      </article>
+
+      <article class="card uc rv" style="--i:3">
+        <div class="uc-top">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>
+          <h3>A versenytársakról csak sejtéseid vannak</h3>
+        </div>
+        <span class="uc-arrow">Mit tesz a rendszer</span>
+        <p>A radar naponta végigpásztázza a versenytársaidat — posztok, hirdetések, akciók, árazás —, és csak a valódi változásokat jelzi, nem zajt küld.</p>
+        <p class="out"><b>Eredmény:</b> előbb tudsz a piaci mozgásról, mint az ügyfeled.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VIDEÓ ===================== -->
+<section class="video-section" id="Bemutato">
+  <div class="wrap">
+    <div class="video-head rv">
+      <span class="eyebrow">Bemutató</span>
+      <h2>Nézd meg, hogyan dolgozik a csapat</h2>
+    </div>
+
+    <div class="ticker rv" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack">
+        <p id="tickerText"><b>Katona Balázs vagyok, és bemutatom az AI csapatomat.</b><span class="sep">•</span>Bagira a fő agy: ő irányítja és ellenőrzi az összes AI ügynököt ebben a digitális marketing ökoszisztémában.<span class="sep">•</span>Minden ügynök egyetlen feladatra van kiképezve professzionális szinten. Elvégzi a munkát, önellenőrzést futtat, és csak a legjobb megoldásokat szállítja — mindig több A B C verzióban.<span class="sep">•</span><b>Ez nem egy eszköz. Ez egy csapat, ami sosem áll le.</b><span class="sep">•</span><b>Stratégia mindenek előtt.</b><span class="sep">•</span>Az ügyfél briefjére nem egy, hanem több marketingstratégiát alkotunk, és prognózist készítünk: az adott időszakban melyik lesz a leghatékonyabb.<span class="sep">•</span>A piacot komplexen vizsgáljuk, és mindezt kombináljuk a saját fejlesztésű versenytárs-figyelő és elemző rendszerünkkel. Amikor a tökéletes stratégia kész, sínre kerül.<span class="sep">•</span><b>Innen a kreatív ügynök hadsereg veszi át a folyamatot.</b><span class="sep">•</span>A szövegíró ügynök gyártja a tartalmat, tűpontosan a célcsoportra szabva. Képgyártó specialista robotok készítik hozzá a képeket — pontosan úgy, hogy a vásárlók megkívánják az adott terméket.<span class="sep">•</span>Elkészülnek filmes minőségű videók, és külön specialistánk dolgozik a saját gyártású UGC tartalmakon. Minden kreatív többszörös ellenőrzés után a legjobb A B verzióban megy tovább.<span class="sep">•</span><b>Posztok, kommentek, üzenetek — valós idejű kezelés a négy legnagyobb platformon, szigorú szabályok szerint.</b><span class="sep">•</span>A Facebookot és az Instagramot a Meta hirdetési specialistánk viszi. A PPC szakértők nulla-huszonnégyben optimalizálják a hirdetéseid megtérülését, és előbb azonosítják a trendeket, mint maga a TikTok.<span class="sep">•</span>Munkájukkal azonnali visszajelzést adnak az egész csapatnak, hogy még percről percre hatékonyabb legyen a márka teljes digitális kommunikációja.<span class="sep">•</span><b>Az AI hirdetéskezelők professzionális szinten, megszakítás nélkül dolgoznak, míg nekem van időm egy konzultációra veled.</b><span class="sep">•</span>Írj nekem, ha érdekel az AI marketing automatizálás, és építsünk egy rád szabott AI marketingcsapatot közösen.<span class="sep">•</span></p>
+      </div>
+    </div>
+
+    <div class="video-frame rv">
+      <div class="video-shell">
+        <div class="ratio">
+          <video id="heroVideo" playsinline muted loop preload="metadata" poster="poster.jpg" controls>
+            <source src="ai-csapat.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MIÉRT TÖBB, MINT EGY CHATGPT ===================== -->
+<section id="miert-mas">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">A különbség</span>
+      <h2>Miért nem ugyanaz, mint egy AI-előfizetés?</h2>
+      <p class="lead" style="margin-top:14px">Egy chatablak akkor ér valamit, ha te vagy a stratéga, a szövegíró és a minőségellenőr. Négy dolog hiányzik belőle — pontosan ezt a négyet építem meg neked.</p>
+    </div>
+
+    <div class="grid g4">
+      <article class="card pill rv" style="--i:0">
+        <span class="num">01</span>
+        <h3>Szerepek, nem egy modell</h3>
+        <p>Nyolc, egyetlen feladatra kiképzett ügynök dolgozik külön szabályokkal, közös tudásbázisból — nem egy általános asszisztens mindenre.</p>
+      </article>
+      <article class="card pill rv" style="--i:1">
+        <span class="num">02</span>
+        <h3>A márkád tudásbázisa</h3>
+        <p>Hang, arculat, termékek, árlogika és tiltólista strukturáltan. A rendszer nem talál ki árat, dátumot vagy vásárlói véleményt.</p>
+      </article>
+      <article class="card pill rv" style="--i:2">
+        <span class="num">03</span>
+        <h3>Minőségi kapu</h3>
+        <p>Aki írja a szöveget, nem az pontozza. Van pontszámküszöb; ami nem éri el, visszamegy javításra, másodszorra emberi kézbe.</p>
+      </article>
+      <article class="card pill rv" style="--i:3">
+        <span class="num">04</span>
+        <h3>Jóváhagyás és mérés</h3>
+        <p>Semmi nem megy ki emberi döntés nélkül, a hirdetések szüneteltetve jönnek létre, és minden hónap végén kiderül, mi működött.</p>
+      </article>
+    </div>
+
+    <p class="chat-strip rv"><b>A lényeg:</b> nem promptcsomagot veszel és nem egy előfizetést kapcsolsz be. Egy működő marketing-infrastruktúrát kapsz, amit én építek fel, kötök be és felügyelek — a te fiókjaidban, a te márkádra hangolva.</p>
+  </div>
+</section>
+
+<!-- ===================== A CSAPAT ===================== -->
+<section id="csapat">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">A csapat</span>
+      <h2>Kik dolgoznak a márkádon</h2>
+      <p class="lead" style="margin-top:14px">Nyolc specializált ügynök, mindegyik egyetlen feladatra betanítva — külön szerepek, külön szabályok, közös tudásbázis.</p>
+      <img src="Katona_Balázs_AI_marketing_csapat.webp" alt="Katona Balázs és az AI marketingcsapat" style="width:100%;max-width:420px;display:block;margin:26px auto 4px;border-radius:18px;border:1px solid var(--line)" loading="lazy" />
+    </div>
+    <div class="grid team">
+
+      <article class="card agent lead-agent rv" style="--i:0">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#E3C08D" stroke-width="1.8"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>A fő agy</h3>
+        </div>
+        <p>Kiosztja, ütemezi és ellenőrzi az összes ügynök munkáját. Hibás vagy hiányos anyag nem megy tovább rajta.</p>
+        <p class="get"><b>Kapsz:</b> heti összefoglalót arról, mi készült el, mi fut és mi következik.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:1">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><path d="M4 19V5M4 19h16"/><path d="M8 16l4-6 3 3 5-7"/></svg></span>
+          <h3>Stratégia</h3>
+        </div>
+        <p>Feldolgozza a briefet, több stratégiai irányt dolgoz ki, és prognózist ad, melyik a legígéretesebb az adott időszakban.</p>
+        <p class="get"><b>Kapsz:</b> havi stratégiai tervet és tartalomnaptárat, döntésre kész formában.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:2">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>
+          <h3>Versenytárs radar</h3>
+        </div>
+        <p>Naponta végigpásztázza a versenytársaidat: posztok, hirdetések, akciók, árazás — és jelzi, mi változott.</p>
+        <p class="get"><b>Kapsz:</b> napi jelzéseket és havi versenytárs-riportot.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:3">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+          <h3>Tartalomgyár</h3>
+        </div>
+        <p>Három szövegváltozat készül minden posztra, egy másik modell pontozza őket, egy harmadik csiszol. Utána jönnek a képek és a hirdetéskreatívok.</p>
+        <p class="get"><b>Kapsz:</b> kész, jóváhagyásra váró posztokat és kreatívokat, több verzióban.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:4">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg></span>
+          <h3>Stúdió és UGC</h3>
+        </div>
+        <p>Filmes minőségű videók, rövid formátumok hook-szerkezettel, és saját gyártású UGC tartalom külön specialistával.</p>
+        <p class="get"><b>Kapsz:</b> havi videócsomagot feedre, reelre és hirdetésre.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:5">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="M8 21l1-4 4-1"/><path d="M9 11h.01M13 11h.01"/></svg></span>
+          <h3>Közösségi média</h3>
+        </div>
+        <p>Ütemezés és publikálás négy platformon, kommentek és üzenetek valós idejű kezelése, spam szűrése szigorú szabályok szerint.</p>
+        <p class="get"><b>Kapsz:</b> rendben tartott oldalakat — nincs megválaszolatlan érdeklődő.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:6">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><path d="M3 17l5-5 4 3 8-9"/><path d="M15 6h5v5"/></svg></span>
+          <h3>Hirdetéskezelés</h3>
+        </div>
+        <p>Meta, Google, TikTok és LinkedIn kampányok: struktúra, célzás, remarketing, A/B teszt és napi optimalizálás.</p>
+        <p class="get"><b>Kapsz:</b> átlátható kampánystruktúrát és heti kampányriportot.</p>
+      </article>
+
+      <article class="card agent rv" style="--i:7">
+        <div class="agent-head">
+          <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h7M8 11h7"/></svg></span>
+          <h3>Tudásbázis és eredmény</h3>
+        </div>
+        <p>A márkád hangja, arculata, termékei és árlogikája strukturált tudásbázisban. Hónap végén kiderül, mi működött.</p>
+        <p class="get"><b>Kapsz:</b> egyoldalas havi riportot — és a tudásbázis a tiéd marad.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EGYÜTTMŰKÖDÉSI SZINTEK ===================== -->
+<section id="szintek">
+  <div class="wrap">
+    <div class="section-head center-head rv">
+      <span class="eyebrow">Együttműködés</span>
+      <h2>Nem kell mindent egyszerre</h2>
+      <p class="lead" style="margin-top:14px">Négy szinten tudunk dolgozni. A konzultáción azt nézzük meg, hol tartasz most, és melyik szintről érdemes indulnod.</p>
+    </div>
+
+    <div class="grid g4">
+      <article class="card tier rv" style="--i:0">
+        <span class="step">1. szint</span>
+        <h3>Audit</h3>
+        <span class="who">Ha még nem tudod, hol tartasz</span>
+        <p>Átnézem az oldalaidat, hirdetéseidet és adataidat, és megkapod írásban, mit érdemes elsőként automatizálni.</p>
+      </article>
+
+      <article class="card tier rv" style="--i:1">
+        <span class="step">2. szint</span>
+        <h3>Alapcsapat</h3>
+        <span class="who">Ha a tartalom akad el</span>
+        <p>Tudásbázis, stratégia és tartalomgyár beüzemelve — havi terv, kész posztok és kreatívok jóváhagyásra.</p>
+      </article>
+
+      <article class="card tier featured rv" style="--i:2">
+        <span class="tier-flag">Legtöbben ezt választják</span>
+        <span class="step">3. szint</span>
+        <h3>Teljes rendszer</h3>
+        <span class="who">Ha hirdetsz is, és mérni akarsz</span>
+        <p>Mind a nyolc ügynök élesben: tartalom, stúdió, közösségi média, hirdetéskezelés, radar és riportolás egy rendszerben.</p>
+      </article>
+
+      <article class="card tier rv" style="--i:3">
+        <span class="step">4. szint</span>
+        <h3>Rendszer + felügyelet</h3>
+        <span class="who">Ha teljes nyugalmat akarsz</span>
+        <p>A teljes rendszer, plusz emberi operatív felügyelet: én tartom kézben a jóváhagyásokat és a havi optimalizálást.</p>
+      </article>
+    </div>
+
+    <p class="tier-note rv">Az árat szándékosan nem írom ki: <b>minden rendszer egyedi méretű</b>, és attól függ, hány platform, mennyi tartalom és mekkora hirdetési keret van mögötte. A konzultáción konkrét számot kapsz, kötelezettség nélkül.</p>
+  </div>
+</section>
+
+<!-- ===================== INDULÁS ===================== -->
+<section id="indulas">
+  <div class="wrap">
+    <div class="grid g2" style="gap:clamp(26px,5vw,54px);align-items:start">
+      <div class="rv">
+        <span class="eyebrow">Indulás</span>
+        <h2>Négy lépés, és fut a rendszer</h2>
+        <p class="lead" style="margin-top:16px">Nem kell semmit előre megvenned, és nem kell technikai tudás. Nem neked kell workflow-kat összeraknod és promptokat kitalálnod — az az én dolgom. Az első lépés egy beszélgetés.</p>
+        <a class="btn" style="margin-top:24px" href="#jelentkezes">Kérek egy konzultációt</a>
+      </div>
+      <div class="tl rv" style="--i:1">
+        <div class="tl-item"><b>Konzultáció</b><span>30 perc, díjmentes. Átbeszéljük, hol tartasz és mi a cél.</span></div>
+        <div class="tl-item"><b>Felmérés</b><span>Átnézem az oldalaidat, hirdetéseidet és az adataidat.</span></div>
+        <div class="tl-item"><b>Csapatépítés</b><span>Összeáll a tudásbázis, beállítom az ügynököket és a folyamatokat.</span></div>
+        <div class="tl-item"><b>Indulás</b><span>Az első hónap élesben, szoros felügyelettel és heti kontrollal.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BIZALOM ===================== -->
+<section class="gate" id="bizalom">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Kockázat</span>
+      <h2>Mit kockáztatsz? Semmit.</h2>
+    </div>
+    <div class="grid g3">
+      <div class="safe rv" style="--i:0"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7z"/></svg><span><b>Díjmentes első konzultáció</b><span>30 perc, nulla kötelezettség, nincs sales nyomás.</span></span></div>
+      <div class="safe rv" style="--i:1"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Emberi jóváhagyás</b><span>Semmi nem jelenik meg ellenőrizetlenül, a hirdetések szüneteltetve indulnak.</span></span></div>
+      <div class="safe rv" style="--i:2"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span><b>A fiókjaid a tieid</b><span>Nem viszek el semmit, és bármikor átveheted a rendszer üzemeltetését.</span></span></div>
+      <div class="safe rv" style="--i:3"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h7M8 11h7"/></svg><span><b>A tudásbázis a tiéd marad</b><span>Amit felépítünk a márkádról, az a te vagyonod, nem az enyém.</span></span></div>
+      <div class="safe rv" style="--i:4"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9"><path d="M3 17l5-5 4 3 8-9"/><path d="M15 6h5v5"/></svg><span><b>Fokozatos bevezetés</b><span>Nem vak automatizálás: szintenként élesítünk, mérhető pontokkal.</span></span></div>
+      <div class="safe rv" style="--i:5"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Nem tűnik el a kontroll</b><span>Heti riport, havi egyoldalas összefoglaló — mindig látod, mi történik.</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GYIK ===================== -->
+<section id="gyik">
+  <div class="wrap" style="max-width:860px">
+    <div class="section-head rv">
+      <span class="eyebrow">Kérdések</span>
+      <h2>Gyakori kérdések</h2>
+    </div>
+    <div class="rv">
+      <details><summary>Mi történik a konzultáció után?</summary><p>Egy rövid írásos összefoglalót kapsz arról, mit láttam az oldalaidon és a hirdetéseidben, és melyik szintről érdemes indulnod. Akkor is a tiéd, ha végül nem dolgozunk együtt.</p></details>
+      <details><summary>Ez lecseréli a marketingesemet?</summary><p>Nem. A rutinmunkát veszi el — a gyártást, az ütemezést, a moderálást, a riportolást. A döntés és a stratégiai irány marad emberi kézben.</p></details>
+      <details><summary>Mennyi idő, amíg működik?</summary><p>A tudásbázis és az alaprendszer néhány hét. Az első mérhető eredmények jellemzően az első teljes hónap után jönnek.</p></details>
+      <details><summary>Mi van, ha az AI hibázik?</summary><p>Ezért van a minőségi kapu és az emberi jóváhagyás. Semmi nem jelenik meg ellenőrizetlenül, a hirdetések pedig szüneteltetett állapotban jönnek létre.</p></details>
+      <details><summary>Milyen platformokra jó?</summary><p>Facebook, Instagram, TikTok, LinkedIn, valamint Google Ads, Meta Ads és TikTok Ads. Webshop és Google cégprofil is bekapcsolható a rendszerbe.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JELENTKEZÉS ===================== -->
+<section id="jelentkezes">
+  <div class="wrap" style="max-width:760px">
+    <div class="section-head center-head rv">
+      <span class="eyebrow">Jelentkezés</span>
+      <h2>Építsünk egy tökéletesen a márkádra szabott AI marketingcsapatot</h2>
+      <p class="lead" style="margin:14px auto 0">Írd meg, mivel foglalkozol és hol tartasz most. Egy munkanapon belül küldök időpontjavaslatot.</p>
+    </div>
+
+    <div class="form-wrap rv">
+      <form id="leadForm" novalidate>
+        <input class="hp" type="text" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="field">
+          <input type="text" id="nev" name="nev" placeholder=" " required autocomplete="name" />
+          <label for="nev">Név</label>
+        </div>
+        <div class="field">
+          <input type="email" id="email" name="email" placeholder=" " required autocomplete="email" />
+          <label for="email">E-mail cím</label>
+        </div>
+        <div class="field">
+          <input type="text" id="ceg" name="ceg" placeholder=" " required autocomplete="organization" />
+          <label for="ceg">Cégnév vagy márka</label>
+        </div>
+        <div class="field">
+          <input type="text" id="link" name="link" placeholder=" " required inputmode="url" />
+          <label for="link">Weboldal vagy Facebook-oldal</label>
+        </div>
+        <div class="field">
+          <select id="terulet" name="terulet" required>
+            <option value="" disabled selected hidden></option>
+            <option>Tartalomgyártás</option>
+            <option>Közösségi média kezelés</option>
+            <option>Hirdetés management</option>
+            <option>Stratégia</option>
+            <option>Minden — teljes csapat</option>
+          </select>
+          <label for="terulet">Miben kellene leginkább segítség?</label>
+          <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#98A2AE" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+
+        <div class="field">
+          <textarea id="uzenet" name="uzenet" placeholder=" " rows="4"></textarea>
+          <label for="uzenet">Üzenet — mit szeretnél elérni?</label>
+        </div>
+        <p class="hint"><em>Például: „Ékszer webshopot viszünk, havi 150 ezer forintot költünk Meta hirdetésre…"</em> <button type="button" id="fillSample">Minta beillesztése</button></p>
+
+        <button class="btn btn-lg" type="submit" style="width:100%;margin-top:4px">
+          Jelentkezem konzultációra
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form-note">Nem küldök hírlevelet. Az adataidat kizárólag a kapcsolatfelvételre használom.</p>
+      </form>
+
+      <div class="success" id="ok">
+        <div class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
+        <h3>Megkaptam a jelentkezésedet</h3>
+        <p>Egy munkanapon belül írok egy időpontjavaslatot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Katona Balázs · AI marketing rendszerek</span>
+    <a href="mailto:bagiramester@gmail.com">bagiramester@gmail.com</a>
+  </div>
+</footer>
+
+<div class="mobile-cta" id="mcta"><a class="btn" href="#jelentkezes">Kérek egy konzultációt</a></div>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- futó narráció: duplázás a végtelenített hurokhoz --- */
+  var track = document.getElementById('tickerTrack');
+  if(track){
+    var clone = track.firstElementChild.cloneNode(true);
+    clone.removeAttribute('id');
+    track.appendChild(clone);
+  }
+
+  /* --- scroll progress, sticky header, mobil CTA --- */
+  var hdr = document.getElementById('hdr'),
+      bar = document.getElementById('progress'),
+      mcta = document.getElementById('mcta'),
+      ticking = false;
+
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    hdr.classList.toggle('stuck', y > 20);
+    mcta.classList.toggle('on', y > window.innerHeight * 0.7);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ window.requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  onScroll();
+
+  /* --- reveal --- */
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* --- kurzor fény + kártya reflektor --- */
+  var fine = window.matchMedia('(pointer:fine)').matches;
+  if(fine && !reduce){
+    var cur = document.getElementById('cursor');
+    document.addEventListener('mousemove', function(e){
+      cur.style.opacity = 1;
+      cur.style.left = e.clientX + 'px';
+      cur.style.top = e.clientY + 'px';
+    }, {passive:true});
+    document.querySelectorAll('.card').forEach(function(c){
+      c.addEventListener('mousemove', function(e){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  /* --- videó --- */
+  var hv = document.getElementById('heroVideo');
+  if(hv){ hv.volume = 1; }
+  if(hv && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if(e.isIntersecting && !reduce){ hv.play().catch(function(){}); }
+        else { hv.pause(); }
+      });
+    }, {threshold:0.45}).observe(hv);
+  }
+
+  /* --- GYIK --- */
+  var dets = document.querySelectorAll('details');
+  dets.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(d.open){ dets.forEach(function(o){ if(o !== d) o.open = false; }); }
+    });
+  });
+
+  /* --- üzenet minta beillesztése --- */
+  var sample = 'Ékszer webshopot viszünk, havi 150 ezer forintot költünk Meta hirdetésre. A tartalomgyártás nálam ragad, és nincs időm a kommentekre. Azt szeretném, hogy a posztolás és a hirdetés magától menjen, én csak jóváhagyjam.';
+  var fillBtn = document.getElementById('fillSample'), ta = document.getElementById('uzenet');
+  if(fillBtn && ta){
+    fillBtn.addEventListener('click', function(){
+      ta.value = sample;
+      ta.focus();
+      ta.setSelectionRange(ta.value.length, ta.value.length);
+    });
+  }
+
+  /* --- űrlap --- */
+  var form = document.getElementById('leadForm'), ok = document.getElementById('ok');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(form.website_url.value){ return; }
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true; btn.style.opacity = .65; btn.textContent = 'Küldés…';
+
+    var data = Object.fromEntries(new FormData(form).entries());
+    data.forras = document.referrer || 'direct';
+    data.idopont = new Date().toISOString();
+    data.verzio = 'v2';
+
+    var ENDPOINT = 'https://formspree.io/f/xnpapjop';
+
+    var done = function(){
+      form.style.display = 'none';
+      ok.classList.add('on');
+      ok.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+      if(window.gtag) gtag('event','generate_lead');
+      if(window.fbq) fbq('track','Lead');
+    };
+
+    if(!ENDPOINT){ console.log('LEAD (nincs endpoint beállítva):', data); done(); return; }
+
+    fetch(ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(data)
+    }).then(done).catch(function(){
+      btn.disabled = false; btn.style.opacity = 1;
+      btn.textContent = 'Próbáld újra';
+    });
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
