@@ -986,7 +986,8 @@ footer a:hover{color:var(--turquoise)}
 
     <div class="form-wrap rv">
       <form id="leadForm" novalidate>
-        <input class="hp" type="text" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <!-- spamcsapda: _gotcha nevű mezőt a böngésző automatikus kitöltése nem nyúl, és a Formspree is szűri szerveroldalon -->
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="field">
           <input type="text" id="nev" name="nev" placeholder=" " required autocomplete="name" />
@@ -1135,7 +1136,7 @@ footer a:hover{color:var(--turquoise)}
   var form = document.getElementById('leadForm'), ok = document.getElementById('ok');
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    if(form.website_url.value){ return; }
+    if(form._gotcha.value){ return; }
     if(!form.checkValidity()){ form.reportValidity(); return; }
 
     var btn = form.querySelector('button[type=submit]');
