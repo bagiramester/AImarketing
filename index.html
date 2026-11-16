@@ -386,6 +386,26 @@ h1 span{display:block}
   .leg i.a{background:#E3C08D}.leg i.b{background:#D9A066}.leg i.c{background:#C98B45}
 }
 @media (max-width:480px){.cw b{padding-right:0;margin-top:2px}.cw::before{top:10px;right:10px;width:22px;height:22px;font-size:12px}}
+
+/* ===== 8. kör ===== */
+.plat{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px;padding:0;list-style:none}
+.plat li{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:650;color:var(--soft)}
+.plat svg{color:var(--text);flex:none}
+.chan span,.where b{display:inline-flex;align-items:center;gap:7px}
+.vframe{max-width:420px;margin-top:26px;border-radius:20px;padding:8px}
+.vframe video{border-radius:14px}
+.mode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;padding:5px;border-radius:16px;background:#0B0D10;border:1px solid var(--line-2)}
+.mode label{position:relative;cursor:pointer}
+.mode input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.mode span{display:block;padding:12px 8px;border-radius:12px;text-align:center;font-size:15px;font-weight:700;color:var(--muted);transition:background .2s,color .2s}
+.mode input:checked+span{background:var(--accent);color:var(--accent-ink)}
+.mode input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.f label i{font-style:normal;font-weight:500;color:var(--muted)}
+.f select{width:100%;padding:16px;border-radius:14px;border:1px solid var(--line-2);background:#0B0D10;color:var(--text);font:inherit;font-size:17px}
+.f select:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px rgba(64,233,208,.15)}
+.f select[aria-invalid="true"]{border-color:#FFB86B}
+@media (max-width:900px){.plat{justify-content:center}}
+@media (max-width:760px){.hero .plat{display:flex;margin-top:20px;gap:8px 14px}.plat li{font-size:13.5px}}
 </style>
 </head>
 <body>
@@ -407,20 +427,16 @@ h1 span{display:block}
       <p class="sub">AI-specialisták kezelik és figyelik a <b>Facebook-, Instagram- és Google-hirdetéseidet</b>, hogy többen megtaláljanak. Én felügyelem őket. <b>Semmi nem megy ki a jóváhagyásod nélkül.</b></p>
       <div class="hero-cta">
         <a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a>
-        <small>A saját vállalkozásodról, ingyen. Nem kötelez semmire.</small>
+        <small>24 órán belül megkapod e-mailben. Ingyen, nem kötelez semmire.</small>
       </div>
       <p class="hprice">Hirdetéskezeléssel együtt <b>149&nbsp;000&nbsp;Ft/hó</b>, benne havi 15 kész poszt. Egyszeri indulási díj: 99&nbsp;000&nbsp;Ft.</p>
-      <ul class="facts">
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Hirdetések AI-specialistákkal</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi 15 kész poszt</li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Nincs hűségidő</li>
-      </ul>
+      <ul class="plat" aria-label="Platformok"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</li></ul>
     </div>
 
     <div>
       <div class="phone-wrap">
         <span class="stamp">Nálad a döntés</span>
-        <div class="chan" aria-hidden="true"><span id="c1">Facebook</span><span id="c2">Instagram</span></div>
+        <div class="chan" aria-hidden="true"><span id="c1"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</span><span id="c2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</span></div>
         <div class="phone">
           <div class="screen" id="screen">
             <div class="s-top"><span>Heti javaslat</span><b id="sState">Rád vár</b></div>
@@ -443,21 +459,6 @@ h1 span{display:block}
   </div>
 </section>
 
-<!-- 7. ÜGYFELEK -->
-<section id="ugyfelek" style="padding-block:clamp(28px,4vw,44px)">
-  <div class="wrap center">
-    <div class="clients" style="margin-top:0"><small>Már velem dolgoznak</small>
-      <ul class="cl">
-        <li><i>DS</i><b>Diana Silver</b><span>ékszer</span></li>
-        <li><i>ME</i><b>Marcell Ékszer</b><span>ékszerüzletek</span></li>
-        <li><i>SJ</i><b>Selena Jewellery</b><span>ékszer</span></li>
-        <li><i>BC</i><b>BC MIX RADIO</b><span>rádió</span></li>
-      </ul>
-      <p class="sample" style="margin-top:14px">A mintaposztokat mindig a te vállalkozásodra szabom, nem sablonból.</p>
-    </div>
-  </div>
-</section>
-
 <!-- 2. HOGYAN MEGY -->
 <section id="hogyan">
   <div class="wrap">
@@ -469,7 +470,7 @@ h1 span{display:block}
       <div class="step">
         <div class="pic"><svg width="150" height="110" viewBox="0 0 150 110" fill="none" aria-hidden="true"><rect x="12" y="14" width="86" height="56" rx="16" fill="#1D242D" stroke="#40E9D0" stroke-width="2.5"/><path d="M34 70l-6 20 24-20" fill="#1D242D" stroke="#40E9D0" stroke-width="2.5" stroke-linejoin="round"/><path d="M30 34h50M30 48h34" stroke="#C6CDD4" stroke-width="5" stroke-linecap="round"/><rect x="92" y="40" width="46" height="34" rx="8" fill="#C98B45"/><circle cx="115" cy="57" r="9" fill="#1B1408"/><circle cx="115" cy="57" r="4.5" fill="#E3C08D"/><rect x="100" y="34" width="14" height="8" rx="3" fill="#C98B45"/></svg></div>
         <h3>Elmeséled, mit csinálsz</h3>
-        <p>Megmondod, mennyit költenél hirdetésre, és küldesz pár fotót.</p>
+        <p>Megmondod, mennyit költenél hirdetésre (havi 100 000 Ft-tól), és küldesz pár fotót.</p>
       </div>
       <div class="step">
         <div class="pic"><svg width="150" height="110" viewBox="0 0 150 110" fill="none" aria-hidden="true"><rect x="10" y="12" width="130" height="88" rx="14" fill="#1D242D" stroke="#3A434F" stroke-width="2"/><g><rect x="20" y="24" width="24" height="24" rx="6" fill="#E3C08D"/><rect x="50" y="24" width="24" height="24" rx="6" fill="#C98B45"/><rect x="80" y="24" width="24" height="24" rx="6" fill="#D9A066"/><rect x="110" y="24" width="24" height="24" rx="6" fill="#E3C08D"/><rect x="20" y="54" width="24" height="24" rx="6" fill="#C98B45"/><rect x="50" y="54" width="24" height="24" rx="6" fill="#E3C08D"/><rect x="80" y="54" width="24" height="24" rx="6" fill="#40E9D0"/><path d="M89 60l10 6-10 6z" fill="#06201C"/><rect x="110" y="54" width="24" height="24" rx="6" fill="#D9A066"/></g><path d="M20 90h70" stroke="#C6CDD4" stroke-width="4" stroke-linecap="round"/></svg></div>
@@ -540,7 +541,7 @@ h1 span{display:block}
         <div><b>3</b><span>videó, TikTokra is</span></div>
         <div><b>1</b><span>a 12-ből lapozós, 4 képpel</span></div>
       </div>
-      <p class="where"><b>Facebook</b><b>Instagram</b><b>TikTok</b></p>
+      <p class="where"><b><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</b><b><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</b><b><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</b></p>
     </div>
     <div>
       <div class="grid15" aria-label="Egy hónap posztjai: 12 kép és 3 videó">
@@ -580,7 +581,7 @@ h1 span{display:block}
       <div class="cw you"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E3C08D" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7z"/><path d="M9 12l2 2 4-4"/></svg><b>Én felügyelem</b><span>Átnézem a munkájukat. Semmi nem megy ki a jóváhagyásod nélkül.</span></div>
     </div>
     <div class="vframe">
-      <video controls playsinline preload="none" poster="poster.jpg">
+      <video controls playsinline preload="none" poster="poster-csapat.jpg">
         <source src="ai-csapat.mp4" type="video/mp4" />
       </video>
     </div>
@@ -633,7 +634,7 @@ h1 span{display:block}
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Kiteszem helyetted a posztokat</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi összefoglaló</li>
         </ul>
-        <a class="btn btn-line" href="#indulas" data-plan="Jelenlét">Ezzel kérem a mintaposztokat</a>
+        <a class="btn btn-line" href="#indulas" data-plan="Jelenlét">Megrendelem</a>
       </article>
       <article class="plan mid">
         <span class="tag">Hirdetéskezeléssel</span>
@@ -646,7 +647,7 @@ h1 span{display:block}
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Minden eredményed egy képernyőn</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Heti javaslat: mire költsd a keretet</li>
         </ul>
-        <a class="btn" href="#indulas" data-plan="Növekedés">Ezzel kérem a mintaposztokat</a>
+        <a class="btn" href="#indulas" data-plan="Növekedés">Megrendelem</a>
       </article>
       <article class="plan">
         <h3>Teljes</h3>
@@ -658,11 +659,11 @@ h1 span{display:block}
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Kész válaszjavaslatok</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi hívás velem</li>
         </ul>
-        <a class="btn btn-line" href="#indulas" data-plan="Teljes">Ezzel kérem a mintaposztokat</a>
+        <a class="btn btn-line" href="#indulas" data-plan="Teljes">Megrendelem</a>
       </article>
     </div>
-    <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Ingyen elkészítek 3 mintaposztot a saját vállalkozásodról, és megmutatom, hogyan hirdetném. Ha tetszik, indulunk.</span></div><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
-    <p class="fine"><b>Alanyi adómentes: az árakra nem jön áfa.</b> Havonta lemondható, hűségidő nincs. Ha hirdetsz, a hirdetésre szánt összeget te döntöd el, és közvetlenül a Facebooknak vagy a Google-nek fizeted; a Jelenlét csomaghoz hirdetés nem kell.</p>
+    <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Ingyen elkészítek 3 mintaposztot a saját vállalkozásodról, és 24 órán belül elküldöm e-mailben. Ha tetszik, indulunk.</span></div><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
+    <p class="fine"><b>Alanyi adómentes: az árakra nem jön áfa.</b> Havonta lemondható, hűségidő nincs. A hirdetési keret havi legalább 100&nbsp;000&nbsp;Ft, ezt közvetlenül a Facebooknak vagy a Google-nek fizeted; havi 1 millió Ft felett kérj egyedi ajánlatot. A Jelenlét csomaghoz hirdetés nem kell.</p>
   </div>
 </section>
 
@@ -673,8 +674,8 @@ h1 span{display:block}
     <div class="faq">
       <details open><summary>Mennyibe kerül az első hónap?</summary><p>A havidíj és az egyszeri 99&nbsp;000&nbsp;Ft indulási díj. Jelenlét: 188&nbsp;000&nbsp;Ft. Növekedés: 248&nbsp;000&nbsp;Ft. Teljes: 328&nbsp;000&nbsp;Ft. Utána csak a havidíj. Áfa nincs.</p></details>
       <details><summary>Ki tudja váltani a marketingest és az ügynökséget?</summary><p>Erre készült. A posztokat és videókat elkészítem és kiteszem. A hirdetéseket a Növekedés csomagtól AI-specialisták kezelik, én felügyelem. Az üzenetekre a Teljes csomagban kész válaszjavaslatot kapsz. Te jóváhagysz, mielőtt bármi kimegy.</p></details>
-      <details><summary>Működik ez az én szakmámban?</summary><p>Helyi vállalkozásoknak és webshopoknak készül, a pékségtől az ékszerüzletig. A három mintaposzton látod, hogyan nézne ki nálad.</p></details>
-      <details><summary>Mennyi hirdetési keret kell?</summary><p>Te döntöd el, és közvetlenül a Facebooknak vagy a Google-nek fizeted. Az én díjam ettől független, fix. Kis kerettel is el lehet indulni; induláskor megmondom, mennyivel érdemes kezdeni.</p></details>
+      <details><summary>Működik ez az én szakmámban?</summary><p>Helyi vállalkozásoknak és webshopoknak készül, a pékségtől a szalonig. A három mintaposzton látod, hogyan nézne ki nálad.</p></details>
+      <details><summary>Mennyi hirdetési keret kell?</summary><p>Havi legalább 100&nbsp;000&nbsp;Ft. Ezt közvetlenül a Facebooknak vagy a Google-nek fizeted, az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok.</p></details>
       <details><summary>Mennyi időmbe kerül? Értenem kell hozzá?</summary><p>Nem kell értened hozzá. Induláskor egy beszélgetés és pár fotó, utána annyi, hogy a telefonodon jóváhagyod, ami elkészült.</p></details>
       <details><summary>Mi az előnye az AI-csapatnak?</summary><p>Naponta átnézi a hirdetéseidet, és nem kell érte ügynökségi díjat fizetned. A minőségért én felelek, te pedig mindent jóváhagysz. Az AI-val készült képeket megjelölöm.</p></details>
       <details><summary>Mi van, ha az AI hibázik, vagy nem tetszik valami?</summary><p>Módosítást kérsz, vagy nem hagyod jóvá. Amit nem hagysz jóvá, az nem megy ki. Mielőtt hozzád kerül, én is átnézem.</p></details>
@@ -689,23 +690,30 @@ h1 span{display:block}
 <section class="order" id="indulas">
   <div class="wrap">
     <div class="center">
-      <h2>Kérd a 3 ingyenes mintaposztot.</h2>
-      <p class="sub">A saját vállalkozásodról, már most. A havi csomagok 2027. január 1-jétől indulnak.</p>
-      <ol class="next"><li><b>1</b>Megkereslek a megadott elérhetőségen, és megkérdezem, miről szóljon a három poszt.</li><li><b>2</b>Elkészítem őket.</li><li><b>3</b>Megnézed, és eldöntöd, kell-e folytatás.</li></ol>
+      <h2 id="fCim">Kérd a 3 ingyenes mintaposztot.</h2>
+      <p class="sub" id="fAl">A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben.</p>
     </div>
     <div class="form">
       <form id="lead" novalidate>
         <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <input type="hidden" name="csomag" id="valasztott" value="" />
+        <div class="mode" role="radiogroup" aria-label="Mit szeretnél?">
+          <label><input type="radio" name="keres" value="mintaposzt" checked /><span>3 ingyenes mintaposzt</span></label>
+          <label><input type="radio" name="keres" value="megrendeles" /><span>Csomagot rendelek</span></label>
+        </div>
+        <div class="f" id="fCsomag" hidden><label for="valasztott">Melyik csomagot kéred?</label>
+          <select id="valasztott" name="csomag"><option value="">Válassz csomagot</option><option value="Jelenlét">Jelenlét – 89 000 Ft / hó</option><option value="Növekedés">Növekedés – 149 000 Ft / hó</option><option value="Teljes">Teljes – 229 000 Ft / hó</option></select>
+          <span class="err" hidden>Válassz csomagot.</span></div>
         <div class="chosen" id="chosen" hidden></div>
         <div class="f"><label for="nev">Neved</label><input type="text" id="nev" name="nev" required autocomplete="name" placeholder="Pl. Kovács Anna" /><span class="err" hidden>Írd be a neved.</span></div>
-        <div class="f"><label for="tel">Telefonszámod vagy e-mail-címed</label><input type="text" id="tel" name="elerhetoseg" required autocomplete="on" placeholder="Ahol szívesebben elérlek" /><span class="err" hidden>Add meg a telefonszámod vagy az e-mail-címed.</span></div>
+        <div class="f"><label for="email">E-mail-címed</label><input type="email" id="email" name="email" required autocomplete="email" inputmode="email" placeholder="Ide küldöm a mintaposztokat" /><span class="err" hidden>Adj meg egy érvényes e-mail-címet.</span></div>
         <div class="f"><label for="mit">Mivel foglalkozol?</label><input type="text" id="mit" name="vallalkozas" required autocomplete="organization" placeholder="Pl. pékség, szalon, webshop" /><span class="err" hidden>Írd le pár szóban, mivel foglalkozol.</span></div>
-        <button class="btn" type="submit">Kérem a 3 ingyenes mintaposztot</button>
+        <div class="f opt"><label for="web">Facebook-oldalad vagy weboldalad <i>(nem kötelező)</i></label><input type="text" id="web" name="oldal" autocomplete="url" placeholder="Ebből dolgozom a mintákhoz" /></div>
+        <div class="f opt"><label for="tel">Telefonszámod <i>(nem kötelező)</i></label><input type="tel" id="tel" name="telefon" autocomplete="tel" inputmode="tel" /></div>
+        <button class="btn" type="submit" id="fGomb">Kérem a 3 ingyenes mintaposztot</button>
         <p class="ferr" id="ferr" role="alert" hidden>Most nem sikerült elküldeni. Próbáld újra, vagy írj ide: bagiramester@gmail.com</p>
-        <p class="micro">Egy perc kitölteni. Nem kell fizetned, bankkártyát nem kérek, és nem kötelez megrendelésre. Az adataidat csak a kapcsolatfelvételhez használom: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
+        <p class="micro"><span id="fMicro">Nem kell fizetned, bankkártyát nem kérek, és nem kötelez megrendelésre.</span> Az adataidat csak ehhez a kéréshez használom: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
       </form>
-      <div class="thanks" id="thanks" hidden><h3>Megkaptam, köszönöm!</h3><p>Megkereslek a megadott elérhetőségen, és megkérdezem, miről szóljon a három mintaposzt.</p></div>
+      <div class="thanks" id="thanks" hidden><h3>Megkaptam, köszönöm!</h3><p id="tSzoveg">24 órán belül elküldöm e-mailben a három mintaposztot.</p></div>
     </div>
   </div>
 </section>
@@ -761,13 +769,25 @@ h1 span{display:block}
     $('sState').textContent = 'Lezárva';
   });
 
-  /* csomagválasztás */
+  /* űrlap módja: mintaposzt vagy megrendelés */
+  var T = {
+    mintaposzt: ['Kérd a 3 ingyenes mintaposztot.', 'A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben.', 'Kérem a 3 ingyenes mintaposztot', 'Nem kell fizetned, bankkártyát nem kérek, és nem kötelez megrendelésre.', '24 órán belül elküldöm e-mailben a három mintaposztot.', 'Ide küldöm a mintaposztokat'],
+    megrendeles: ['Rendeld meg a csomagodat.', 'A havi csomagok 2027. január 1-jétől indulnak. E-mailben visszaigazolom, és egyeztetjük az indulást.', 'Megrendelem a csomagot', 'Most nem kell fizetned: díjat csak az e-mailes visszaigazolás és az egyeztetés után számlázok.', 'E-mailben visszaigazolom a megrendelésedet, és egyeztetjük az indulást.', 'Ide küldöm a visszaigazolást']
+  };
+  function mod(m){
+    var t = T[m];
+    $('fCim').textContent = t[0]; $('fAl').textContent = t[1]; $('fGomb').textContent = t[2]; $('fMicro').textContent = t[3]; $('tSzoveg').textContent = t[4]; $('email').placeholder = t[5];
+    $('fCsomag').hidden = (m !== 'megrendeles'); $('chosen').hidden = true;
+    Array.prototype.forEach.call(document.getElementsByName('keres'), function(x){ x.checked = (x.value === m); });
+  }
+  Array.prototype.forEach.call(document.getElementsByName('keres'), function(x){ x.addEventListener('change', function(){ mod(x.value); }); });
   Array.prototype.forEach.call(document.querySelectorAll('[data-plan]'), function(a){
     a.addEventListener('click', function(){
-      var p = a.getAttribute('data-plan'); $("valasztott").value = p;
-      $('chosen').textContent = 'A mintaposztok után ezt a csomagot nézzük meg: ' + p + '. Most semmit nem kell fizetned.'; $('chosen').hidden = false;
+      var p = a.getAttribute('data-plan'); mod('megrendeles'); $('valasztott').value = p;
+      $('chosen').textContent = 'Választott csomag: ' + p + '. Most nem kell fizetned.'; $('chosen').hidden = false;
     });
   });
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#indulas"]:not([data-plan])'), function(a){ a.addEventListener('click', function(){ mod('mintaposzt'); }); });
 
   /* GYIK: egyszerre egy nyitva */
   var dets = document.querySelectorAll('details');
@@ -778,10 +798,11 @@ h1 span{display:block}
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if(form._gotcha.value){ return; }
-    var bad = null;
-    Array.prototype.forEach.call(form.querySelectorAll('.f'), function(f){
-      var i = f.querySelector('input'), v = i.value.trim(), ok = v.length > 1;
-      if(i.id === 'tel'){ ok = /@.+\./.test(v) || v.replace(/\D/g,'').length >= 8; }
+    var bad = null, rendel = form.keres.value === 'megrendeles';
+    Array.prototype.forEach.call(form.querySelectorAll('.f:not(.opt)'), function(f){
+      var i = f.querySelector('input,select'), v = i.value.trim(), ok = v.length > 1;
+      if(i.id === 'email'){ ok = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v); }
+      if(i.id === 'valasztott'){ ok = !rendel || v !== ''; }
       f.querySelector('.err').hidden = ok; i.setAttribute('aria-invalid', ok ? 'false' : 'true');
       if(!ok && !bad) bad = i;
     });
@@ -790,10 +811,10 @@ h1 span{display:block}
     var btn = form.querySelector('button[type=submit]'), label = btn.textContent;
     btn.disabled = true; btn.textContent = 'Küldés…';
     var data = Object.fromEntries(new FormData(form).entries());
-    data.forras = document.referrer || 'direct'; data.idopont = new Date().toISOString(); data.verzio = 'v6-landing';
+    data.forras = document.referrer || 'direct'; data.idopont = new Date().toISOString(); data.verzio = 'v7-landing'; if(!rendel){ delete data.csomag; }
     var fail = function(){ btn.disabled = false; btn.textContent = label; $('ferr').hidden = false; };
     fetch('https://formspree.io/f/xnpapjop', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data) })
-      .then(function(res){ if(!res.ok){ fail(); return; } form.hidden = true; $('thanks').hidden = false; if(window.gtag) gtag('event','generate_lead'); })
+      .then(function(res){ if(!res.ok){ fail(); return; } form.hidden = true; $('thanks').hidden = false; if(window.gtag) gtag('event', rendel ? 'megrendeles' : 'generate_lead'); })
       .catch(fail);
   });
 
