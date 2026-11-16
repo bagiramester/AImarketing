@@ -40,7 +40,7 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
     s.src='https://www.googletagmanager.com/gtag/js?id='+GA; document.head.appendChild(s);
     gtag('js',new Date()); gtag('config',GA);
   }
-  window.kbSuti={ get:read, igen:function(){ save('igen'); loadGA(); }, nem:function(){ save('nem'); } };
+  window.kbSuti={ get:read, igen:function(){ save('igen'); loadGA(); }, nem:function(){ save('nem'); gtag('consent','update',{analytics_storage:'denied'}); } };
   if(read()==='igen'){ loadGA(); }
 })();
 </script>
@@ -1043,7 +1043,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
     <div class="section-head rv">
       <span class="eyebrow">A helyzet</span>
       <h2>Ismerős valamelyik?</h2>
-      <p class="lead" style="margin-top:14px">A legtöbb kis cégnél nem a szándék hiányzik, hanem az idő és a rendszer. Ezt a négy helyzetet oldja meg a vezérlőpult az első hónaptól.</p>
+      <p class="lead" style="margin-top:14px">Sok kis cégnél nem a szándék hiányzik, hanem az idő és a rendszer. Ezt a négy helyzetet oldja meg a vezérlőpult az első hónaptól.</p>
     </div>
     <div class="grid g2">
       <article class="card uc rv" style="--i:0">
@@ -1059,7 +1059,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
         <p class="out"><b>Eredmény:</b> tudod, melyik forint mit hozott.</p>
       </article>
       <article class="card uc rv" style="--i:2">
-        <div class="uc-top"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><h3>Öt helyre kell belépned, hogy átlásd a marketinged</h3></div>
+        <div class="uc-top"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><h3>Négy helyre kell belépned, hogy átlásd a marketinged</h3></div>
         <span class="uc-arrow">Mit tesz a rendszer</span>
         <p>A Facebook, az Instagram, a TikTok és a Google adatai, posztjai, kampányai és üzenetei egyetlen felületre kerülnek. Telefonról is.</p>
         <p class="out"><b>Eredmény:</b> egy belépés, minden csatorna.</p>
@@ -1068,7 +1068,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
         <div class="uc-top"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A868" stroke-width="1.9" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>Az üzenetek és kommentek között elvész az érdeklődő</h3></div>
         <span class="uc-arrow">Mit tesz a rendszer</span>
         <p>Minden üzenet és komment egy listába érkezik, válaszjavaslattal. Elküldöd, átírod, vagy átveszed a beszélgetést.</p>
-        <p class="out"><b>Eredmény:</b> nem marad megválaszolatlan érdeklődő.</p>
+        <p class="out"><b>Eredmény:</b> gyorsabb válasz, kevesebb elveszett érdeklődő.</p>
       </article>
     </div>
   </div>
@@ -1079,7 +1079,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
   <div class="wrap">
     <div class="section-head rv">
       <span class="eyebrow">Mit vált ki</span>
-      <h2>A marketinges és az ügynökség munkája, egy előfizetésben</h2>
+      <h2>A marketinges és az ügynökség napi munkája, egy előfizetésben</h2>
       <p class="lead" style="margin-top:14px">Amiért eddig embert kellett felvenned vagy ügynökséget megbíznod, azt a rendszer elvégzi vagy előkészíti. Neked a döntés marad.</p>
     </div>
     <div class="cmp-panel rv">
@@ -1091,7 +1091,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
             <tr><th scope="row">Képek és rövid videók</th><td>Grafikus, videós</td><td class="hi">Gombnyomásra készülnek a saját fotóidból</td></tr>
             <tr><th scope="row">Feltöltés, időzítés</th><td>Asszisztens vagy te magad, esténként</td><td class="hi">Jóváhagyás után automatikus</td></tr>
             <tr><th scope="row">Hirdetések kezelése</th><td>PPC-szakember vagy ügynökség</td><td class="hi">Egy listában kezeled, heti javaslatokkal</td></tr>
-            <tr><th scope="row">Riport és elemzés</th><td>Ügynökségi havi riport</td><td class="hi">Naponta frissülő adatok, érthető magyarázattal</td></tr>
+            <tr><th scope="row">Riport és elemzés</th><td>Ügynökségi havi riport</td><td class="hi">Rendszeresen frissülő adatok, érthető magyarázattal</td></tr>
             <tr><th scope="row">Üzenetek, kommentek</th><td>Ügyfélszolgálatos vagy te magad</td><td class="hi">Közös beérkező, kész válaszjavaslattal</td></tr>
           </tbody>
         </table>
@@ -1113,14 +1113,14 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
       <article class="card rv" style="--i:0"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M8 16l4-6 3 3 5-7"/></svg></span><h3>Adatok és elemzés</h3><p>Meta, Google és TikTok egy nézetben: elérés, érdeklődők, költés, eredmény. Érthető magyarázattal, nem táblázatokkal.</p><p class="get"><b>Látod:</b> mi működik, és mi viszi a pénzt.</p></article>
       <article class="card rv" style="--i:1"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></span><h3>Kreatív gyártó</h3><p>Gombnyomásra készülnek képek és rövid videók a saját termékfotóidból, a márkád színeiben, több változatban.</p><p class="get"><b>Kapsz:</b> minőségi kapun átment kreatívokat.</p></article>
       <article class="card rv" style="--i:2"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h3>Posztok és naptár</h3><p>Havi tartalomnaptár, kész szövegek a márkád hangján. Jóváhagyod, és a rendszer időzítve közzéteszi a csatornáidon.</p><p class="get"><b>Kapsz:</b> rendszeres jelenlétet, kézi feltöltés nélkül.</p></article>
-      <article class="card rv" style="--i:3"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M3 17l5-5 4 3 8-9"/><path d="M15 6h5v5"/></svg></span><h3>Kampánykezelés</h3><p>A hirdetéseid egy listában: indítás, szüneteltetés, keret. A rendszer javaslatot tesz, a döntés a tiéd.</p><p class="get"><b>Kapsz:</b> átlátható kampányokat és heti javaslatokat.</p></article>
-      <article class="card rv" style="--i:4"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>Üzenetek és kommentek</h3><p>Közös beérkező a csatornáidhoz. A rendszer válaszjavaslatot ír a tudásbázisodból, te egy gombbal küldöd.</p><p class="get"><b>Kapsz:</b> gyors válaszokat, elveszett érdeklődők nélkül.</p></article>
-      <article class="card rv" style="--i:5"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h7M8 11h7"/></svg></span><h3>Márka-tudásbázis</h3><p>A hangod, az arculatod, a termékeid és az áraid egy helyen. A rendszer ebből dolgozik, és nem talál ki árat vagy akciót.</p><p class="get"><b>A tiéd marad:</b> akkor is, ha lemondod az előfizetést.</p></article>
+      <article class="card rv" style="--i:3"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M3 17l5-5 4 3 8-9"/><path d="M15 6h5v5"/></svg></span><h3>Kampánykezelés</h3><p>A hirdetéseid egy listában. A rendszer javaslatot tesz; szüneteltetés vagy keretmódosítás csak a megerősítésed után történik.</p><p class="get"><b>Kapsz:</b> átlátható kampányokat és heti javaslatokat.</p></article>
+      <article class="card rv" style="--i:4"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>Üzenetek és kommentek</h3><p>Közös beérkező a csatornáidhoz. A rendszer válaszjavaslatot ír a tudásbázisodból, te egy gombbal küldöd.</p><p class="get"><b>Kapsz:</b> kész válaszjavaslatokat egy listában.</p></article>
+      <article class="card rv" style="--i:5"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.8" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h7M8 11h7"/></svg></span><h3>Márka-tudásbázis</h3><p>A hangod, az arculatod, a termékeid és az áraid egy helyen. Árat és akciót a rendszer csak innen vesz, és minden szöveget te hagysz jóvá.</p><p class="get"><b>A tiéd marad:</b> akkor is, ha lemondod az előfizetést.</p></article>
     </div>
     <div class="src rv">
       <div><b>Meta</b><span>Facebook és Instagram: elérés, aktivitás, üzenetek, hirdetési költés és eredmény. Automatikus közzététel.</span></div>
       <div><b>Google</b><span>Hirdetések, cégprofil (hívás, útvonalkérés) és a weboldalad forgalma.</span></div>
-      <div><b>TikTok</b><span>Megtekintések, követők, videónkénti teljesítmény és hirdetések. A közzététel bekötése fiókonként egyeztetve.</span></div>
+      <div><b>TikTok</b><span>Hirdetési és videós adatok. A bekötés és a közzététel módja fiókonként egyeztetve.</span></div>
     </div>
   </div>
 </section>
@@ -1157,10 +1157,10 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
           <thead><tr><th scope="col">Szempont</th><th scope="col">Ügynökség</th><th scope="col">Általános AI-eszközök</th><th scope="col" class="hi">Marketing vezérlőpult</th></tr></thead>
           <tbody>
             <tr><th scope="row">Ki végzi a munkát?</th><td>Az ügynökség csapata</td><td>Te magad, több külön eszközzel</td><td class="hi">A rendszer készíti elő, te döntesz</td></tr>
-            <tr><th scope="row">A te időd</th><td>Egyeztetések, e-mailek, várakozás</td><td>Promptolás, szerkesztés, kézi feltöltés</td><td class="hi">Heti néhány perc jóváhagyás</td></tr>
-            <tr><th scope="row">Rálátás</th><td>Jellemzően havi riport</td><td>Platformonként külön felület</td><td class="hi">Egy vezérlőpult, naponta frissülő adatokkal</td></tr>
+            <tr><th scope="row">A te időd</th><td>Egyeztetések és jóváhagyási körök</td><td>Promptolás, szerkesztés, kézi feltöltés</td><td class="hi">Heti néhány perc jóváhagyás</td></tr>
+            <tr><th scope="row">Rálátás</th><td>Jellemzően havi riport</td><td>Platformonként külön felület</td><td class="hi">Egy vezérlőpult, a frissítés idejével minden számnál</td></tr>
             <tr><th scope="row">Márkahang</th><td>A szövegírótól függ</td><td>Általános, amíg be nem tanítod</td><td class="hi">Saját tudásbázisból, minőségi kapuval</td></tr>
-            <tr><th scope="row">Nyelv és piac</th><td>Magyar</td><td>Többnyire angol felület és gondolkodás</td><td class="hi">Magyar felület, magyar piacra hangolva</td></tr>
+            <tr><th scope="row">Nyelv és piac</th><td>Magyar</td><td>Eszközönként változó</td><td class="hi">Magyar felület, magyar piacra hangolva</td></tr>
             <tr><th scope="row">Kontroll</th><td>Megállapodás kérdése</td><td>Teljes, de minden rajtad múlik</td><td class="hi">Semmi nem megy ki jóváhagyás nélkül</td></tr>
           </tbody>
         </table>
@@ -1204,13 +1204,13 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
         <ul class="ticks">
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Vezérlőpult a közösségi adataiddal</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi tartalomnaptár, 12 kész poszt képpel</li>
-          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Jóváhagyás után automatikus közzététel</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Jóváhagyás után automatikus közzététel (Facebook, Instagram)</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi riport egy oldalon</li>
         </ul>
         <a class="btn btn-ghost" href="#jelentkezes" data-plan="Jelenlét">Ezt kérem</a>
       </article>
       <article class="card plan featured rv" style="--i:1">
-        <span class="plan-flag">A legtöbb vállalkozásnak ezt ajánlom</span>
+        <span class="plan-flag">Ajánlott, ha hirdetsz is</span>
         <h3>Növekedés</h3>
         <span class="who">Ha hirdetsz is, és látni akarod, mit hoz</span>
         <div class="price"><b>149 000 Ft</b><span>/ hó</span></div>
@@ -1231,7 +1231,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
           <li class="plus"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Minden, ami a Növekedés csomagban</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Üzenetek és kommentek közös beérkezője</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>20 poszt és 8 rövid videó havonta</li>
-          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Versenytársfigyelés havi összefoglalóval</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi stratégiai összefoglaló</li>
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havi személyes egyeztetés</li>
         </ul>
         <a class="btn btn-ghost" href="#jelentkezes" data-plan="Teljes rendszer">Ezt kérem</a>
@@ -1277,7 +1277,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
     </div>
     <div class="grid g3">
       <div class="safe rv" style="--i:0"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Emberi jóváhagyás</b><span>Poszt, hirdetés és válasz csak a te döntésed után megy ki.</span></span></div>
-      <div class="safe rv" style="--i:1"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span><b>A fiókjaid a tieid</b><span>Partner-hozzáféréssel dolgozom, jelszót nem kérek, és bármikor visszavonhatod.</span></span></div>
+      <div class="safe rv" style="--i:1"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span><b>A fiókjaid a tieid</b><span>Partner-hozzáféréssel dolgozom, jelszót nem kérek. A hozzáférést bármikor visszavonhatod.</span></span></div>
       <div class="safe rv" style="--i:2"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h7M8 11h7"/></svg><span><b>A tudásbázis a tiéd marad</b><span>Amit a márkádról felépítünk, azt lemondáskor is megkapod.</span></span></div>
       <div class="safe rv" style="--i:3"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9" aria-hidden="true"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7z"/></svg><span><b>Adatvédelem szerződésben</b><span>Adatfeldolgozói megállapodást kötünk, és leírom, milyen eszközök dolgoznak az adataiddal.</span></span></div>
       <div class="safe rv" style="--i:4"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg><span><b>Jelölt AI-tartalom</b><span>Az AI-val készült képek és videók jelölése az uniós és a platformszabályok szerint történik.</span></span></div>
@@ -1297,9 +1297,9 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
       <details><summary>Mennyi időmbe kerül hetente?</summary><p>A posztok átnézése és jóváhagyása jellemzően néhány perc. Az üzenetekre a válaszjavaslat készen vár, neked csak el kell küldened vagy át kell írnod.</p></details>
       <details><summary>Kell értenem a hirdetésekhez vagy az AI-hoz?</summary><p>Nem. A vezérlőpult magyarul, érthetően mutatja az eredményeket és a javaslatokat. A beállítást és a betanítást én végzem.</p></details>
       <details><summary>Mi van, ha nem tetszik egy poszt?</summary><p>Módosítást kérsz egy koppintással, vagy elveted. Jóváhagyás nélkül semmi nem jelenik meg.</p></details>
-      <details><summary>Milyen csatornákat kezel a rendszer?</summary><p>Facebook, Instagram, TikTok és Google (hirdetések, cégprofil, weboldal-forgalom). A pontos funkciók csatornánként eltérhetnek, mert a platformok szabályai mások; a bemutatón megmutatom, a te esetedben mi hogyan működik.</p></details>
+      <details><summary>Milyen csatornákat kezel a rendszer?</summary><p>Facebook és Instagram: adatok, posztok, automatikus közzététel. Google: hirdetések, cégprofil-adatok, weboldal-forgalom. A TikTok és a Google cégprofil posztolása a platformok engedélyeitől függ, ezt fiókonként egyeztetjük; a bemutatón megmutatom, a te vállalkozásodnál mi hogyan működik.</p></details>
       <details><summary>Mekkora hirdetési keret kell hozzá?</summary><p>Hirdetés nélkül is használható. Ha hirdetsz, a keretet te határozod meg, és közvetlenül a platformnak fizeted. A felmérés után javaslatot adok az induló keretre.</p></details>
-      <details><summary>Ki fér hozzá a fiókjaimhoz?</summary><p>Partner-hozzáférést adsz a saját üzleti fiókodból, amit bármikor visszavonhatsz. Jelszót nem kérek és nem tárolok.</p></details>
+      <details><summary>Ki fér hozzá a fiókjaimhoz?</summary><p>Partner-hozzáférést adsz a saját üzleti fiókodból, amit bármikor visszavonhatsz. Jelszót nem kérek.</p></details>
       <details><summary>Tényleg kiváltja a marketingest vagy az ügynökséget?</summary><p>A napi munkát igen: a tervezést, a szövegírást, a képgyártást, a feltöltést, a riportot és a válaszjavaslatokat a rendszer végzi. Ami nálad marad, az a döntés: mit hagysz jóvá, és mennyit költesz. Ha van marketingesed, ő is használhatja a felületet, és több ideje jut a stratégiára.</p></details>
       <details><summary>Hogyan mondhatom le?</summary><p>Havonta lemondható. A fiókjaid, a tartalmaid és a tudásbázisod nálad maradnak.</p></details>
     </div>
@@ -1362,7 +1362,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
 <div class="mobile-cta" id="mcta"><a class="btn" href="#jelentkezes">Kérek bemutatót</a></div>
 
 <div class="cookie" id="suti" role="dialog" aria-label="Sütik" hidden>
-  <p>Az oldal működéséhez nem kell süti. Ha hozzájárulsz, névtelen látogatottsági mérést (Google Analytics) használok, hogy lássam, mi hasznos az oldalon. Részletek az <a href="adatkezeles.html">adatkezelési tájékoztatóban</a>.</p>
+  <p>Az oldal működéséhez nem kell süti. Ha hozzájárulsz, látogatottsági mérést (Google Analytics) használok, hogy lássam, mi hasznos az oldalon. Részletek az <a href="adatkezeles.html">adatkezelési tájékoztatóban</a>.</p>
   <div class="acts"><button class="mini ok" type="button" id="sutiIgen">Hozzájárulok</button><button class="mini" type="button" id="sutiNem">Csak a szükségesek</button></div>
 </div>
 
@@ -1454,7 +1454,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
       if(act === 'ok'){
         post.setAttribute('data-state','ok'); pill.textContent = 'Jóváhagyva · időzítve';
         acts.hidden = true; box.hidden = true; log.hidden = false;
-        log.innerHTML = '<b>Időzítve:</b> ' + post.getAttribute('data-when') + ' · ' + post.getAttribute('data-ch') + '. A megadott időpontban a rendszer teszi közzé.';
+        log.innerHTML = '<b>Időzítve:</b> ' + post.getAttribute('data-when') + ' · ' + post.getAttribute('data-ch') + '. Minta: valódi közzététel nem történik.';
         done();
       } else if(act === 'no'){
         post.setAttribute('data-state','no'); pill.textContent = 'Elvetve';
@@ -1478,7 +1478,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
     var yes = b.getAttribute('data-sugg') === 'igen';
     sugg.querySelector('.acts').hidden = true;
     var n = document.createElement('p'); n.className = 'done-note' + (yes ? '' : ' muted');
-    n.innerHTML = yes ? TICK + '<span>Rögzítve. A módosítás holnap reggeltől él, és a naplóban is látod.</span>' : '<span>Rendben, marad a mostani beállítás.</span>';
+    n.innerHTML = yes ? TICK + '<span>Mintában rögzítve. Éles rendszerben a módosítás a megerősítésed után megy át.</span>' : '<span>Rendben, marad a mostani beállítás.</span>';
     sugg.appendChild(n);
   });
 
@@ -1510,7 +1510,7 @@ ol.flow{margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,
       }
       a.removeAttribute('contenteditable'); m.setAttribute('data-state','sent');
       m.querySelector('.acts').hidden = true;
-      var n = document.createElement('p'); n.className = 'done-note'; n.innerHTML = TICK + '<span>Válasz elküldve.</span>'; m.appendChild(n);
+      var n = document.createElement('p'); n.className = 'done-note'; n.innerHTML = TICK + '<span>Minta: a válasz éles rendszerben a bekötött csatornán megy ki.</span>'; m.appendChild(n);
       setCount(cntUzi, $$('.msg[data-state="wait"]').length);
     });
   });
