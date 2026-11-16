@@ -238,8 +238,16 @@ h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--go
 .sh svg{flex:none}
 
 /* én */
-.me{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(26px,5vw,60px);align-items:center}
-.me img{border-radius:26px;border:1px solid var(--line-2);aspect-ratio:1/1;object-fit:cover;width:100%}
+.me{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(26px,5vw,60px);align-items:center}
+.me img{border-radius:26px;border:1px solid var(--line-2);width:100%;height:auto}
+.cv{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.cv li{display:flex;gap:12px;font-size:16.5px;color:var(--soft);line-height:1.5}
+.cv li svg{flex:none;margin-top:5px}
+.cv b{color:var(--text);font-weight:700}
+.bignum{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.bignum div{padding:14px 18px;border-radius:16px;border:1px solid var(--line);background:var(--ink-2)}
+.bignum b{display:block;font-size:30px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--accent)}
+.bignum span{display:block;margin-top:5px;font-size:13.5px;color:var(--muted)}
 .clients{margin-top:26px}
 .clients small{display:block;margin-bottom:10px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .clients div{display:flex;flex-wrap:wrap;gap:10px}
@@ -293,7 +301,7 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
   .plans{align-items:stretch;max-width:520px;margin-inline:auto}
   .gate{grid-template-columns:1fr}
   .arr{rotate:135deg;justify-self:center;margin:2px 0 12px}
-  .me img{max-width:340px;margin-inline:auto}
+  .me img{max-width:440px;margin-inline:auto}
   .stamp{left:-4px}.chan{right:-8px;bottom:54%}
 }
 @media (max-width:760px){
@@ -472,8 +480,15 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
     <div>
       <span class="kicker">Ki áll mögötte</span>
       <h2>Egy ember felel érte: én.</h2>
-      <p class="sub">Katona Balázs vagyok. Az AI-csapat dolgozik, én felügyelem és állítom be a hirdetéseidet, és engem érsz el, ha kérdésed van.</p>
-      <p class="sub" style="margin-top:14px">Hívj nyugodtan: <a href="tel:" style="color:var(--accent);font-weight:700;white-space:nowrap"></a></p>
+      <p class="sub">Katona Balázs vagyok. Több mint 20 éve vezetek digitális marketinget ügynökségeknél és nagyvállalatoknál. Most ezt a tudást adom a kisebb cégeknek, AI-csapattal.</p>
+      <div class="bignum"><div><b>20+</b><span>év digitális marketing</span></div><div><b>35</b><span>fős csapatig vezető</span></div><div><b>3</b><span>országban futó márkák</span></div></div>
+      <ul class="cv">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Nemzetközi ügynökségek digitális vezetője:</b> J. Walter Thompson, Havas Worldwide.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Márkák, amelyeken dolgoztam:</b> Nestlé, Bayer, Lidl, Škoda, Volkswagen, Suzuki, Telenor, Shell.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Digitális marketing vezető a Lexholdingnál:</b> a BÁV országos hálózata és a FŐTAXI online marketingje.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Ma:</b> a Diana Silver marketingigazgatója, három ország webáruházaival.</span></li>
+      </ul>
+      <p class="sub" style="margin-top:18px">Hívj nyugodtan: <a href="tel:" style="color:var(--accent);font-weight:700;white-space:nowrap"></a></p>
       <div class="clients">
         <small>Már velem dolgoznak</small>
         <div><span>Diana Silver</span><span>Marcell Ékszer</span><span>Selena Jewellery</span><span>BC MIX RADIO</span></div>
