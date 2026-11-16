@@ -78,6 +78,14 @@ header.stuck{background:rgba(11,13,16,.86);backdrop-filter:blur(16px);border-bot
 .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;height:66px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
 .logo i{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:#161B22;border:1px solid var(--line-2)}
+.hright{display:flex;align-items:center;gap:16px}
+.htel{font-weight:700;font-size:15.5px;white-space:nowrap}
+.htel:hover{color:var(--accent)}
+.gift{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:11px 16px;border-radius:14px;border:1px solid rgba(227,192,141,.5);background:rgba(227,192,141,.1);font-size:16px;font-weight:650;color:#F3E3C8}
+.gift b{color:var(--gold)}
+.offer{margin:34px auto 0;max-width:860px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:22px 26px;border-radius:var(--r);border:1px solid rgba(227,192,141,.5);background:linear-gradient(120deg,rgba(227,192,141,.14),rgba(64,233,208,.08))}
+.offer b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em}
+.offer span{display:block;margin-top:4px;font-size:16px;color:var(--soft)}
 .logo i::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
 
 /* nyitókép */
@@ -90,6 +98,7 @@ h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--go
 .hero .sub b{color:#FFF;font-weight:700}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:28px}
 .hero-cta small{font-size:14.5px;color:var(--muted)}
+.hero-cta small a{color:var(--text);font-weight:700;white-space:nowrap}
 .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;padding:0;list-style:none}
 .facts li{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(244,241,236,.04);font-size:14.5px;font-weight:600;color:var(--soft)}
 .facts svg{flex:none}
@@ -221,7 +230,7 @@ details p{padding:0 22px 20px;color:var(--soft);font-size:16.5px}
 .chosen{margin-bottom:14px;padding:10px 14px;border-radius:12px;background:rgba(64,233,208,.1);border:1px solid rgba(64,233,208,.3);font-size:15px;font-weight:650}
 .form .btn{width:100%;margin-top:6px}
 .micro{margin-top:14px;font-size:14px;color:var(--muted);text-align:center;line-height:1.5}
-.micro a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.micro a{white-space:nowrap;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .hp{position:absolute;left:-9999px;width:0;height:0;opacity:0}
 .thanks{text-align:center;padding:26px 6px}
 .thanks h3{font-size:26px;margin-bottom:8px}
@@ -255,6 +264,7 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
   body{font-size:17px;padding-bottom:84px}
   .mcta{display:block}
   header .btn{display:none}
+  .hright{gap:0}
   .seg{font-size:11.5px;padding-inline:7px}
   .track{height:42px}
 }
@@ -266,7 +276,7 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
 <header id="hdr">
   <div class="wrap bar">
     <a class="logo" href="#top"><i></i>Katona Balázs</a>
-    <a class="btn btn-sm" href="#indulas">Kérek visszahívást</a>
+    <span class="hright"><a class="htel" href="tel:"></a><a class="btn btn-sm" href="#indulas">Kérem a 3 mintaposztot</a></span>
   </div>
 </header>
 
@@ -278,9 +288,10 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
     <div>
       <h1>Marketinges nélkül is megy <em>a marketinged.</em></h1>
       <p class="sub">Havi <b>89 000 Ft-tól</b> elkészítem a posztjaidat, te csak jóváhagyod a telefonodon. Nem kell marketinges, nem kell ügynökség.</p>
+      <p class="gift"><b>Ajándék:</b> 3 mintaposzt a saját vállalkozásodról, ingyen.</p>
       <div class="hero-cta">
-        <a class="btn" href="#indulas">Kérek visszahívást</a>
-        <small>A visszahívás ingyenes, nem kötelez semmire.</small>
+        <a class="btn" href="#indulas">Kérem a 3 mintaposztot</a>
+        <small>Ingyenes, nem kötelez semmire. Vagy hívj: <a href="tel:"></a></small>
       </div>
       <ul class="facts">
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Havonta 15 kész poszt</li>
@@ -349,6 +360,7 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
       <span class="kicker">Ki áll mögötte</span>
       <h2>Egy ember felel érte: én.</h2>
       <p class="sub">Katona Balázs vagyok. Én készítem el a posztjaidat, én állítom be a hirdetéseidet, és engem érsz el, ha kérdésed van.</p>
+      <p class="sub" style="margin-top:14px">Hívj nyugodtan: <a href="tel:" style="color:var(--accent);font-weight:700;white-space:nowrap"></a></p>
       <div class="clients">
         <small>Már velem dolgoznak</small>
         <div><span>Diana Silver</span><span>Marcell Ékszer</span><span>Selena Jewellery</span><span>BC MIX RADIO</span></div>
@@ -461,7 +473,8 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
         <a class="btn btn-line" href="#indulas" data-plan="Teljes">Ezt kérem</a>
       </article>
     </div>
-    <p class="fine"><b>Havonta lemondható, hűségidő nincs.</b> Ha hirdetsz, a hirdetésre szánt összeget te döntöd el, és közvetlenül a Facebooknak vagy a Google-nek fizeted; a Jelenlét csomaghoz hirdetés nem kell.</p>
+    <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Ingyen elkészítek 3 mintaposztot a saját vállalkozásodról. Ha tetszik, indulunk.</span></div><a class="btn" href="#indulas">Kérem a 3 mintaposztot</a></div>
+    <p class="fine"><b>Alanyi adómentes: az árakra nem jön áfa.</b> Havonta lemondható, hűségidő nincs.  Ha hirdetsz, a hirdetésre szánt összeget te döntöd el, és közvetlenül a Facebooknak vagy a Google-nek fizeted; a Jelenlét csomaghoz hirdetés nem kell.</p>
   </div>
 </section>
 
@@ -515,6 +528,7 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
       <details><summary>Mesterséges intelligenciát használsz?</summary><p>Igen, a szövegek és a képek elkészítésében segít. Mindent átnézek, és a te jóváhagyásod nélkül semmi nem megy ki. Az így készült képeket a szabályok szerint megjelölöm.</p></details>
       <details><summary>Ki fér hozzá a Facebook-oldalamhoz?</summary><p>Te adsz hozzáférést a saját oldaladról, jelszót nem kérek. Bármikor visszavonhatod, az oldalad a tiéd marad.</p></details>
       <details><summary>Mi van, ha nem tetszik egy poszt?</summary><p>Módosítást kérsz, vagy nem hagyod jóvá. Amit nem hagysz jóvá, az nem megy ki.</p></details>
+      <details><summary>Mi az a 3 ingyenes mintaposzt?</summary><p>Mielőtt döntesz, elkészítek három posztot a saját vállalkozásodról, a te fotóidból. Nem kerül semmibe, és nem kötelez megrendelésre.</p></details>
       <details><summary>Meddig köt?</summary><p>Sehogy: havonta lemondható, hűségidő nélkül. Az indulási díj (99 000 Ft) egyszeri.</p></details>
       <details><summary>Mit nem tud még?</summary><p>Facebookra és Instagramra automatikusan posztol. A Google-cégprofilra posztolás még nincs kész. Az üzeneteket naponta többször gyűjti össze, nem azonnal.</p></details>
     </div>
@@ -525,8 +539,8 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
 <section class="order" id="indulas">
   <div class="wrap">
     <div class="center">
-      <h2>Indulhatunk?</h2>
-      <p class="sub">Add meg, hol érlek el, és visszahívlak.</p>
+      <h2>Kéred a 3 ingyenes mintaposztot?</h2>
+      <p class="sub">Add meg, hol érlek el. Visszahívlak, és elkészítem őket a saját vállalkozásodról.</p>
     </div>
     <div class="form">
       <form id="lead" novalidate>
@@ -536,8 +550,8 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
         <div class="f"><label for="nev">Neved</label><input type="text" id="nev" name="nev" required autocomplete="name" /></div>
         <div class="f"><label for="tel">Telefonszámod</label><input type="tel" id="tel" name="telefon" required autocomplete="tel" inputmode="tel" /></div>
         <div class="f"><label for="mit">Mivel foglalkozol? (nem kötelező)</label><input type="text" id="mit" name="vallalkozas" autocomplete="organization" /></div>
-        <button class="btn" type="submit">Kérem a visszahívást</button>
-        <p class="micro">Amíg nem erősíted meg az ajánlatot, semmire sem kötelez. Az adataidat csak a visszahíváshoz használom: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
+        <button class="btn" type="submit">Kérem a 3 mintaposztot</button>
+        <p class="micro">Ingyenes, és semmire sem kötelez. Inkább telefonálnál? <a href="tel:"></a>.  Az adataidat csak a visszahíváshoz használom: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
       </form>
       <div class="thanks" id="thanks" hidden><h3>Köszönöm!</h3><p>Hamarosan hívlak.</p></div>
     </div>
@@ -548,13 +562,13 @@ footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom));border-top:1px so
 
 <footer>
   <div class="wrap foot">
-    <span>© <span id="yr"></span> Katona Balázs egyéni vállalkozó · bagiramester@gmail.com</span>
+    <span>© <span id="yr"></span> Katona Balázs egyéni vállalkozó · <a href="tel:"></a> · bagiramester@gmail.com</span>
     <span><a href="adatkezeles.html">Adatkezelési tájékoztató</a> · <button type="button" id="sutiNyit">Sütibeállítások</button></span>
-    <p>Székhely, nyilvántartási szám és adószám: a vállalkozás 2027. januári indulásával kerül feltüntetésre. Az árak 2027. január 1-jétől érvényesek. A mintaposztok képei illusztrációk; a posztok elkészítéséhez mesterséges intelligenciát is használok, és minden tartalmat ember hagy jóvá.</p>
+    <p>Székhely, nyilvántartási szám és adószám: a vállalkozás 2027. januári indulásával kerül feltüntetésre. Az árak 2027. január 1-jétől érvényesek, alanyi adómentes vállalkozóként áfa nélkül. A mintaposztok képei illusztrációk; a posztok elkészítéséhez mesterséges intelligenciát is használok, és minden tartalmat ember hagy jóvá.</p>
   </div>
 </footer>
 
-<div class="mcta" id="mcta"><a class="btn" href="#indulas">Kérek visszahívást</a></div>
+<div class="mcta" id="mcta"><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
 
 <div class="cookie" id="suti" role="dialog" aria-label="Sütik" hidden>
   Az oldal működéséhez nem kell süti. Ha hozzájárulsz, látogatottsági mérést (Google Analytics) használok. Részletek: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.
