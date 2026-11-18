@@ -105,6 +105,15 @@ header.stuck{background:rgba(11,13,16,.86);backdrop-filter:blur(16px);border-bot
 .qlink{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .crew.c3{grid-template-columns:repeat(3,minmax(0,1fr))}@media (max-width:760px){.crew.c3{grid-template-columns:1fr}}
 .vframe video{aspect-ratio:16/9;height:auto;object-fit:cover}
+.plus{margin-top:6px;font-size:13.5px;font-weight:650;color:var(--soft)}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;padding:10px 14px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:700}.skip:focus{left:12px}
+#en .bignum{margin-top:0;margin-bottom:22px}#en .bignum div{flex:1 1 0;padding:18px}#en .bignum b{font-size:clamp(40px,5.5vw,60px);color:var(--gold)}#en .bignum span{font-size:14.5px}
+.t i{background:rgba(11,13,16,.85)}
+.foot p{font-size:13px}
+@media (max-width:900px){.plan.mid{order:-1}
+  .hero-grid>div:first-child{display:contents}.hero-grid{gap:0}.hero-grid>div:first-child>*{order:1}.hero-grid>div:last-child{order:2;margin-top:30px}.hero-grid>div:first-child>.hprice{order:3;margin-top:26px}.hero-grid>div:first-child>.plat{order:4}
+  .step{display:grid;grid-template-columns:78px minmax(0,1fr);column-gap:14px;align-items:start;padding:20px 18px;text-align:left}.step .pic{grid-row:1/span 2;height:auto;margin:4px 0 0}.step .pic svg{width:78px;height:auto}.step h3{font-size:19px;padding-right:40px}.step::before{font-size:38px!important;top:14px!important;right:16px!important}.step p{grid-column:2}}
+@media (max-width:560px){.soc a{width:40px!important;height:40px!important}.soc{gap:2px}}
 .cvnote{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.5}
 .safe b{font-size:18px}.safe span{font-size:15.5px}
 .sub{text-wrap:pretty}
@@ -465,7 +474,7 @@ h1 span{display:block}
 .guide-ok{display:grid;gap:12px}.guide-ok b{font-size:20px}
 @media (max-width:760px){.pain,.guide{grid-template-columns:1fr}.hero-cta .btn{width:100%}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://bagiramester.github.io/AImarketing/#szolgaltato", "name": "Katona Balázs – AI-marketing kisvállalkozásoknak", "url": "https://bagiramester.github.io/AImarketing/", "image": "https://bagiramester.github.io/AImarketing/og-cover.jpg", "description": "AI-specialisták készítik a közösségi posztokat és kezelik a Facebook-, Instagram- és Google-hirdetéseket, emberi felügyelettel és az ügyfél jóváhagyásával.", "email": "bagiramester@gmail.com", "founder": {"@type": "Person", "name": "Katona Balázs", "sameAs": ["https://www.linkedin.com/in/balazskatona", "https://www.facebook.com/8alazskatona", "https://www.instagram.com/8alazskatona"]}, "areaServed": {"@type": "Country", "name": "Magyarország"}, "availableLanguage": "hu", "makesOffer": [{"@type": "Offer", "name": "Jelenlét", "price": "89000", "priceCurrency": "HUF", "availabilityStarts": "2027-01-01", "itemOffered": {"@type": "Service", "name": "Havi 15 kész poszt, közzététellel és havi összefoglalóval"}}, {"@type": "Offer", "name": "Növekedés", "price": "149000", "priceCurrency": "HUF", "availabilityStarts": "2027-01-01", "itemOffered": {"@type": "Service", "name": "Posztok és hirdetéskezelés AI-specialistákkal, heti javaslattal"}}, {"@type": "Offer", "name": "Teljes", "price": "229000", "priceCurrency": "HUF", "availabilityStarts": "2027-01-01", "itemOffered": {"@type": "Service", "name": "Posztok, hirdetéskezelés, üzenetek és kommentek kész válaszjavaslattal"}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mennyi hirdetési keret kell?", "acceptedAnswer": {"@type": "Answer", "text": "Havi legalább 100 000 Ft. Ezt közvetlenül a Facebook és a Google számlázza neked, jutalékot nem kérek belőle. Az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok."}}, {"@type": "Question", "name": "Van egyszeri díj?", "acceptedAnswer": {"@type": "Answer", "text": "Igen: megrendelés után egyszeri 99 000 Ft beállítási díj, ebből bekötöm és letesztelem a fiókjaidat. Utána csak a havidíjat fizeted."}}, {"@type": "Question", "name": "Hogyan mondhatom le?", "acceptedAnswer": {"@type": "Answer", "text": "Havonta lemondható, hűségidő és kilépési díj nélkül."}}, {"@type": "Question", "name": "Mi van, ha a hirdetés nem hoz eredményt?", "acceptedAnswer": {"@type": "Answer", "text": "Eredményt előre nem ígérek. Hetente megírom, mi ment és mi nem, javaslatot teszek, és te döntesz, folytatod-e."}}, {"@type": "Question", "name": "Helyettesítheti a marketingest és az ügynökséget?", "acceptedAnswer": {"@type": "Answer", "text": "Erre készült. A posztokat és videókat elkészítem és kiteszem. A hirdetéseket a Növekedés csomagtól AI-specialisták kezelik, én felügyelem. Az üzenetekre a Teljes csomagban kész válaszjavaslatot kapsz."}}, {"@type": "Question", "name": "Működik ez az én szakmámban?", "acceptedAnswer": {"@type": "Answer", "text": "Helyi vállalkozásoknak és webshopoknak szól: pékségtől és szalontól a szerelőcégen át az ékszer-webshopig. A három mintaposzton látod, hogyan nézne ki nálad."}}, {"@type": "Question", "name": "Mennyi időmbe kerül? Értenem kell hozzá?", "acceptedAnswer": {"@type": "Answer", "text": "Nem kell értened hozzá. Induláskor egy beszélgetésben lépésről lépésre végigvezetlek a hozzáférések megadásán. Utána annyi a dolgod, hogy a vezérlőpultodon jóváhagyod, ami elkészült."}}, {"@type": "Question", "name": "Milyen képek lesznek a posztokon?", "acceptedAnswer": {"@type": "Answer", "text": "A képeket AI készíti a saját termékfotóidból: a terméked a képen ugyanaz marad, csak a környezete változik. Megjelölöm, hogy AI-val készültek."}}, {"@type": "Question", "name": "Mi van, ha az AI hibázik, vagy nem tetszik valami?", "acceptedAnswer": {"@type": "Answer", "text": "Módosítást kérsz, vagy nem hagyod jóvá: akkor nem megy ki. Mielőtt eléd kerül, én is átnézem."}}, {"@type": "Question", "name": "Ki fér hozzá a Facebook-oldalamhoz?", "acceptedAnswer": {"@type": "Answer", "text": "Te adsz hozzáférést a saját oldaladról, jelszót nem kérek. Bármikor visszavonhatod."}}, {"@type": "Question", "name": "Mit nem tud még a rendszer?", "acceptedAnswer": {"@type": "Answer", "text": "Facebookra és Instagramra a jóváhagyott poszt az ütemezett időpontban automatikusan megjelenik. A Google Cégprofilba posztolás még nincs kész. A rendszer az üzeneteket naponta többször gyűjti össze, nem azonnal."}}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://bagiramester.github.io/AImarketing/#szolgaltato", "name": "Katona Balázs – AI-marketing kisvállalkozásoknak", "url": "https://bagiramester.github.io/AImarketing/", "image": "https://bagiramester.github.io/AImarketing/og-cover.jpg", "description": "AI-specialisták készítik a közösségi posztokat és kezelik a Facebook-, Instagram- és Google-hirdetéseket, emberi felügyelettel és az ügyfél jóváhagyásával.", "email": "bagiramester@gmail.com", "founder": {"@type": "Person", "name": "Katona Balázs", "sameAs": ["https://www.linkedin.com/in/balazskatona", "https://www.facebook.com/8alazskatona", "https://www.instagram.com/8alazskatona"]}, "areaServed": {"@type": "Country", "name": "Magyarország"}, "availableLanguage": "hu", "makesOffer": [{"@type": "Offer", "name": "Jelenlét", "price": "89000", "priceCurrency": "HUF", "availabilityStarts": "2027-01-01", "itemOffered": {"@type": "Service", "name": "Havi 15 kész poszt, közzététellel és havi összefoglalóval"}}, {"@type": "Offer", "name": "Növekedés", "price": "149000", "priceCurrency": "HUF", "availabilityStarts": "2027-01-01", "itemOffered": {"@type": "Service", "name": "Posztok és hirdetéskezelés AI-specialistákkal, heti javaslattal"}}, {"@type": "Offer", "name": "Teljes", "price": "229000", "priceCurrency": "HUF", "availabilityStarts": "2027-01-01", "itemOffered": {"@type": "Service", "name": "Posztok, hirdetéskezelés, üzenetek és kommentek kész válaszjavaslattal"}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mennyi hirdetési keret kell?", "acceptedAnswer": {"@type": "Answer", "text": "Havi legalább 100 000 Ft. Ezt közvetlenül a Facebook és a Google számlázza neked, jutalékot nem kérek belőle. Az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok."}}, {"@type": "Question", "name": "Hogyan mondhatom le?", "acceptedAnswer": {"@type": "Answer", "text": "Havonta lemondható, hűségidő és kilépési díj nélkül."}}, {"@type": "Question", "name": "Mi van, ha a hirdetés nem hoz eredményt?", "acceptedAnswer": {"@type": "Answer", "text": "Eredményt előre nem ígérek. Hetente megírom, mi ment és mi nem, javaslatot teszek, és te döntesz, folytatod-e."}}, {"@type": "Question", "name": "Helyettesítheti a marketingest és az ügynökséget?", "acceptedAnswer": {"@type": "Answer", "text": "Erre készült. A posztokat és videókat elkészítem és kiteszem. A hirdetéseket a Növekedés csomagtól AI-specialisták kezelik, én felügyelem. Az üzenetekre a Teljes csomagban kész válaszjavaslatot kapsz."}}, {"@type": "Question", "name": "Működik ez az én szakmámban?", "acceptedAnswer": {"@type": "Answer", "text": "Helyi vállalkozásoknak és webshopoknak szól: pékségtől és szalontól a szerelőcégen át az ékszer-webshopig. A három mintaposzton látod, hogyan nézne ki nálad."}}, {"@type": "Question", "name": "Mennyi időmbe kerül? Értenem kell hozzá?", "acceptedAnswer": {"@type": "Answer", "text": "Nem kell értened hozzá. Induláskor egy beszélgetésben lépésről lépésre végigvezetlek a hozzáférések megadásán. Utána annyi a dolgod, hogy a vezérlőpultodon jóváhagyod, ami elkészült."}}, {"@type": "Question", "name": "Milyen képek lesznek a posztokon?", "acceptedAnswer": {"@type": "Answer", "text": "A képeket AI készíti a saját fotóidból: a terméked vagy a munkád a képen ugyanaz marad, csak a környezete változik. Megjelölöm, hogy AI-val készültek."}}, {"@type": "Question", "name": "Mi van, ha az AI hibázik, vagy nem tetszik valami?", "acceptedAnswer": {"@type": "Answer", "text": "Módosítást kérsz, vagy nem hagyod jóvá: akkor nem megy ki. Mielőtt eléd kerül, én is átnézem."}}, {"@type": "Question", "name": "Mit nem tud még a szolgáltatás?", "acceptedAnswer": {"@type": "Answer", "text": "Facebookra és Instagramra a jóváhagyott poszt az ütemezett időpontban automatikusan megjelenik. A Google Cégprofilba posztolás még nincs kész. A rendszer az üzeneteket naponta többször gyűjti össze, nem azonnal."}}]}]}</script>
 </head>
 <body>
 
@@ -477,15 +486,16 @@ h1 span{display:block}
   </div>
 </header>
 
+<a class="skip" href="#top">Ugrás a tartalomra</a>
 <main id="top">
 
 <!-- 1. NYITÓKÉP -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="kicker">Kisvállalkozásoknak</span>
+      <span class="kicker">Pékségnek, szalonnak, szerelőcégnek, webshopnak</span>
       <h1>Posztok és hirdetések <em>ügynökség helyett.</em><span>Te csak jóváhagyod.</span></h1>
-      <p class="sub">AI-specialisták (erre betanított programok) készítik a posztjaidat, és kezelik a <b>Facebook-, Instagram- és Google-hirdetéseidet</b>. Én átnézem a munkájukat. <b>Semmi nem megy ki a jóváhagyásod nélkül.</b></p>
+      <p class="sub">AI-specialisták (erre betanított programok) készítik a posztjaidat, és kezelik a <b>Facebook-, Instagram- és Google-hirdetéseidet</b>. Én, Katona Balázs, több mint 20 év digitális marketinggel a hátam mögött átnézem a munkájukat. <b>Semmi nem megy ki a jóváhagyásod nélkül.</b></p>
       <div class="hero-cta">
         <a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a>
         <small>24 órán belül megkapod e-mailben. Ingyen, bankkártya nélkül. <a class="qlink" href="mailto:bagiramester@gmail.com?subject=K%C3%A9rd%C3%A9s%20az%20AI-marketingr%C5%91l">Kérdésem van</a></small>
@@ -511,7 +521,7 @@ h1 span{display:block}
               <button class="s-ok" type="button" id="sOk">Jóváhagyom</button>
               <button class="s-edit" type="button" id="sEdit">Maradjon így</button>
             </div>
-            <div class="s-done" id="sDone" hidden>Kész. Holnaptól 4 000 Ft-tal fut.<small>Ez csak minta, valódi hirdetés nem változik.</small></div>
+            <div class="s-done" id="sDone" role="status" hidden>Kész. Holnaptól 4 000 Ft-tal fut.<small>Ez csak minta, valódi hirdetés nem változik.</small></div>
           </div>
         </div>
       </div>
@@ -527,8 +537,8 @@ h1 span{display:block}
     <div class="pain">
       <div><span>Nincs időm posztolni.</span><b>Havi 15 kész posztot kapsz, te csak jóváhagyod.</b><i>Minden csomagban</i></div>
       <div><span>Nem tudom, megéri-e a hirdetés.</span><b>Hetente megírom érthetően, mire ment a pénz és mit hozott.</b><i>A Növekedés csomagtól</i></div>
-      <div><span>Az ügynökség nekem drága, és nem látok bele.</span><b>Fix havidíj, és minden számot a saját vezérlőpultodon látsz.</b><i>Minden csomagban</i></div>
-      <div><span>Napokig válasz nélkül maradnak az üzenetek.</span><b>Minden kérdés egy listában, kész válaszjavaslattal.</b><i>A Teljes csomagban</i></div>
+      <div><span>Az ügynökség túl drága nekem, és nem látom, mit csinálnak.</span><b>Fix havidíj, és minden számot a saját vezérlőpultodon látsz.</b><i>Minden csomagban</i></div>
+      <div><span>Napokig válasz nélkül maradnak az üzenetek.</span><b>Az üzeneteidet naponta többször egy listába gyűjtöm, kész válaszjavaslattal. Neked csak rá kell bólintanod.</b><i>A Teljes csomagban</i></div>
     </div>
   </div>
 </section>
@@ -580,12 +590,12 @@ h1 span{display:block}
       <div class="step">
         <div class="pic"><svg width="150" height="110" viewBox="0 0 150 110" fill="none" aria-hidden="true"><rect x="12" y="14" width="86" height="56" rx="16" fill="#1D242D" stroke="#40E9D0" stroke-width="2.5"/><path d="M34 70l-6 20 24-20" fill="#1D242D" stroke="#40E9D0" stroke-width="2.5" stroke-linejoin="round"/><path d="M30 34h50M30 48h34" stroke="#C6CDD4" stroke-width="5" stroke-linecap="round"/><rect x="92" y="40" width="46" height="34" rx="8" fill="#C98B45"/><circle cx="115" cy="57" r="9" fill="#1B1408"/><circle cx="115" cy="57" r="4.5" fill="#E3C08D"/><rect x="100" y="34" width="14" height="8" rx="3" fill="#C98B45"/></svg></div>
         <h3>Elmeséled, mit csinálsz</h3>
-        <p>Elmondod, mivel foglalkozol, és elküldöd a termékfotóidat. Ha hirdetést is kérsz, megadod a havi keretet (100 000 Ft-tól).</p>
+        <p>Elmondod, mivel foglalkozol, és elküldöd a fotóidat: a termékeidet, a munkáidat vagy a helyet, ahol dolgozol. Ha hirdetést is kérsz, megadod a havi keretet (100 000 Ft-tól).</p>
       </div>
       <div class="step">
         <div class="pic"><svg width="150" height="110" viewBox="0 0 150 110" fill="none" aria-hidden="true"><rect x="10" y="12" width="130" height="88" rx="14" fill="#1D242D" stroke="#3A434F" stroke-width="2"/><g><rect x="20" y="24" width="24" height="24" rx="6" fill="#E3C08D"/><rect x="50" y="24" width="24" height="24" rx="6" fill="#C98B45"/><rect x="80" y="24" width="24" height="24" rx="6" fill="#D9A066"/><rect x="110" y="24" width="24" height="24" rx="6" fill="#E3C08D"/><rect x="20" y="54" width="24" height="24" rx="6" fill="#C98B45"/><rect x="50" y="54" width="24" height="24" rx="6" fill="#E3C08D"/><rect x="80" y="54" width="24" height="24" rx="6" fill="#40E9D0"/><path d="M89 60l10 6-10 6z" fill="#06201C"/><rect x="110" y="54" width="24" height="24" rx="6" fill="#D9A066"/></g><path d="M20 90h70" stroke="#C6CDD4" stroke-width="4" stroke-linecap="round"/></svg></div>
         <h3>Beállítok mindent</h3>
-        <p>Posztok, videók, és ha kéred, hirdetések: a te termékeidről, a te stílusodban. A hozzáférések megadásán lépésről lépésre végigvezetlek.</p>
+        <p>Posztok, videók és kérésre hirdetések is készülnek a te stílusodban. A hozzáférések megadásán lépésről lépésre végigvezetlek.</p>
       </div>
       <div class="step you">
         <div class="pic"><svg width="150" height="110" viewBox="0 0 150 110" fill="none" aria-hidden="true"><rect x="46" y="4" width="58" height="102" rx="12" fill="#1D242D" stroke="#E3C08D" stroke-width="2.5"/><rect x="54" y="16" width="42" height="34" rx="6" fill="#C98B45"/><rect x="54" y="58" width="42" height="18" rx="9" fill="#12B886"/><path d="M68 67l5 5 9-10" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M96 78c8 2 14 8 14 18v10H86V92l-6-12c-2-4 4-7 6-3l4 7V70c0-5 6-5 6 0z" fill="#F6EBDD" stroke="#1B1408" stroke-width="2" stroke-linejoin="round"/></svg></div>
@@ -603,16 +613,15 @@ h1 span{display:block}
       <span class="kicker">Ki áll mögötte</span>
       <h2>Egy ember felel érte: én.</h2>
       <p class="sub">Katona Balázs vagyok. Nagy cégeknél tanultam meg, mi működik; most ugyanezt viszem el kisvállalkozásoknak, AI-csapattal, ügynökségi árak nélkül.</p>
-      <div class="bignum"><div><b>20+</b><span>év digitális marketing</span></div><div><b>35</b><span>fős csapatot is vezettem</span></div></div>
+      <p class="melink"><a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/balazskatona" target="_blank" rel="me noopener noreferrer">Nézd meg a LinkedIn-profilomat</a></p>
     </div>
     <div>
+      <div class="bignum"><div><b>20+</b><span>év digitális marketing</span></div><div><b>35</b><span>fős csapatot is vezettem</span></div></div>
       <ul class="cv">
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Digitális vezető voltam nemzetközi ügynökségeknél:</b> J. Walter Thompson, Havas Worldwide.</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Márkák, amelyeken ügynökségi munkám során dolgoztam:</b> többek között Nestlé, Lidl, Škoda, Telenor.</span></li>
-        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Ma is ezzel az AI-csapattal</b> viszem három országban működő webáruházak marketingjét.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Nemzetközi ügynökségeknél és nagyvállalatoknál vezettem digitális marketinget.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Ma is ezzel az AI-csapattal viszem három országban működő webáruházak marketingjét.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Új szolgáltatás, ezért nem mutatok ügyfélvéleményt. Helyette megkapod a három mintaposztot a saját vállalkozásodról: abból eldöntheted, jó-e.</span></li>
       </ul>
-      <p class="melink"><a class="btn btn-line btn-sm" href="https://www.linkedin.com/in/balazskatona" target="_blank" rel="me noopener noreferrer">Nézd meg a LinkedIn-profilomat</a></p>
-      <p class="cvnote">A felsorolt cégek korábbi munkatapasztalatom részei: nem ügyfeleim, és nem állnak kapcsolatban ezzel a szolgáltatással.</p>
     </div>
   </div>
 </section>
@@ -649,12 +658,12 @@ h1 span{display:block}
     </div>
     <div class="cmp" role="table" aria-label="Összehasonlítás">
       <div class="cr ch" role="row"><span role="columnheader">Feladat</span><span role="columnheader">AI nélkül</span><span role="columnheader">Alkalmi AI-használat</span><span role="columnheader">AI-csapattal</span></div>
-      <div class="cr" role="row"><b role="cell">Havi posztok</b><span role="cell" data-l="AI nélkül">Gyakran napokig készül, és csúszik.</span><span role="cell" data-l="Alkalmi AI">Gyorsabb, de sokszor sablonos.</span><span role="cell" data-l="AI-csapattal">15 kész poszt a te hangodon, jóváhagyásra várva.</span></div>
+      <div class="cr" role="row"><b role="cell">Havi posztok</b><span role="cell" data-l="AI nélkül">Gyakran napokig készül, és csúszik.</span><span role="cell" data-l="Alkalmi AI">Gyorsabb, de sokszor sablonos.</span><span role="cell" data-l="AI-csapattal">15 kész poszt a te stílusodban, jóváhagyásra várva.</span></div>
       <div class="cr" role="row"><b role="cell">Hirdetések</b><span role="cell" data-l="AI nélkül">Sokszor csak havonta nézel rá.</span><span role="cell" data-l="Alkalmi AI">Egy kérdés, egy válasz, ellenőrzés nélkül.</span><span role="cell" data-l="AI-csapattal">Napi figyelés, heti javaslat, te döntesz.</span></div>
       <div class="cr" role="row"><b role="cell">Üzenetek, kommentek</b><span role="cell" data-l="AI nélkül">Órákat visz el, mégis elveszhet az érdeklődő.</span><span role="cell" data-l="Alkalmi AI">Egyenként másolgatod a kérdéseket.</span><span role="cell" data-l="AI-csapattal">Egy listában, kész válaszjavaslattal.</span></div>
       <div class="cr" role="row"><b role="cell">Mérés</b><span role="cell" data-l="AI nélkül">Nehéz eldönteni, melyik számot nézd.</span><span role="cell" data-l="Alkalmi AI">Adat van, döntés nincs.</span><span role="cell" data-l="AI-csapattal">Havi összefoglaló: mi működött, mi nem, mi jön.</span></div>
     </div>
-    <p class="sample">Tájékoztató összevetés, a kisvállalkozóknál gyakori helyzet alapján. Az üzenetkezelés a Teljes csomag része.</p>
+    <p class="sample">Tájékoztató összevetés, tipikus kisvállalkozói helyzet alapján. Az üzenetkezelés a Teljes csomag része.</p>
   </div>
 </section>
 
@@ -664,7 +673,7 @@ h1 span{display:block}
     <div class="center">
       <span class="kicker">Árak</span>
       <h2>Három csomag, fix havidíj.</h2>
-      <p class="sub" style="margin-inline:auto">Ha a posztolást, a Facebook- és a Google-hirdetések kezelését külön-külön rendeled meg, az jellemzően havi 260–400 ezer Ft*. A Növekedés csomagban mindhárom benne van, fix 149&nbsp;000&nbsp;Ft-ért.</p>
+      <p class="sub" style="margin-inline:auto">Ha a posztolást, a Facebook- és a Google-hirdetések kezelését külön-külön rendeled meg, az jellemzően havi 260–400 ezer Ft*. A Növekedés csomagban mindhárom benne van, fix 149&nbsp;000&nbsp;Ft-ért. Ha magad csinálod, az idődbe kerül.</p>
     </div>
     <div class="plans">
       <article class="plan">
@@ -679,9 +688,10 @@ h1 span{display:block}
         <a class="btn btn-line" href="#indulas" data-plan="Jelenlét">Ezt a csomagot kérem</a>
       </article>
       <article class="plan mid">
-        <span class="tag">Legtöbbeknek ezt ajánlom</span>
+        <span class="tag">Ezt ajánlom, ha hirdetnél is</span>
         <h3>Növekedés</h3>
         <div class="price">149 000 Ft <small>/ hó</small></div>
+        <p class="plus">+ saját hirdetési keret, havi 100 000 Ft-tól</p>
         <ul class="has">
           <li class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Minden a Jelenlétből</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Hirdetéskezelés AI-specialistákkal</li>
@@ -693,6 +703,7 @@ h1 span{display:block}
       <article class="plan">
         <h3>Teljes</h3>
         <div class="price">229 000 Ft <small>/ hó</small></div>
+        <p class="plus">+ saját hirdetési keret, havi 100 000 Ft-tól</p>
         <ul class="has">
           <li class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Minden a Növekedésből</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Üzenetek és kommentek egy listában, kész válaszjavaslattal</li>
@@ -701,15 +712,9 @@ h1 span{display:block}
         <a class="btn btn-line" href="#indulas" data-plan="Teljes">Ezt a csomagot kérem</a>
       </article>
     </div>
-    <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Új szolgáltatás, az első ügyfelek 2027 januárjában indulnak. Ezért készítek előre, ingyen 3 mintaposztot a saját vállalkozásodról: abból látod, mit kapnál.</span></div><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
-    <p class="fine"><b>Fix havidíj: nem kell krediteket venned, és jutalékot sem kérek.</b> Alanyi adómentes vagyok, az árak végösszegek, áfa nem jön hozzájuk. Megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díj (a fiókjaid bekötése és tesztelése). Rendelés után egyeztetünk, most nem kell fizetned. A Jelenlét csomaghoz hirdetés nem kell.</p>
-    <div class="faq faq-ar">
-      <details><summary>Mennyi hirdetési keret kell?</summary><p>Havi legalább 100&nbsp;000&nbsp;Ft. Ezt közvetlenül a Facebook és a Google számlázza neked, jutalékot nem kérek belőle. Az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok.</p></details>
-      <details><summary>Van egyszeri díj?</summary><p>Igen: megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díj, ebből bekötöm és letesztelem a fiókjaidat. Utána csak a havidíjat fizeted.</p></details>
-      <details><summary>Hogyan mondhatom le?</summary><p>Havonta lemondható, hűségidő és kilépési díj nélkül.</p></details>
-      <details><summary>Mi van, ha a hirdetés nem hoz eredményt?</summary><p>Eredményt előre nem ígérek. Hetente megírom, mi ment és mi nem, javaslatot teszek, és te döntesz, folytatod-e.</p></details>
-    <p class="sample">* Tájékoztató összevetés nyilvános hazai árlisták jellemző sávjai alapján (2026. november): közösségi oldalak kezelése 70–100 ezer, Facebook-hirdetések kezelése 90–150 ezer, Google-hirdetések kezelése 100–150 ezer Ft havonta, hirdetési keret nélkül. Szolgáltatónként eltér, belépő ajánlatok olcsóbbak is lehetnek. Az én csomagom módszere eltér: AI-specialisták dolgoznak, emberi felügyelettel.</p>
-    </div>
+    <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Ingyen elkészítek 3 mintaposztot a saját vállalkozásodról: abból látod, mit kapnál.</span></div><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
+    <p class="fine"><b>Fix havidíj, jutalék és kredit nélkül.</b> Alanyi adómentes vagyok, az árak végösszegek: áfa nem kerül rájuk. Megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díj jár (a fiókjaid bekötése és tesztelése); fizetned most nem kell. A Jelenlét csomaghoz hirdetés nem kell.</p>
+    <p class="sample">* Saját áttekintésem nyilvános hazai árlistákról (2026. november): közösségi oldalak kezelése 70–100 ezer, Facebook-hirdetések kezelése 90–150 ezer, Google-hirdetések kezelése 100–150 ezer Ft havonta, hirdetési keret nélkül. Szolgáltatónként eltér, belépőajánlatok olcsóbbak is lehetnek. A módszerem más: AI-specialisták dolgoznak, emberi felügyelettel.</p>
   </div>
 </section>
 
@@ -718,11 +723,10 @@ h1 span{display:block}
   <div class="wrap">
     <div class="center"><span class="kicker">Biztonság</span><h2>Te irányítasz, végig.</h2></div>
     <div class="safe">
-      <div><b>Ingyenes 3 mintaposzt</b><span>Előbb látod, mit kapnál. Bankkártya nélkül, vállalkozásonként egyszer.</span></div>
-      <div><b>Te hagysz jóvá mindent</b><span>Ha pénzről van szó, az is csak a jóváhagyásoddal megy át.</span></div>
-      <div><b>A fiókjaid a tieid</b><span>Jelszót nem kérek, a hozzáférést bármikor visszavonhatod. Amit a márkádról leírok, azt elviheted magaddal.</span></div>
+      <div><b>3 ingyenes mintaposzt</b><span>Előbb látod, mit kapnál. Bankkártya nélkül, vállalkozásonként egyszer.</span></div>
+      <div><b>Te hagysz jóvá mindent</b><span>A pénzköltés is csak a jóváhagyásoddal indul el.</span></div>
+      <div><b>A fiókjaid a tieid</b><span>Jelszót nem kérek, a hozzáférést bármikor visszavonhatod. A márkádról összegyűjtött anyagokat elviheted magaddal.</span></div>
     </div>
-    <p class="fine">Havonta lemondható, hűségidő és kilépési díj nélkül. A hirdetési keretet te adod meg, és bármikor leállíthatod.</p>
   </div>
 </section>
 
@@ -731,13 +735,15 @@ h1 span{display:block}
   <div class="wrap">
     <div class="center"><h2>Amit most kérdeznél</h2></div>
     <div class="faq">
+      <details><summary>Mennyi hirdetési keret kell?</summary><p>Havi legalább 100&nbsp;000&nbsp;Ft. Ezt közvetlenül a Facebook és a Google számlázza neked, jutalékot nem kérek belőle. Az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok.</p></details>
+      <details><summary>Hogyan mondhatom le?</summary><p>Havonta lemondható, hűségidő és kilépési díj nélkül.</p></details>
+      <details><summary>Mi van, ha a hirdetés nem hoz eredményt?</summary><p>Eredményt előre nem ígérek. Hetente megírom, mi ment és mi nem, javaslatot teszek, és te döntesz, folytatod-e.</p></details>
       <details><summary>Helyettesítheti a marketingest és az ügynökséget?</summary><p>Erre készült. A posztokat és videókat elkészítem és kiteszem. A hirdetéseket a Növekedés csomagtól AI-specialisták kezelik, én felügyelem. Az üzenetekre a Teljes csomagban kész válaszjavaslatot kapsz. </p></details>
       <details><summary>Működik ez az én szakmámban?</summary><p>Helyi vállalkozásoknak és webshopoknak szól: pékségtől és szalontól a szerelőcégen át az ékszer-webshopig. A három mintaposzton látod, hogyan nézne ki nálad.</p></details>
       <details><summary>Mennyi időmbe kerül? Értenem kell hozzá?</summary><p>Nem kell értened hozzá. Induláskor egy beszélgetésben lépésről lépésre végigvezetlek a hozzáférések megadásán. Utána annyi a dolgod, hogy a vezérlőpultodon jóváhagyod, ami elkészült.</p></details>
-      <details><summary>Milyen képek lesznek a posztokon?</summary><p>A képeket AI készíti a saját termékfotóidból: a terméked a képen ugyanaz marad, csak a környezete változik. Megjelölöm, hogy AI-val készültek.</p></details>
+      <details><summary>Milyen képek lesznek a posztokon?</summary><p>A képeket AI készíti a saját fotóidból: a terméked vagy a munkád a képen ugyanaz marad, csak a környezete változik. Megjelölöm, hogy AI-val készültek.</p></details>
       <details><summary>Mi van, ha az AI hibázik, vagy nem tetszik valami?</summary><p>Módosítást kérsz, vagy nem hagyod jóvá: akkor nem megy ki. Mielőtt eléd kerül, én is átnézem.</p></details>
-      <details><summary>Ki fér hozzá a Facebook-oldalamhoz?</summary><p>Te adsz hozzáférést a saját oldaladról, jelszót nem kérek. Bármikor visszavonhatod.</p></details>
-      <details><summary>Mit nem tud még a rendszer?</summary><p>Facebookra és Instagramra a jóváhagyott poszt az ütemezett időpontban automatikusan megjelenik. A Google Cégprofilba posztolás még nincs kész. A rendszer az üzeneteket naponta többször gyűjti össze, nem azonnal.</p></details>
+      <details><summary>Mit nem tud még a szolgáltatás?</summary><p>Facebookra és Instagramra a jóváhagyott poszt az ütemezett időpontban automatikusan megjelenik. A Google Cégprofilba posztolás még nincs kész. A rendszer az üzeneteket naponta többször gyűjti össze, nem azonnal.</p></details>
     </div>
   </div>
 </section>
@@ -769,7 +775,7 @@ h1 span{display:block}
           <label><input type="radio" name="keres" value="megrendeles" /><span>Csomagot rendelek</span></label>
         </div>
         <div class="f" id="fCsomag" hidden><label for="valasztott">Melyik csomagot kéred?</label>
-          <select id="valasztott" name="csomag"><option value="">Válassz csomagot</option><option value="Jelenlét">Jelenlét – 89 000 Ft / hó</option><option value="Növekedés">Növekedés – 149 000 Ft / hó</option><option value="Teljes">Teljes – 229 000 Ft / hó</option></select>
+          <select id="valasztott" name="csomag"><option value="">Válassz csomagot</option><option value="Jelenlét">Jelenlét – 89 000 Ft/hó</option><option value="Növekedés">Növekedés – 149 000 Ft/hó</option><option value="Teljes">Teljes – 229 000 Ft/hó</option></select>
           <span class="err" hidden>Válassz csomagot.</span></div>
         <div class="chosen" id="chosen" hidden></div>
         <div class="f"><label for="nev">Neved</label><input type="text" id="nev" name="nev" required autocomplete="name" placeholder="Pl. Kovács Anna" /><span class="err" hidden>Írd be a neved.</span></div>
@@ -778,7 +784,7 @@ h1 span{display:block}
         <div class="f opt"><label for="web">Facebook-oldalad vagy weboldalad <i>(nem kötelező)</i></label><input type="text" id="web" name="oldal" autocomplete="url" placeholder="Ebből dolgozom a mintákhoz" /></div>
         <div class="f opt"><label for="tel">Telefonszámod <i>(nem kötelező)</i></label><input type="tel" id="tel" name="telefon" autocomplete="tel" inputmode="tel" placeholder="Pl. +36 30 123 4567" /></div>
         <button class="btn" type="submit" id="fGomb">Kérem a 3 ingyenes mintaposztot</button>
-        <p class="micro" style="margin-top:10px">Kérdésed van? Írj: bagiramester@gmail.com, 1 munkanapon belül válaszolok. Ha inkább beszélnél, add meg a telefonszámod, és visszahívlak.</p>
+        <p class="micro" style="margin-top:10px">Kérdésed van? Írj: bagiramester@gmail.com, egy munkanapon belül válaszolok. Ha inkább beszélnél, add meg a telefonszámod, és visszahívlak.</p>
         <p class="ferr" id="ferr" role="alert" hidden>Most nem sikerült elküldeni. Próbáld újra, vagy írj ide: bagiramester@gmail.com</p>
         <p class="micro"><span id="fMicro">Nem kell fizetned, és nem kötelez megrendelésre. Vállalkozásonként egyszer kérhető.</span> Az adataidat csak ehhez a kéréshez használom: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
       </form>
@@ -791,14 +797,14 @@ h1 span{display:block}
 <section id="otletek" style="padding-block:clamp(30px,5vw,56px)">
   <div class="wrap">
     <div class="guide">
-      <div><span class="kicker">Még nem állsz készen?</span><h2>30 posztötlet kisvállalkozásoknak</h2><p>Harminc ötlet, amit még ezen a héten kitehetsz a Facebook- vagy Instagram-oldaladra. Add meg az e-mail-címed, és rögtön letöltheted.</p></div>
+      <div><span class="kicker">Még nem állsz készen?</span><h2>30 posztötlet kisvállalkozásoknak</h2><p>Harminc ötlet, amit még ezen a héten kitehetsz a Facebook- vagy Instagram-oldaladra. Add meg az e-mail-címedet, és rögtön letöltheted.</p></div>
       <form id="guide" novalidate>
         <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label for="gemail">E-mail-címed</label>
         <input type="email" id="gemail" name="email" required autocomplete="email" inputmode="email" placeholder="nev@pelda.hu" />
         <span class="err" id="gerr" hidden>Adj meg egy érvényes e-mail-címet.</span>
-        <button class="btn" type="submit">Kérem a 30 ötletet</button>
-        <p class="micro" style="text-align:left;margin-top:10px">Az e-mail-címedet csak a segédanyag átadásához használom, hírlevelet nem küldök. Részletek: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
+        <button class="btn btn-line" type="submit">Kérem a 30 ötletet</button>
+        <p class="micro" style="text-align:left;margin-top:10px">Az e-mail-címedet csak ehhez a letöltéshez kérem, hírlevelet nem küldök. Részletek: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.</p>
       </form>
       <div class="guide-ok" id="guideOk" hidden><b>Köszönöm!</b><a class="btn" href="30-posztotlet.pdf" target="_blank" rel="noopener">A 30 posztötlet megnyitása (PDF)</a></div>
     </div>
@@ -817,7 +823,7 @@ h1 span{display:block}
 
 <div class="mcta" id="mcta"><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
 
-<div class="cookie" id="suti" role="dialog" aria-label="Sütik" hidden>
+<div class="cookie" id="suti" role="region" aria-label="Sütik" hidden>
   Az oldal működéséhez nem kell süti. Ha hozzájárulsz, látogatottsági mérést (Google Analytics) használok. Részletek: <a href="adatkezeles.html">adatkezelési tájékoztató</a>.
   <div><button class="btn btn-sm" type="button" id="sutiIgen">Hozzájárulok</button><button class="btn btn-sm btn-line" type="button" id="sutiNem">Nem járulok hozzá</button></div>
 </div>
@@ -859,8 +865,9 @@ h1 span{display:block}
   /* űrlap módja: mintaposzt vagy megrendelés */
   var T = {
     mintaposzt: ['Kérd a 3 ingyenes mintaposztot.', 'A saját vállalkozásodról készül. Ingyenes, bankkártya nélkül.', 'Kérem a 3 ingyenes mintaposztot', 'Nem kell fizetned, és nem kötelez megrendelésre. Vállalkozásonként egyszer kérhető.', '24 órán belül elküldöm e-mailben a három mintaposztot. Ha nem érkezik meg, nézd meg a Promóciók és a Spam mappát is.', 'Ide küldöm a mintaposztokat'],
-    megrendeles: ['Rendeld meg a csomagodat.', 'A havi csomagok 2027. január 1-jétől indulnak. E-mailben visszaigazolom, és egyeztetjük az indulást.', 'Megrendelem a csomagot', 'Most nem kell fizetned: díjat csak az e-mailes visszaigazolás és az egyeztetés után számlázok. Rendelés után egyszeri 99 000 Ft beállítási díj.', 'E-mailben visszaigazolom a megrendelésedet, és egyeztetjük az indulást.', 'Ide küldöm a visszaigazolást']
+    megrendeles: ['Rendeld meg a csomagodat.', 'Az indulás 2027. január 1. A rendelésed előjegyzés: fizetned most nem kell, a részletekről előbb egyeztetünk.', 'Megrendelem a csomagot', 'Most nem kell fizetned: díjat csak az e-mailes visszaigazolás és az egyeztetés után számlázok. Rendelés után egyszeri 99 000 Ft beállítási díj.', 'Egy munkanapon belül e-mailben visszaigazolom az előjegyzésedet, és egyeztetjük az indulást. Fizetned most nem kell.', 'Ide küldöm a visszaigazolást']
   };
+  Array.prototype.forEach.call(document.querySelectorAll('#lead .f'), function(f, i){ var e = f.querySelector('.err'), c = f.querySelector('input,select'); if(e && c){ e.id = e.id || 'err-' + i; e.setAttribute('role', 'alert'); c.setAttribute('aria-describedby', e.id); } });
   function mod(m){
     var t = T[m];
     $('fCim').textContent = t[0]; $('fAl').textContent = t[1]; $('fGomb').textContent = t[2]; $('fMicro').textContent = t[3]; $('tSzoveg').textContent = t[4]; $('email').placeholder = t[5];
