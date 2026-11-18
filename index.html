@@ -406,6 +406,24 @@ h1 span{display:block}
 .f select[aria-invalid="true"]{border-color:#FFB86B}
 @media (max-width:900px){.plat{justify-content:center}}
 @media (max-width:760px){.hero .plat{display:flex;margin-top:20px;gap:8px 14px}.plat li{font-size:13.5px}}
+
+/* ===== 9. kör ===== */
+.pain{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px}
+.pain div{padding:20px 22px;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(170deg,var(--ink-3),var(--ink-2))}
+.pain span{display:block;font-size:16px;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,138,122,.6)}
+.pain b{display:block;margin-top:8px;font-size:18px;font-weight:700;line-height:1.35}
+.faq-ar{margin-top:22px}
+.hero-cta .btn-line{padding:15px 22px}
+.guide{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(22px,4vw,36px);border-radius:26px;border:1px solid rgba(227,192,141,.4);background:rgba(227,192,141,.07)}
+.guide h2{font-size:clamp(24px,3.4vw,34px);margin-top:8px}
+.guide p{margin-top:10px;color:var(--soft)}
+.guide label{display:block;margin-bottom:6px;font-size:14.5px;font-weight:650;color:var(--soft)}
+.guide input[type=email]{width:100%;padding:16px;border-radius:14px;border:1px solid var(--line-2);background:#0B0D10;font-size:17px;margin-bottom:10px}
+.guide input[type=email]:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px rgba(64,233,208,.15)}
+.guide .err{display:block;margin:-4px 0 10px;font-size:14px;font-weight:650;color:#FFB86B}
+.guide .btn{width:100%}
+.guide-ok{display:grid;gap:12px}.guide-ok b{font-size:20px}
+@media (max-width:760px){.pain,.guide{grid-template-columns:1fr}.hero-cta .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -427,7 +445,8 @@ h1 span{display:block}
       <p class="sub">AI-specialisták kezelik és figyelik a <b>Facebook-, Instagram- és Google-hirdetéseidet</b>, hogy többen megtaláljanak. Én felügyelem őket. <b>Semmi nem megy ki a jóváhagyásod nélkül.</b></p>
       <div class="hero-cta">
         <a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a>
-        <small>24 órán belül megkapod e-mailben. Ingyen, nem kötelez semmire.</small>
+        <a class="btn btn-line" href="mailto:bagiramester@gmail.com?subject=K%C3%A9rd%C3%A9s%20az%20AI-marketingr%C5%91l">Kérdésem van</a>
+        <small>A mintaposztokat 24 órán belül megkapod e-mailben. Ingyen, nem kötelez semmire.</small>
       </div>
       <p class="hprice">Hirdetéskezeléssel együtt <b>149&nbsp;000&nbsp;Ft/hó</b> + saját hirdetési keret (havi 100&nbsp;000&nbsp;Ft-tól). Benne havi 15 kész poszt. Indulás: 2027. január 1.</p>
       <ul class="plat" aria-label="Platformok"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>Facebook</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>Instagram</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg>Google Ads</li></ul>
@@ -455,6 +474,19 @@ h1 span{display:block}
         </div>
       </div>
       <p class="sample">Próbáld ki: koppints a zöld gombra. Mintaadatok, nem valódi eredmény.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1B. ISMERŐS -->
+<section id="ismeros">
+  <div class="wrap">
+    <div class="center"><span class="kicker">Ismerős?</span><h2>Négy gond, amit leveszek rólad.</h2></div>
+    <div class="pain">
+      <div><span>Nincs időm posztolni.</span><b>Havi 15 kész posztot kapsz, te csak jóváhagyod.</b></div>
+      <div><span>Nem tudom, megéri-e a hirdetés.</span><b>Hetente megírom érthetően, mire ment a pénz és mit hozott.</b></div>
+      <div><span>Az ügynökség drága, és nem látok bele.</span><b>Fix havidíj, és minden számot a saját vezérlőpultodon látsz.</b></div>
+      <div><span>Napokig válasz nélkül maradnak az üzenetek.</span><b>Minden kérdés egy listában, kész válaszjavaslattal.</b></div>
     </div>
   </div>
 </section>
@@ -636,7 +668,7 @@ h1 span{display:block}
         <a class="btn btn-line" href="#indulas" data-plan="Jelenlét">Megrendelem</a>
       </article>
       <article class="plan mid">
-        <span class="tag">Hirdetéskezeléssel</span>
+        <span class="tag">A legtöbb kisvállalkozásnak ezt ajánlom</span>
         <h3>Növekedés</h3>
         <div class="price">149 000 Ft <small>/ hó</small></div>
         <ul class="has">
@@ -661,6 +693,11 @@ h1 span{display:block}
     </div>
     <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Ingyen elkészítek 3 mintaposztot a saját vállalkozásodról, és 24 órán belül elküldöm e-mailben. Ha tetszik, indulunk.</span></div><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
     <p class="fine"><b>Alanyi adómentes: az árakra nem jön áfa.</b> A csomagok 2027. január 1-jétől indulnak. Havonta lemondható, hűségidő nincs. Megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díj: a fiókjaid bekötése és tesztelése. A hirdetési keret havi legalább 100&nbsp;000&nbsp;Ft, ezt közvetlenül a Facebooknak vagy a Google-nek fizeted; havi 1 millió Ft felett kérj egyedi ajánlatot. A Jelenlét csomaghoz hirdetés nem kell.</p>
+    <div class="faq faq-ar">
+      <details><summary>Mennyi hirdetési keret kell?</summary><p>Havi legalább 100&nbsp;000&nbsp;Ft. Ezt közvetlenül a Facebooknak vagy a Google-nek fizeted, az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok.</p></details>
+      <details><summary>Van egyszeri díj?</summary><p>Igen, megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díj: ebből kötjük be és teszteljük a fiókjaidat. Utána csak a havidíj jön, áfa nélkül.</p></details>
+      <details><summary>Hogyan mondhatom le?</summary><p>Havonta lemondható, hűségidő nélkül.</p></details>
+    </div>
   </div>
 </section>
 
@@ -671,15 +708,30 @@ h1 span{display:block}
     <div class="faq">
       <details><summary>Ki tudja váltani a marketingest és az ügynökséget?</summary><p>Erre készült. A posztokat és videókat elkészítem és kiteszem. A hirdetéseket a Növekedés csomagtól AI-specialisták kezelik, én felügyelem. Az üzenetekre a Teljes csomagban kész válaszjavaslatot kapsz. Te jóváhagysz, mielőtt bármi kimegy.</p></details>
       <details><summary>Működik ez az én szakmámban?</summary><p>Helyi vállalkozásoknak és webshopoknak készül, a pékségtől a szalonig. A három mintaposzton látod, hogyan nézne ki nálad.</p></details>
-      <details><summary>Mennyi hirdetési keret kell?</summary><p>Havi legalább 100&nbsp;000&nbsp;Ft. Ezt közvetlenül a Facebooknak vagy a Google-nek fizeted, az én díjam ettől független, fix. Havi 1 millió Ft feletti keretnél egyedi ajánlatot adok.</p></details>
       <details><summary>Mennyi időmbe kerül? Értenem kell hozzá?</summary><p>Nem kell értened hozzá. Induláskor egy beszélgetés, utána annyi, hogy a vezérlőpultodon jóváhagyod, ami elkészült.</p></details>
       <details><summary>Milyen képek lesznek a posztokon?</summary><p>A képeket AI készíti a saját termékfotóidból, így a valódi termékeid látszanak rajtuk; megjelölöm, hogy AI-val készültek. Csak az megy ki, amit jóváhagysz.</p></details>
       <details><summary>Mi az előnye az AI-csapatnak?</summary><p>Naponta átnézi a hirdetéseidet, és nem kell érte ügynökségi díjat fizetned. A minőségért én felelek, te pedig mindent jóváhagysz.</p></details>
       <details><summary>Mi van, ha az AI hibázik, vagy nem tetszik valami?</summary><p>Módosítást kérsz, vagy nem hagyod jóvá. Amit nem hagysz jóvá, az nem megy ki. Mielőtt hozzád kerül, én is átnézem.</p></details>
       <details><summary>Ki fér hozzá a Facebook-oldalamhoz?</summary><p>Te adsz hozzáférést a saját oldaladról, jelszót nem kérek. Bármikor visszavonhatod, az oldalad a tiéd marad.</p></details>
-      <details><summary>Meddig köt?</summary><p>Sehogy: havonta lemondható, hűségidő nélkül.</p></details>
-      <details><summary>Van egyszeri díj?</summary><p>Igen, megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díj: ebből kötjük be és teszteljük a fiókjaidat. Utána csak a havidíj jön, áfa nélkül.</p></details>
       <details><summary>Mit nem tud még a rendszer?</summary><p>Facebookra és Instagramra a jóváhagyott poszt magától megy ki. A Google-cégprofilra posztolás még nincs kész. Az üzeneteket naponta többször gyűjti össze, nem azonnal.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 8B. SEGÉDANYAG -->
+<section id="otletek" style="padding-block:clamp(30px,5vw,56px)">
+  <div class="wrap">
+    <div class="guide">
+      <div><span class="kicker">Ingyenes segédanyag</span><h2>30 posztötlet kisvállalkozásoknak</h2><p>Harminc ötlet, amit még ezen a héten ki tudsz tenni az oldaladra. Add meg az e-mail-címed, és rögtön letöltheted.</p></div>
+      <form id="guide" novalidate>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label for="gemail">E-mail-címed</label>
+        <input type="email" id="gemail" name="email" required autocomplete="email" inputmode="email" placeholder="nev@pelda.hu" />
+        <span class="err" id="gerr" hidden>Adj meg egy érvényes e-mail-címet.</span>
+        <button class="btn" type="submit">Kérem a 30 ötletet</button>
+        <p class="micro" style="text-align:left;margin-top:10px">Hírlevelet nem küldök. <a href="adatkezeles.html">Adatkezelési tájékoztató</a>.</p>
+      </form>
+      <div class="guide-ok" id="guideOk" hidden><b>Köszönöm!</b><a class="btn" href="30-posztotlet.pdf" target="_blank" rel="noopener">A 30 posztötlet megnyitása (PDF)</a></div>
     </div>
   </div>
 </section>
@@ -689,7 +741,7 @@ h1 span{display:block}
   <div class="wrap">
     <div class="center">
       <h2 id="fCim">Kérd a 3 ingyenes mintaposztot.</h2>
-      <p class="sub" id="fAl">A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben.</p>
+      <p class="sub" id="fAl">A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben. Ingyenes, és semmire sem kötelez.</p>
     </div>
     <div class="form">
       <form id="lead" novalidate>
@@ -770,7 +822,7 @@ h1 span{display:block}
 
   /* űrlap módja: mintaposzt vagy megrendelés */
   var T = {
-    mintaposzt: ['Kérd a 3 ingyenes mintaposztot.', 'A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben.', 'Kérem a 3 ingyenes mintaposztot', 'Nem kell fizetned, bankkártyát nem kérek, és nem kötelez megrendelésre.', '24 órán belül elküldöm e-mailben a három mintaposztot.', 'Ide küldöm a mintaposztokat'],
+    mintaposzt: ['Kérd a 3 ingyenes mintaposztot.', 'A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben. Ingyenes, és semmire sem kötelez.', 'Kérem a 3 ingyenes mintaposztot', 'Nem kell fizetned, bankkártyát nem kérek, és nem kötelez megrendelésre.', '24 órán belül elküldöm e-mailben a három mintaposztot.', 'Ide küldöm a mintaposztokat'],
     megrendeles: ['Rendeld meg a csomagodat.', 'A havi csomagok 2027. január 1-jétől indulnak. E-mailben visszaigazolom, és egyeztetjük az indulást.', 'Megrendelem a csomagot', 'Most nem kell fizetned: díjat csak az e-mailes visszaigazolás és az egyeztetés után számlázok.', 'E-mailben visszaigazolom a megrendelésedet, és egyeztetjük az indulást.', 'Ide küldöm a visszaigazolást']
   };
   function mod(m){
@@ -815,6 +867,18 @@ h1 span{display:block}
     fetch('https://formspree.io/f/xnpapjop', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data) })
       .then(function(res){ if(!res.ok){ fail(); return; } form.hidden = true; $('thanks').hidden = false; if(window.gtag) gtag('event', rendel ? 'megrendeles' : 'generate_lead'); })
       .catch(fail);
+  });
+
+  /* segédanyag */
+  var gf = $('guide');
+  gf.addEventListener('submit', function(e){
+    e.preventDefault(); if(gf._gotcha.value){ return; }
+    var v = $('gemail').value.trim(), ok = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v); $('gerr').hidden = ok; $('gemail').setAttribute('aria-invalid', ok ? 'false' : 'true'); if(!ok){ $('gemail').focus(); return; }
+    var b = gf.querySelector('button'), l = b.textContent; b.disabled = true; b.textContent = 'Küldés…';
+    var kesz = function(){ gf.hidden = true; $('guideOk').hidden = false; if(window.gtag) gtag('event', 'posztotlet_letoltes'); };
+    fetch('https://formspree.io/f/xnpapjop', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify({_subject: 'Posztötlet letöltés', keres: 'posztotlet', email: v, forras: document.referrer || 'direct', idopont: new Date().toISOString()}) })
+      .then(function(res){ if(res.ok){ kesz(); } else { b.disabled = false; b.textContent = l; $('gerr').textContent = 'Most nem sikerült. Próbáld újra.'; $('gerr').hidden = false; } })
+      .catch(function(){ b.disabled = false; b.textContent = l; $('gerr').textContent = 'Most nem sikerült. Próbáld újra.'; $('gerr').hidden = false; });
   });
 
   $('yr').textContent = new Date().getFullYear();
