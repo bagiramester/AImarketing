@@ -79,6 +79,31 @@ header.stuck{background:rgba(11,13,16,.86);backdrop-filter:blur(16px);border-bot
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
 .logo i{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:#161B22;border:1px solid var(--line-2)}
 .hright{display:flex;align-items:center;gap:16px}
+.hnav{display:flex;gap:22px;font-size:15px;font-weight:600;color:var(--soft)}.hnav a:hover{color:var(--accent)}
+.soc{display:flex;gap:6px}.soc a{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line-2);color:var(--soft);transition:color .2s,border-color .2s}.soc a:hover{color:var(--accent);border-color:var(--accent)}
+@media (max-width:1020px){.hnav{display:none}}
+@media (max-width:560px){.hright{gap:8px}.soc{gap:4px}.soc a{width:30px;height:30px}}
+.safe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.safe div{padding:18px;border-radius:18px;border:1px solid var(--line);background:var(--ink-2)}
+.safe b{display:block;font-size:17px;font-weight:750;letter-spacing:-.02em}.safe b::before{content:"\2713";margin-right:8px;color:var(--ok)}
+.safe span{display:block;margin-top:6px;font-size:14.8px;color:var(--muted);line-height:1.5}
+.cmp{margin-top:26px;border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:15px}
+.cr{display:grid;grid-template-columns:1fr 1.2fr 1.2fr 1.3fr;gap:0}.cr>*{padding:13px 16px;border-top:1px solid var(--line);color:var(--muted)}.cr>b{color:var(--text)}
+.cr.ch>*{border-top:0;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--ink-2)}
+.cr>:last-child{color:var(--text);background:rgba(64,233,208,.07)}.cr.ch>:last-child{color:var(--accent)}
+@media (max-width:760px){.cr.ch{display:none}.cr{grid-template-columns:1fr}.cr>*{border-top:0;padding:4px 16px}.cr>b{padding-top:16px;border-top:1px solid var(--line);font-size:17px}.cr:first-of-type>b,.cr.ch+.cr>b{border-top:0}.cr>span::before{content:attr(data-l) ": ";font-weight:700;color:var(--soft)}.cr>:last-child{padding-block:8px 14px;margin-top:4px}.cr>:last-child::before{color:var(--accent)}}
+.melink{margin-top:18px;font-size:15.5px;color:var(--muted)}.melink a{color:var(--accent);font-weight:700}
+.me{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(26px,5vw,60px);align-items:center}
+@media (max-width:900px){.me{grid-template-columns:1fr}}
+#kulonbseg .cw b{padding-right:30px}#en .bignum div{flex:1 1 0;min-width:0;padding:14px}
+.h3c{margin-top:44px;text-align:center;font-size:clamp(22px,3vw,28px)}
+@media (max-width:900px){.safe{grid-template-columns:1fr;max-width:520px;margin-inline:auto}}
+.zaro{text-align:center;padding:clamp(28px,5vw,48px);border-radius:26px;border:1px solid rgba(64,233,208,.35);background:linear-gradient(140deg,rgba(64,233,208,.10),rgba(227,192,141,.08))}
+.zaro p{margin:14px auto 22px;max-width:52ch;color:var(--soft)}.zaro p b{color:var(--text)}.zaro .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lep{max-width:560px;margin:22px auto 0;padding:0;list-style:none;counter-reset:l;display:grid;gap:8px;text-align:left}
+.lep li{counter-increment:l;display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--soft)}
+.lep li::before{content:counter(l);flex:0 0 26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:800}
+.foot .soc{margin-top:4px}
 .htel{font-weight:700;font-size:15.5px;white-space:nowrap}
 .htel:hover{color:var(--accent)}
 .gift{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:11px 16px;border-radius:14px;border:1px solid rgba(227,192,141,.5);background:rgba(227,192,141,.1);font-size:16px;font-weight:650;color:#F3E3C8}
@@ -430,8 +455,9 @@ h1 span{display:block}
 
 <header id="hdr">
   <div class="wrap bar">
-    <a class="logo" href="#top"><i></i>Katona Balázs</a>
-    <a class="btn btn-sm" href="#indulas">3 ingyenes mintaposzt</a>
+    <a class="logo" href="#top"><i></i><span>Katona Balázs</span></a>
+    <nav class="hnav" aria-label="Oldal részei"><a href="#hogyan">Hogyan működik</a><a href="#csapat">A csapat</a><a href="#en">Rólam</a><a href="#arak">Árak</a><a href="#gyik">Kérdések</a></nav>
+    <div class="hright"><span class="soc"><a href="https://www.facebook.com/8alazskatona" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a><a href="https://www.instagram.com/8alazskatona" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/in/balazskatona" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.07-1.95-3.07-1.96 0-2.26 1.46-2.26 2.97V21H9z"/></svg></a></span><a class="btn btn-sm" href="#indulas">3 ingyenes mintaposzt</a></div>
   </div>
 </header>
 
@@ -532,7 +558,15 @@ h1 span{display:block}
       <span class="arr" aria-hidden="true"></span>
       <div class="g"><svg width="46" height="46" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M6 24L42 8l-9 34-9-13z" stroke="#40E9D0" stroke-width="3" stroke-linejoin="round"/><path d="M24 29l18-21" stroke="#40E9D0" stroke-width="3"/></svg><b>Kimegy magától</b><span>A megbeszélt időben.</span></div>
     </div>
-    <p class="fine" style="margin-top:22px;text-align:center">Havonta lemondható, nincs hűségidő. Jelszót nem kérek, az oldalad a tiéd marad.</p>
+    <h3 class="h3c">Mit kockáztatsz? Semmit.</h3>
+    <div class="safe">
+      <div><b>Ingyenes 3 mintaposzt</b><span>Előbb látod, mit kapnál. Nem kötelez semmire.</span></div>
+      <div><b>Emberi jóváhagyás</b><span>Semmi nem jelenik meg ellenőrizetlenül. Pénzt érintő változás csak a jóváhagyásoddal megy át.</span></div>
+      <div><b>A fiókjaid a tieid</b><span>Jelszót nem kérek, a hozzáférést bármikor visszavonhatod.</span></div>
+      <div><b>A márkaprofilod a tiéd marad</b><span>Amit a márkádról felépítünk (hang, termékek, tiltólista), azt viheted magaddal.</span></div>
+      <div><b>Havonta lemondható</b><span>Nincs hűségidő, nincs kilépési díj.</span></div>
+      <div><b>Mindig látod, mi történik</b><span>Heti javaslat, havi összefoglaló, minden szám a vezérlőpultodon.</span></div>
+    </div>
   </div>
 </section>
 
@@ -618,6 +652,52 @@ h1 span{display:block}
       </video>
     </div>
     <p class="sample">Nézd meg, hogyan dolgozik a csapat (2 perc).</p>
+  </div>
+</section>
+
+<!-- 7. KI ÁLL MÖGÖTTE -->
+<section id="en">
+  <div class="wrap me">
+    <div>
+      <span class="kicker">Ki áll mögötte</span>
+      <h2>Egy ember felel érte: én.</h2>
+      <p class="sub">Katona Balázs vagyok. Több mint 20 éve vezetek digitális marketinget ügynökségeknél és nagyvállalatoknál. Most ezt a tudást adom a kisebb cégeknek, AI-csapattal.</p>
+      <div class="bignum"><div><b>20+</b><span>év digitális marketing</span></div><div><b>35</b><span>fős csapatig vezető</span></div><div><b>3</b><span>országban futó márkák</span></div></div>
+    </div>
+    <div>
+      <ul class="cv">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Nemzetközi ügynökségek digitális vezetője:</b> J. Walter Thompson, Havas Worldwide.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Márkák, amelyeken dolgoztam:</b> Nestlé, Bayer, Lidl, Škoda, Volkswagen, Suzuki, Telenor, Shell.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Digitális marketing vezető a Lexholdingnál:</b> a BÁV országos hálózata és a FŐTAXI online marketingje.</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span><b>Ma:</b> három országban futó webáruházak marketingjét vezetem, és ugyanezzel az AI-csapattal dolgozom nap mint nap.</span></li>
+      </ul>
+      <p class="melink">A teljes szakmai hátterem: <a href="https://www.linkedin.com/in/balazskatona" target="_blank" rel="noopener noreferrer">LinkedIn-profilom</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4A. MIÉRT NEM ELÉG EGY AI-ELŐFIZETÉS -->
+<section id="kulonbseg">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">A különbség</span>
+      <h2>Miért nem elég egy AI-előfizetés?</h2>
+      <p class="sub">Egy chatablak akkor ér valamit, ha te vagy a stratéga, a szövegíró és az ellenőr is. Nálam ezt a négy dolgot készen kapod.</p>
+    </div>
+    <div class="crew">
+      <div class="cw"><b>Szerepek, nem egy chatablak</b><span>Külön AI-specialista ír, készít képet és kezel hirdetést. Nem egy általános asszisztens csinál mindent.</span></div>
+      <div class="cw"><b>A márkád profilja</b><span>Hang, termékek, tiltólista egy helyen. A rendszer nem talál ki árat, dátumot vagy vásárlói véleményt.</span></div>
+      <div class="cw"><b>Minőségi kapu</b><span>Aki írja a szöveget, nem az ellenőrzi. Ami nem üti meg a szintet, visszamegy javításra.</span></div>
+      <div class="cw"><b>Jóváhagyás és mérés</b><span>Semmi nem megy ki a döntésed nélkül, és hetente látod, mi működött.</span></div>
+    </div>
+    <div class="cmp" role="table" aria-label="Összehasonlítás">
+      <div class="cr ch" role="row"><span role="columnheader">Feladat</span><span role="columnheader">AI nélkül</span><span role="columnheader">Alkalmi AI-használat</span><span role="columnheader">AI-csapattal</span></div>
+      <div class="cr" role="row"><b role="cell">Havi posztok</b><span role="cell" data-l="AI nélkül">Napokig készül, mindig csúszik.</span><span role="cell" data-l="Alkalmi AI">Gyorsabb, de sablonos és összefüggéstelen.</span><span role="cell" data-l="AI-csapattal">15 kész poszt a te hangodon, jóváhagyásra várva.</span></div>
+      <div class="cr" role="row"><b role="cell">Hirdetések</b><span role="cell" data-l="AI nélkül">Havonta egyszer ránézel, ha marad idő.</span><span role="cell" data-l="Alkalmi AI">Egy kérdés, egy válasz, ellenőrzés nélkül.</span><span role="cell" data-l="AI-csapattal">Napi figyelés, heti javaslat, te döntesz.</span></div>
+      <div class="cr" role="row"><b role="cell">Üzenetek, kommentek</b><span role="cell" data-l="AI nélkül">Órákat visz el, mégis elvész az érdeklődő.</span><span role="cell" data-l="Alkalmi AI">Egyenként másolgatod a kérdéseket.</span><span role="cell" data-l="AI-csapattal">Egy listában, kész válaszjavaslattal.</span></div>
+      <div class="cr" role="row"><b role="cell">Mérés</b><span role="cell" data-l="AI nélkül">Nem tudod, melyik számot nézd.</span><span role="cell" data-l="Alkalmi AI">Adat van, döntés nincs.</span><span role="cell" data-l="AI-csapattal">Havi összefoglaló: mi működött, mi nem, mi jön.</span></div>
+    </div>
+    <p class="sample">A táblázat a jellemző kisvállalkozói helyzetet mutatja. Az üzenetkezelés a Teljes csomag része.</p>
   </div>
 </section>
 
@@ -707,6 +787,7 @@ h1 span{display:block}
     <div class="center"><h2>Amit most kérdeznél</h2></div>
     <div class="faq">
       <details><summary>Ki tudja váltani a marketingest és az ügynökséget?</summary><p>Erre készült. A posztokat és videókat elkészítem és kiteszem. A hirdetéseket a Növekedés csomagtól AI-specialisták kezelik, én felügyelem. Az üzenetekre a Teljes csomagban kész válaszjavaslatot kapsz. Te jóváhagysz, mielőtt bármi kimegy.</p></details>
+      <details><summary>Mi az a 3 ingyenes mintaposzt?</summary><p>Mielőtt döntesz, elkészítek három posztot a saját vállalkozásodról, szöveggel és képpel, és 24 órán belül elküldöm e-mailben. Mindig a te vállalkozásodra szabom, nem sablonból. Nem kerül semmibe, és nem kötelez megrendelésre.</p></details>
       <details><summary>Működik ez az én szakmámban?</summary><p>Helyi vállalkozásoknak és webshopoknak készül, a pékségtől a szalonig. A három mintaposzton látod, hogyan nézne ki nálad.</p></details>
       <details><summary>Mennyi időmbe kerül? Értenem kell hozzá?</summary><p>Nem kell értened hozzá. Induláskor egy beszélgetés, utána annyi, hogy a vezérlőpultodon jóváhagyod, ami elkészült.</p></details>
       <details><summary>Milyen képek lesznek a posztokon?</summary><p>A képeket AI készíti a saját termékfotóidból: a terméked a képen ugyanaz marad, csak a környezete változik. Megjelölöm, hogy AI-val készültek. Csak az megy ki, amit jóváhagysz.</p></details>
@@ -714,6 +795,17 @@ h1 span{display:block}
       <details><summary>Mi van, ha az AI hibázik, vagy nem tetszik valami?</summary><p>Módosítást kérsz, vagy nem hagyod jóvá. Amit nem hagysz jóvá, az nem megy ki. Mielőtt hozzád kerül, én is átnézem.</p></details>
       <details><summary>Ki fér hozzá a Facebook-oldalamhoz?</summary><p>Te adsz hozzáférést a saját oldaladról, jelszót nem kérek. Bármikor visszavonhatod, az oldalad a tiéd marad.</p></details>
       <details><summary>Mit nem tud még a rendszer?</summary><p>Facebookra és Instagramra a jóváhagyott poszt magától megy ki. A Google-cégprofilra posztolás még nincs kész. Az üzeneteket naponta többször gyűjti össze, nem azonnal.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 8A. ZÁRÓ SÁV -->
+<section id="zaro" style="padding-block:clamp(30px,5vw,56px)">
+  <div class="wrap">
+    <div class="zaro">
+      <h2>A marketinged akkor sem áll le, amikor te nyaralsz.</h2>
+      <p>Hirdetéskezelés és havi 15 kész poszt egyben: <b>149&nbsp;000&nbsp;Ft/hó</b>, fix havidíj + saját hirdetési keret.</p>
+      <div class="cta"><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a><a class="btn btn-line" href="#arak">Megnézem a csomagokat</a></div>
     </div>
   </div>
 </section>
@@ -742,6 +834,7 @@ h1 span{display:block}
     <div class="center">
       <h2 id="fCim">Kérd a 3 ingyenes mintaposztot.</h2>
       <p class="sub" id="fAl">A saját vállalkozásodról készül, és 24 órán belül megkapod e-mailben. Ingyenes, és semmire sem kötelez.</p>
+      <ol class="lep" id="fLep"><li>Elküldöd az űrlapot. Egy perc.</li><li>24 órán belül megkapod e-mailben a három mintaposztot, a te vállalkozásodra szabva.</li><li>Megnézed, és eldöntöd, kell-e folytatás.</li></ol>
     </div>
     <div class="form">
       <form id="lead" novalidate>
@@ -775,6 +868,7 @@ h1 span{display:block}
   <div class="wrap foot">
     <span>© <span id="yr"></span> Katona Balázs egyéni vállalkozó · bagiramester@gmail.com</span>
     <span><a href="adatkezeles.html">Adatkezelési tájékoztató</a> · <button type="button" id="sutiNyit">Sütibeállítások</button></span>
+    <span class="soc"><a href="https://www.facebook.com/8alazskatona" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a><a href="https://www.instagram.com/8alazskatona" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/in/balazskatona" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.07-1.95-3.07-1.96 0-2.26 1.46-2.26 2.97V21H9z"/></svg></a></span>
     <p>Az itt látható csomagok és árak 2027. január 1-jétől érvényesek, alanyi adómentes vállalkozóként áfa nélkül. A mintaposztok képei AI-val készültek, a képernyők mintaadatokat mutatnak. A tartalmak mesterséges intelligenciával készülnek, és minden tartalmat ember hagy jóvá.</p>
   </div>
 </footer>
@@ -828,7 +922,7 @@ h1 span{display:block}
   function mod(m){
     var t = T[m];
     $('fCim').textContent = t[0]; $('fAl').textContent = t[1]; $('fGomb').textContent = t[2]; $('fMicro').textContent = t[3]; $('tSzoveg').textContent = t[4]; $('email').placeholder = t[5];
-    $('fCsomag').hidden = (m !== 'megrendeles'); $('chosen').hidden = true;
+    $('fCsomag').hidden = (m !== 'megrendeles'); $('fLep').hidden = (m === 'megrendeles'); $('chosen').hidden = true;
     Array.prototype.forEach.call(document.getElementsByName('keres'), function(x){ x.checked = (x.value === m); });
   }
   Array.prototype.forEach.call(document.getElementsByName('keres'), function(x){ x.addEventListener('change', function(){ mod(x.value); }); });
