@@ -129,15 +129,18 @@ html{scroll-padding-bottom:96px}
 @media (max-width:760px){.chan{display:none}}
 @media (max-width:560px){.t i{display:none}}
 .chk{display:flex;gap:10px;align-items:flex-start;margin:12px 0 4px;font-size:14.5px;color:var(--soft);text-align:left;cursor:pointer}.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
-.fbrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px;align-items:start}
+.fbrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px;align-items:stretch}
+.fbp{display:flex;flex-direction:column}.fbt{flex:1}
 .fbp{border-radius:18px;overflow:hidden;background:#F6F3EE;color:#1C2127;box-shadow:0 30px 70px -36px rgba(0,0,0,.9)}
 .fbp .fh{display:flex;align-items:center;gap:10px;padding:14px 16px 8px}
 .fbp .fh i{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E9B77A,#B4722D);flex:none}
 .fbp .fh b{display:block;font-size:15.5px;font-weight:750;letter-spacing:-.01em}.fbp .fh span{display:block;font-size:12.5px;color:#5B6570}
-.fbt{padding:2px 16px 12px;font-size:15px;line-height:1.5}.fbt p{margin:0 0 8px}.fbt .tg{margin:0;color:#1F6FB5;font-size:14px}
+.fbt{padding:2px 16px 12px;font-size:14.5px;line-height:1.5}.fbt p{margin:0 0 8px}.fbt .tg{margin:0;color:#1F6FB5;font-size:14px}
 .fbp img{width:100%;height:auto;display:block}
 @media (max-width:900px){.fbrow{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*clamp(18px,5vw,36px));padding:4px clamp(18px,5vw,36px) 14px;-webkit-overflow-scrolling:touch}.fbp{flex:0 0 84%;max-width:360px;scroll-snap-align:center}}
 .plus span{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
+.egysz{margin-top:6px;font-size:13px;color:var(--muted)}
+@media (min-width:901px) and (max-width:1120px){.fbrow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .cvnote{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.5}
 .safe b{font-size:18px}.safe span{font-size:15.5px}
 .sub{text-wrap:pretty}
@@ -572,27 +575,32 @@ h1 span{display:block}
   <div class="wrap">
     <div class="center">
       <span class="kicker">Ezt kapod a mintában</span>
-      <h2>Így néz ki három mintaposzt.</h2>
-      <p class="sub">Ezt a hármat egy mintapékségnek készítettem. A tiédet a saját vállalkozásodról kapod, 24 órán belül.</p>
+      <h2>Így néz ki egy mintaposzt a te szakmádban.</h2>
+      <p class="sub">Négy szakma, négy példa. Te hármat kapsz a saját vállalkozásodról, 24 órán belül.</p>
     </div>
     <div class="fbrow">
       <article class="fbp">
-        <div class="fh"><i aria-hidden="true"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
-        <div class="fbt"><p>Reggel hatkor már meleg a kemence. 🍞</p><p>A kovászos kenyerünk két napig készül: lassan kel, ettől lesz ropogós a héja és lyukacsos a belseje. Nem sietünk vele, mert ezt nem lehet siettetni.</p><p>Ha még nem kóstoltad, gyere be érte holnap reggel, amíg meleg.</p><p class="tg">#kovászoskenyér #pékség #frisskenyér</p></div>
+        <div class="fh"><i aria-hidden="true" style="background:radial-gradient(circle at 35% 30%,#E9B77A,#B4722D)"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>Reggel hatkor már meleg a kemence. 🍞</p><p>A kovászos kenyerünk két napig készül: lassan kel, ettől lesz ropogós a héja és lyukacsos a belseje.</p><p>Ha még nem kóstoltad, gyere be érte holnap reggel, amíg meleg.</p><p class="tg">#kovászoskenyér #pékség #frisskenyér</p></div>
         <img src="img/minta-1.jpg" alt="Kovászos kenyér, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
       </article>
       <article class="fbp">
-        <div class="fh"><i aria-hidden="true"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
-        <div class="fbt"><p>A kakaós csigának a közepe a legjobb. Ebben mindenki egyetért. 😄</p><p>Nálunk minden reggel frissen sül, és mire kinyitunk, az egész utca érzi az illatát. A tésztát mi hajtogatjuk, a kakaót nem sajnáljuk belőle.</p><p>Te a széléről kezded, vagy rögtön a közepéről?</p><p class="tg">#kakaóscsiga #péksütemény #reggeli</p></div>
-        <img src="img/minta-2.jpg" alt="Kakaós csiga, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
+        <div class="fh"><i aria-hidden="true" style="background:radial-gradient(circle at 35% 30%,#F2C6C0,#C97F86)"></i><div><b>Minta Szalon</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>Őszi színek, amik mindenhez mennek. 🍂</p><p>A nude-rózsaszín géllakk az egyik kedvencünk: visszafogott, ápolt, hétköznapra és alkalomra is jó.</p><p>Jövő hétre még van néhány szabad időpontunk. Írj üzenetet, és megkeressük a neked valót.</p><p class="tg">#manikűr #géllakk #szalon</p></div>
+        <img src="img/minta-szalon.jpg" alt="Géllakkozott kéz egy szalonban, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
       </article>
       <article class="fbp">
-        <div class="fh"><i aria-hidden="true"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
-        <div class="fbt"><p>Egy jó reggel egy kávéval és egy friss péksütivel kezdődik. ☕</p><p>Ugorj be hozzánk munkába menet: a pultnál gyorsan megy, a péksüti pedig még meleg. Ha előre tudod, mit kérsz, írj nekünk üzenetet, és félretesszük.</p><p>Nálad mi a reggeli kedvenc?</p><p class="tg">#reggeli #kávé #péksüti</p></div>
-        <img src="img/minta-3.jpg" alt="Kávé és péksütemény, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
+        <div class="fh"><i aria-hidden="true" style="background:radial-gradient(circle at 35% 30%,#8FB4E8,#2F5FA8)"></i><div><b>Minta Szerelő</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>Fűtési szezon előtt érdemes átnézetni a kazánt. 🔧</p><p>Egy karbantartás alatt kitisztítjuk, beállítjuk, és megnézzük, biztonságosan működik-e. Így nem a leghidegebb napon derül ki, hogy baj van.</p><p>Hívj minket, vagy írj üzenetet, és egyeztetünk időpontot.</p><p class="tg">#kazánkarbantartás #fűtésszerelő #vízgázfűtés</p></div>
+        <img src="img/minta-szerelo.jpg" alt="Szerelő kazánt állít be, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
+      </article>
+      <article class="fbp">
+        <div class="fh"><i aria-hidden="true" style="background:radial-gradient(circle at 35% 30%,#E6E8EC,#8D96A3)"></i><div><b>Minta Ékszer</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>Egy apró ezüst medál, ami minden nap veled lehet. ✨</p><p>Kézzel készül, ezért nincs két teljesen egyforma darab. Ajándéknak is szép: díszdobozban érkezik.</p><p>Nézd meg a webshopban, a link a profilunkban.</p><p class="tg">#ezüstékszer #nyaklánc #ajándékötlet</p></div>
+        <img src="img/minta-ekszer.jpg" alt="Ezüst nyaklánc díszdobozzal, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
       </article>
     </div>
-    <p class="sample">Mintaposztok egy kitalált pékségnek, a képeket AI készítette. Szalonnak, szerelőcégnek és webshopnak is a saját szakmájára készül a minta.</p>
+    <p class="sample">Mintaposztok kitalált vállalkozásoknak. A képeket AI készítette.</p>
     <div class="center" style="margin-top:22px"><a class="btn" href="#indulas">Kérek ilyet a saját vállalkozásomról</a></div>
   </div>
 </section>
@@ -734,6 +742,7 @@ h1 span{display:block}
       <article class="plan">
         <h3>Jelenlét <small style="font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0">hirdetés nélkül</small></h3>
         <div class="price">89 000 Ft <small>/ hó</small></div>
+        <p class="egysz">+ egyszeri 99 000 Ft beállítási díj</p>
         <ul class="has">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>15 kész poszt havonta</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Saját vezérlőpult, jóváhagyás telefonról is</li>
@@ -746,6 +755,7 @@ h1 span{display:block}
         <span class="tag">Ezt ajánlom, ha hirdetnél is</span>
         <h3>Növekedés</h3>
         <div class="price">149 000 Ft <small>/ hó</small></div>
+        <p class="egysz">+ egyszeri 99 000 Ft beállítási díj</p>
         <p class="plus">+ saját hirdetési keret, havi 100 000 Ft-tól <span>(ezt a Facebooknak és a Google-nek fizeted, nem nekem)</span></p>
         <ul class="has">
           <li class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Minden a Jelenlétből</li>
@@ -758,6 +768,7 @@ h1 span{display:block}
       <article class="plan">
         <h3>Teljes</h3>
         <div class="price">229 000 Ft <small>/ hó</small></div>
+        <p class="egysz">+ egyszeri 99 000 Ft beállítási díj</p>
         <p class="plus">+ saját hirdetési keret, havi 100 000 Ft-tól <span>(ezt a Facebooknak és a Google-nek fizeted, nem nekem)</span></p>
         <ul class="has">
           <li class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#40E9D0" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Minden a Növekedésből</li>
@@ -768,7 +779,7 @@ h1 span{display:block}
       </article>
     </div>
     <div class="offer"><div><b>Előbb nézd meg, utána dönts.</b><span>Ingyen elkészítek 3 mintaposztot a saját vállalkozásodról: abból látod, mit kapnál.</span></div><a class="btn" href="#indulas">Kérem a 3 ingyenes mintaposztot</a></div>
-    <p class="fine"><b>Fix havidíj, jutalék nélkül.</b> Alanyi adómentes vagyok, az árak végösszegek: áfa nem kerül rájuk. Megrendelés után egyszeri 99&nbsp;000&nbsp;Ft beállítási díjat kell fizetni (a fiókjaid bekötése és tesztelése); most nem kell fizetned.</p>
+    <p class="fine"><b>Fix havidíj, jutalék nélkül.</b> Alanyi adómentes vagyok, az árak végösszegek: áfa nem kerül rájuk. Az egyszeri beállítási díj a fiókjaid bekötését és tesztelését fedezi. Előjegyzéskor nem kell fizetned.</p>
     <p class="sample">* Saját összeadás nyilvános hazai árlistákból (2026. november), nem egyetlen szolgáltató csomagára vonatkozik: közösségi oldalak kezelése 70–100 ezer, Facebook-hirdetések kezelése 90–150 ezer, Google-hirdetések kezelése 100–150 ezer Ft havonta, hirdetési keret nélkül. Szolgáltatónként eltér, belépőajánlatok olcsóbbak is lehetnek. A módszerem más, ezért a szolgáltatás tartalma nem teljesen azonos: nálam AI-specialisták dolgoznak, emberi felügyelettel.</p>
   </div>
 </section>
