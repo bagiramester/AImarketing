@@ -129,6 +129,14 @@ html{scroll-padding-bottom:96px}
 @media (max-width:760px){.chan{display:none}}
 @media (max-width:560px){.t i{display:none}}
 .chk{display:flex;gap:10px;align-items:flex-start;margin:12px 0 4px;font-size:14.5px;color:var(--soft);text-align:left;cursor:pointer}.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
+.fbrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px;align-items:start}
+.fbp{border-radius:18px;overflow:hidden;background:#F6F3EE;color:#1C2127;box-shadow:0 30px 70px -36px rgba(0,0,0,.9)}
+.fbp .fh{display:flex;align-items:center;gap:10px;padding:14px 16px 8px}
+.fbp .fh i{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E9B77A,#B4722D);flex:none}
+.fbp .fh b{display:block;font-size:15.5px;font-weight:750;letter-spacing:-.01em}.fbp .fh span{display:block;font-size:12.5px;color:#5B6570}
+.fbt{padding:2px 16px 12px;font-size:15px;line-height:1.5}.fbt p{margin:0 0 8px}.fbt .tg{margin:0;color:#1F6FB5;font-size:14px}
+.fbp img{width:100%;height:auto;display:block}
+@media (max-width:900px){.fbrow{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*clamp(18px,5vw,36px));padding:4px clamp(18px,5vw,36px) 14px;-webkit-overflow-scrolling:touch}.fbp{flex:0 0 84%;max-width:360px;scroll-snap-align:center}}
 .cvnote{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.5}
 .safe b{font-size:18px}.safe span{font-size:15.5px}
 .sub{text-wrap:pretty}
@@ -558,12 +566,42 @@ h1 span{display:block}
   </div>
 </section>
 
+<!-- 3A. MINTAPOSZTOK -->
+<section id="mintak">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Ezt kapod a mintában</span>
+      <h2>Így néz ki három mintaposzt.</h2>
+      <p class="sub">Ezt a hármat egy mintapékségnek készítettem. A tiédet a saját vállalkozásodról kapod, 24 órán belül.</p>
+    </div>
+    <div class="fbrow">
+      <article class="fbp">
+        <div class="fh"><i aria-hidden="true"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>Reggel hatkor már meleg a kemence. 🍞</p><p>A kovászos kenyerünk két napig készül: lassan kel, ettől lesz ropogós a héja és lyukacsos a belseje. Nem sietünk vele, mert ezt nem lehet siettetni.</p><p>Ha még nem kóstoltad, gyere be érte holnap reggel, amíg meleg.</p><p class="tg">#kovászoskenyér #pékség #frisskenyér</p></div>
+        <img src="img/minta-1.jpg" alt="Kovászos kenyér, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
+      </article>
+      <article class="fbp">
+        <div class="fh"><i aria-hidden="true"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>A kakaós csigának a közepe a legjobb. Ebben mindenki egyetért. 😄</p><p>Nálunk minden reggel frissen sül, és mire kinyitunk, az egész utca érzi az illatát. A tésztát mi hajtogatjuk, a kakaót nem sajnáljuk belőle.</p><p>Te a széléről kezded, vagy rögtön a közepéről?</p><p class="tg">#kakaóscsiga #péksütemény #reggeli</p></div>
+        <img src="img/minta-2.jpg" alt="Kakaós csiga, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
+      </article>
+      <article class="fbp">
+        <div class="fh"><i aria-hidden="true"></i><div><b>Minta Pékség</b><span>Facebook · Instagram · mintaposzt</span></div></div>
+        <div class="fbt"><p>Egy jó reggel egy kávéval és egy friss péksütivel kezdődik. ☕</p><p>Ugorj be hozzánk munkába menet: a pultnál gyorsan megy, a péksüti pedig még meleg. Ha előre tudod, mit kérsz, írj nekünk üzenetet, és félretesszük.</p><p>Nálad mi a reggeli kedvenc?</p><p class="tg">#reggeli #kávé #péksüti</p></div>
+        <img src="img/minta-3.jpg" alt="Kávé és péksütemény, AI-val készült mintakép" loading="lazy" decoding="async" width="720" height="720" />
+      </article>
+    </div>
+    <p class="sample">Mintaposztok egy kitalált pékségnek. A képeket AI készítette.</p>
+    <div class="center" style="margin-top:22px"><a class="btn" href="#indulas">Kérek ilyet a saját vállalkozásomról</a></div>
+  </div>
+</section>
+
 <!-- 3. HAVI CSOMAG -->
 <section id="csomag">
   <div class="wrap pack">
     <div>
-      <span class="kicker">Ezt kapod</span>
-      <h2>Minden hónapban 15 kész poszt.</h2>
+      <span class="kicker">Havonta</span>
+      <h2>Minden hónapban 15 ilyen kész poszt.</h2>
       <div class="count">
         <div><b>12</b><span>képes poszt</span></div>
         <div><b>3</b><span>videó</span></div>
