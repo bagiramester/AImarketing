@@ -10,7 +10,7 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url(../fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:swap;src:url(../fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* KKV-ügyfélnézet: ami még nincs bekötve, az nem látszik */
-#vesz,#v-hirdetesek button,#ai-gomb,#mp-ai{display:none!important}
+#ai-gomb,#mp-ai{display:none!important}
 
 /* Elrendezés: egy oszlopos, telefonra szánt ügyfélnézet; felül a három platform, alatta trend, kampányok, mérés. */
 :root{
@@ -282,21 +282,25 @@ a.fbm:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
   var U = h.u || '', S = h.s || '', K = h.k || '';
   window.KKV = {u: U, nev: '', ok: !!(U && /^[0-9]{1,4}$/.test(S) && K)};
   var alap = 'u=' + enc(U) + '&s=' + enc(S) + '&k=' + enc(K);
-  function atnevez(r){ return String(r).replace(/^Naptárak!/, 'Naptarak!').replace(/^ds_index!/, 'beallitas!'); }
+  /* melyik táblából jön a tartomány: a posztok a havi táblából, a vészleállító kapcsolója a központból, minden más az ügyfél adattáblájából */
+  function hol(a){ var r = String(a.range); if(/^Posztok!/.test(r)) return String(a.spreadsheetId || ''); if(/^ds_index!/.test(r)) return 'kp'; return 'adat'; }
+  function atnevez(r){ return String(r).replace(/^Naptárak!/, 'Naptarak!'); }
   function hibakod(st){ return {code: st === 403 ? 'not_granted' : 'hiba'}; }
-  var sor = [], ido = null;
+  function valasz(x){ if(!x.ok) throw hibakod(x.status); return x.text().then(function(t){ try{ return JSON.parse(t); }catch(e){ throw {code: 'blocked_by_policy'}; } }); }
+  var sorok = {}, ido = null;
   function kuld(){
-    var cs = sor; sor = []; ido = null;
-    var r = cs.map(function(c){ return 'ranges=' + enc(c.range); }).join('&');
-    fetch(KAPU + '?m=olvas&' + alap + '&r=' + enc(r), {cache: 'no-store'})
-      .then(function(x){ if(!x.ok) throw hibakod(x.status); return x.json(); })
-      .then(function(j){ var vr = (j && j.valueRanges) || []; cs.forEach(function(c, i){ c.ok({payload: {values: (vr[i] && vr[i].values) || []}}); }); })
-      .catch(function(e){ cs.forEach(function(c){ c.hiba(e && e.code ? e : {code: 'hiba'}); }); });
+    var mind = sorok; sorok = {}; ido = null;
+    Object.keys(mind).forEach(function(t){
+      var cs = mind[t], r = cs.map(function(c){ return 'ranges=' + enc(c.range); }).join('&');
+      fetch(KAPU + '?m=olvas&' + alap + '&t=' + enc(t) + '&r=' + enc(r), {cache: 'no-store'}).then(valasz)
+        .then(function(j){ var vr = (j && j.valueRanges) || []; cs.forEach(function(c, i){ c.ok({payload: {values: (vr[i] && vr[i].values) || []}}); }); })
+        .catch(function(e){ cs.forEach(function(c){ c.hiba(e && e.code ? e : {code: 'hiba'}); }); });
+    });
   }
   var kapu = {callTool: function(srv, tool, a){
-    if(tool === 'get_values') return new Promise(function(ok, hiba){ sor.push({range: atnevez(a.range), ok: ok, hiba: hiba}); if(sor.length >= 10){ clearTimeout(ido); kuld(); } else if(!ido){ ido = setTimeout(kuld, 80); } });
-    if(tool === 'update_values') return fetch(KAPU + '?m=ir&' + alap + '&range=' + enc(atnevez(a.range)) + '&v=' + enc(JSON.stringify(a.values)), {cache: 'no-store'})
-      .then(function(x){ if(!x.ok) throw {code: x.status === 403 ? 'blocked_by_policy' : 'hiba'}; return {payload: {}}; });
+    if(tool === 'get_values') return new Promise(function(ok, hiba){ var t = hol(a); (sorok[t] = sorok[t] || []).push({range: atnevez(a.range), ok: ok, hiba: hiba}); if(!ido){ ido = setTimeout(kuld, 80); } });
+    if(tool === 'update_values') return fetch(KAPU + '?m=ir&' + alap + '&t=' + enc(hol(a)) + '&range=' + enc(atnevez(a.range)) + '&v=' + enc(JSON.stringify(a.values)), {cache: 'no-store'}).then(valasz).then(function(){ return {payload: {}}; });
+    if(a && a.objektum_id && a.uj_status) return fetch(KAPU + '?m=hirdetes&' + alap + '&objektum_id=' + enc(a.objektum_id) + '&uj_status=' + enc(a.uj_status), {cache: 'no-store'}).then(valasz).then(function(j){ return {payload: {status: j && j.status}}; });
     return Promise.reject({code: 'blocked_by_policy'});
   }};
   window.claude = {use: function(n){ return Promise.resolve(n === 'mcp' && window.KKV.ok ? kapu : null); }};
